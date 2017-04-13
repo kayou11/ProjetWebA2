@@ -22,3 +22,7 @@ ed51b3,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/home,1492086006,,200
 382ee5,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492086236,16ae64,200
 16ae64,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492086236,,404
 2cbab4,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492086244,,200
+c174d8,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/shop,1492088306,,301
+20a6a0,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/shop/,1492088306,,200
+5d6179,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/shop/,1492088315,,200
+49dc89,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492093415,,200
