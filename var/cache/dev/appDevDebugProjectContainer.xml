@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="FOSRestBundle">FOS\RestBundle\FOSRestBundle</parameter>
+      <parameter key="AimeosShopBundle">Aimeos\ShopBundle\AimeosShopBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -70,6 +71,11 @@
         <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/friendsofsymfony/rest-bundle</parameter>
         <parameter key="namespace">FOS\RestBundle</parameter>
       </parameter>
+      <parameter key="AimeosShopBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/aimeos/aimeos-symfony</parameter>
+        <parameter key="namespace">Aimeos\ShopBundle</parameter>
+      </parameter>
       <parameter key="AppBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/AppBundle</parameter>
@@ -104,10 +110,10 @@
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
-    <parameter key="database_port">null</parameter>
-    <parameter key="database_name">symfony</parameter>
+    <parameter key="database_port">3306</parameter>
+    <parameter key="database_name">SiteBDECesi</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">null</parameter>
+    <parameter key="database_password">root</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
@@ -260,6 +266,7 @@
       <parameter>DoctrineBundle</parameter>
       <parameter>SensioFrameworkExtraBundle</parameter>
       <parameter>FOSRestBundle</parameter>
+      <parameter>AimeosShopBundle</parameter>
       <parameter>AppBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
@@ -279,7 +286,7 @@
     <parameter key="assetic.write_to">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.node.bin">/Users/PierreKayou/.nvm/versions/node/v4.4.7/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
@@ -426,6 +433,323 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="aimeos_shop.apc_prefix">sf:</parameter>
+    <parameter key="aimeos_shop.extdir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../ext</parameter>
+    <parameter key="aimeos_shop.uploaddir">/</parameter>
+    <parameter key="aimeos_shop.page" type="collection">
+      <parameter key="account-index" type="collection">
+        <parameter>account/profile</parameter>
+        <parameter>account/history</parameter>
+        <parameter>account/favorite</parameter>
+        <parameter>account/watch</parameter>
+        <parameter>basket/mini</parameter>
+        <parameter>catalog/session</parameter>
+      </parameter>
+      <parameter key="basket-index" type="collection">
+        <parameter>basket/standard</parameter>
+        <parameter>basket/related</parameter>
+      </parameter>
+      <parameter key="catalog-count" type="collection">
+        <parameter>catalog/count</parameter>
+      </parameter>
+      <parameter key="catalog-detail" type="collection">
+        <parameter>basket/mini</parameter>
+        <parameter>catalog/stage</parameter>
+        <parameter>catalog/detail</parameter>
+        <parameter>catalog/session</parameter>
+      </parameter>
+      <parameter key="catalog-list" type="collection">
+        <parameter>basket/mini</parameter>
+        <parameter>catalog/filter</parameter>
+        <parameter>catalog/stage</parameter>
+        <parameter>catalog/lists</parameter>
+      </parameter>
+      <parameter key="catalog-suggest" type="collection">
+        <parameter>catalog/suggest</parameter>
+      </parameter>
+      <parameter key="catalog-stock" type="collection">
+        <parameter>catalog/stock</parameter>
+      </parameter>
+      <parameter key="checkout-confirm" type="collection">
+        <parameter>checkout/confirm</parameter>
+      </parameter>
+      <parameter key="checkout-index" type="collection">
+        <parameter>checkout/standard</parameter>
+      </parameter>
+      <parameter key="checkout-update" type="collection">
+        <parameter>checkout/update</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.resource" type="collection">
+      <parameter key="db" type="collection">
+        <parameter key="adapter">mysql</parameter>
+        <parameter key="host">127.0.0.1</parameter>
+        <parameter key="port">3306</parameter>
+        <parameter key="database">SiteBDECesi</parameter>
+        <parameter key="username">root</parameter>
+        <parameter key="password">root</parameter>
+        <parameter key="stmt" type="collection">
+          <parameter>SET NAMES 'utf8'</parameter>
+          <parameter>SET SESSION sql_mode='ANSI'</parameter>
+        </parameter>
+        <parameter key="limit">2</parameter>
+        <parameter key="opt-persistent">0</parameter>
+      </parameter>
+      <parameter key="fs" type="collection">
+        <parameter key="adapter">Standard</parameter>
+        <parameter key="basedir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../web</parameter>
+        <parameter key="tempdir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev</parameter>
+      </parameter>
+      <parameter key="fs-admin" type="collection">
+        <parameter key="adapter">Standard</parameter>
+        <parameter key="basedir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../web/uploads</parameter>
+        <parameter key="tempdir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev</parameter>
+      </parameter>
+      <parameter key="fs-secure" type="collection">
+        <parameter key="adapter">Standard</parameter>
+        <parameter key="basedir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/secure</parameter>
+        <parameter key="tempdir">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev</parameter>
+      </parameter>
+      <parameter key="mq" type="collection">
+        <parameter key="adapter">Standard</parameter>
+        <parameter key="db">db</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.admin" type="collection">
+      <parameter key="extjs" type="collection">
+        <parameter key="url" type="collection">
+          <parameter key="target">aimeos_shop_extadm</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="jqadm" type="collection">
+        <parameter key="url" type="collection">
+          <parameter key="copy" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_copy</parameter>
+          </parameter>
+          <parameter key="create" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_create</parameter>
+          </parameter>
+          <parameter key="delete" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_delete</parameter>
+          </parameter>
+          <parameter key="get" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_get</parameter>
+          </parameter>
+          <parameter key="save" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_save</parameter>
+          </parameter>
+          <parameter key="search" type="collection">
+            <parameter key="target">aimeos_shop_jqadm_search</parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+      <parameter key="jsonadm" type="collection">
+        <parameter key="url" type="collection">
+          <parameter key="target">aimeos_shop_jsonadm_get</parameter>
+          <parameter key="config" type="collection">
+            <parameter key="absoluteUri">true</parameter>
+          </parameter>
+          <parameter key="options" type="collection">
+            <parameter key="target">aimeos_shop_jsonadm_options</parameter>
+            <parameter key="config" type="collection">
+              <parameter key="absoluteUri">true</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.client" type="collection">
+      <parameter key="html" type="collection">
+        <parameter key="account" type="collection">
+          <parameter key="history" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_account</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="favorite" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_account_favorite</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="watch" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_account_watch</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="download" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_account_download</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="catalog" type="collection">
+          <parameter key="count" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_count</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="detail" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_detail</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="lists" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_list</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="session" type="collection">
+            <parameter key="pinned" type="collection">
+              <parameter key="url" type="collection">
+                <parameter key="target">aimeos_shop_session_pinned</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+          <parameter key="stock" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_stock</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="suggest" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_suggest</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="common" type="collection">
+          <parameter key="content" type="collection">
+            <parameter key="baseurl">/</parameter>
+          </parameter>
+          <parameter key="template" type="collection">
+            <parameter key="baseurl">bundles/aimeosshop/elegance</parameter>
+          </parameter>
+        </parameter>
+        <parameter key="basket" type="collection">
+          <parameter key="standard" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_basket</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="checkout" type="collection">
+          <parameter key="confirm" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_confirm</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="standard" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_checkout</parameter>
+            </parameter>
+            <parameter key="summary" type="collection">
+              <parameter key="option" type="collection">
+                <parameter key="terms" type="collection">
+                  <parameter key="url" type="collection">
+                    <parameter key="target">aimeos_shop_terms</parameter>
+                  </parameter>
+                  <parameter key="privacy" type="collection">
+                    <parameter key="url" type="collection">
+                      <parameter key="target">aimeos_shop_privacy</parameter>
+                    </parameter>
+                  </parameter>
+                </parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+          <parameter key="update" type="collection">
+            <parameter key="url" type="collection">
+              <parameter key="target">aimeos_shop_update</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+      <parameter key="jsonapi" type="collection">
+        <parameter key="url" type="collection">
+          <parameter key="target">aimeos_shop_jsonapi_get</parameter>
+          <parameter key="options" type="collection">
+            <parameter key="target">aimeos_shop_jsonapi_options</parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.controller" type="collection">
+      <parameter key="common" type="collection">
+        <parameter key="media" type="collection">
+          <parameter key="standard" type="collection">
+            <parameter key="mimeicon" type="collection">
+              <parameter key="directory">bundles/aimeosshop/mimeicons</parameter>
+              <parameter key="extension">.png</parameter>
+            </parameter>
+            <parameter key="files">null</parameter>
+            <parameter key="preview">null</parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+      <parameter key="extjs" type="collection">
+        <parameter key="attribute" type="collection">
+          <parameter key="export" type="collection">
+            <parameter key="text" type="collection">
+              <parameter key="default" type="collection">
+                <parameter key="downloaddir">/uploads</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="catalog" type="collection">
+          <parameter key="export" type="collection">
+            <parameter key="text" type="collection">
+              <parameter key="default" type="collection">
+                <parameter key="downloaddir">/uploads</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+        <parameter key="product" type="collection">
+          <parameter key="export" type="collection">
+            <parameter key="text" type="collection">
+              <parameter key="default" type="collection">
+                <parameter key="downloaddir">/uploads</parameter>
+              </parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.i18n">null</parameter>
+    <parameter key="aimeos_shop.madmin">null</parameter>
+    <parameter key="aimeos_shop.mshop" type="collection">
+      <parameter key="customer" type="collection">
+        <parameter key="manager" type="collection">
+          <parameter key="password" type="collection">
+            <parameter key="options" type="collection">
+              <parameter key="format">%1$s{%2$s}</parameter>
+            </parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+      <parameter key="index" type="collection">
+        <parameter key="manager" type="collection">
+          <parameter key="name">MySQL</parameter>
+          <parameter key="attribute" type="collection">
+            <parameter key="name">MySQL</parameter>
+          </parameter>
+          <parameter key="catalog" type="collection">
+            <parameter key="name">MySQL</parameter>
+          </parameter>
+          <parameter key="price" type="collection">
+            <parameter key="name">MySQL</parameter>
+          </parameter>
+          <parameter key="text" type="collection">
+            <parameter key="name">MySQL</parameter>
+          </parameter>
+        </parameter>
+      </parameter>
+    </parameter>
+    <parameter key="aimeos_shop.command">null</parameter>
+    <parameter key="aimeos_shop.backend">null</parameter>
+    <parameter key="aimeos_shop.frontend">null</parameter>
+    <parameter key="aimeos_shop.disable_sites">true</parameter>
+    <parameter key="aimeos_shop.apc_enable">false</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -562,7 +886,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>zoAc5NUaZt</argument>
                 <argument>0</argument>
-                <argument>U9vENqW+f+DXyQCebnF-fQ</argument>
+                <argument>9yJ1E4Jincz-Bvo1O+ajU-</argument>
                 <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -753,7 +1077,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>77e5w3UIne</argument>
       <argument>0</argument>
-      <argument>U9vENqW+f+DXyQCebnF-fQ</argument>
+      <argument>9yJ1E4Jincz-Bvo1O+ajU-</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -763,7 +1087,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>3MDI1qEtgi</argument>
       <argument>0</argument>
-      <argument>U9vENqW+f+DXyQCebnF-fQ</argument>
+      <argument>9yJ1E4Jincz-Bvo1O+ajU-</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -773,7 +1097,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>OBRcLxGJY8</argument>
       <argument>0</argument>
-      <argument>U9vENqW+f+DXyQCebnF-fQ</argument>
+      <argument>9yJ1E4Jincz-Bvo1O+ajU-</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1613,6 +1937,10 @@
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>sensio_framework_extra.psr7.listener.response</argument>
+        <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\PsrResponseListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -1945,7 +2273,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58ef89e5cbc7d4.35875154</argument>
+            <argument>58ef92d2032a07.12983185</argument>
           </service>
         </argument>
         <argument type="service">
@@ -1961,7 +2289,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58ef89e5cbc7d4.35875154</argument>
+            <argument>58ef92d2032a07.12983185</argument>
           </service>
         </argument>
       </argument>
@@ -2166,7 +2494,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58ef89e5cbc7d4.35875154</argument>
+            <argument>58ef92d2032a07.12983185</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2305,7 +2633,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58ef89e5cbc7d4.35875154</argument>
+            <argument>58ef92d2032a07.12983185</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2511,6 +2839,7 @@
               <argument>DoctrineBundle</argument>
               <argument>SensioFrameworkExtraBundle</argument>
               <argument>FOSRestBundle</argument>
+              <argument>AimeosShopBundle</argument>
               <argument>AppBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
@@ -2967,6 +3296,33 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
+                  <argument>AimeosShopBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/Resources/AimeosShopBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>AimeosShopBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/aimeos/aimeos-symfony/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
                   <argument>AppBundle</argument>
                   <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/Resources/AppBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -3230,10 +3586,10 @@
       <argument type="collection">
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
-        <argument key="port">null</argument>
-        <argument key="dbname">symfony</argument>
+        <argument key="port">3306</argument>
+        <argument key="dbname">SiteBDECesi</argument>
         <argument key="user">root</argument>
-        <argument key="password">null</argument>
+        <argument key="password">root</argument>
         <argument key="charset">UTF8</argument>
         <argument key="driverOptions" type="collection"/>
         <argument key="defaultTableOptions" type="collection"/>
@@ -3320,7 +3676,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="AimeosShopBundle">Aimeos\ShopBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -3333,7 +3691,19 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/aimeos/aimeos-symfony/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Aimeos\ShopBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -3401,6 +3771,11 @@
         <argument>0</argument>
         <argument>datetime</argument>
       </call>
+      <call method="add">
+        <argument type="service" id="sensio_framework_extra.psr7.converter.server_request"/>
+        <argument>0</argument>
+        <argument>psr.server_request</argument>
+      </call>
     </service>
     <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter">
       <tag name="request.param_converter" converter="doctrine.orm"/>
@@ -3426,6 +3801,18 @@
       <argument type="service" id="security.role_hierarchy" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
+    </service>
+    <service id="sensio_framework_extra.psr7.converter.server_request" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\PsrServerRequestParamConverter">
+      <tag name="request.param_converter" converter="psr.server_request"/>
+      <argument type="service">
+        <service class="Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory" public="false"/>
+      </argument>
+    </service>
+    <service id="sensio_framework_extra.psr7.listener.response" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\PsrResponseListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service">
+        <service class="Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory" public="false"/>
+      </argument>
     </service>
     <service id="fos_rest.request.param_fetcher" class="FOS\RestBundle\Request\ParamFetcher">
       <argument type="service" id="service_container"/>
@@ -3455,6 +3842,30 @@
       <call method="setDefaultFormat">
         <argument>null</argument>
       </call>
+    </service>
+    <service id="aimeos" class="Aimeos\ShopBundle\Service\Aimeos">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_config" class="Aimeos\ShopBundle\Service\Config">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_context" class="Aimeos\ShopBundle\Service\Context">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_i18n" class="Aimeos\ShopBundle\Service\I18n">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_locale" class="Aimeos\ShopBundle\Service\Locale">
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_page" class="Aimeos\ShopBundle\Service\Page">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="aimeos_support" class="Aimeos\ShopBundle\Service\Support"/>
+    <service id="aimeos_view" class="Aimeos\ShopBundle\Service\View">
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="service_container"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3908,6 +4319,10 @@
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/aimeos/aimeos-symfony/Resources/views</argument>
+        <argument>AimeosShop</argument>
       </call>
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

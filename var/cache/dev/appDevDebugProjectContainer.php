@@ -31,6 +31,14 @@ class appDevDebugProjectContainer extends Container
 
         $this->services = array();
         $this->methodMap = array(
+            'aimeos' => 'getAimeosService',
+            'aimeos_config' => 'getAimeosConfigService',
+            'aimeos_context' => 'getAimeosContextService',
+            'aimeos_i18n' => 'getAimeosI18nService',
+            'aimeos_locale' => 'getAimeosLocaleService',
+            'aimeos_page' => 'getAimeosPageService',
+            'aimeos_support' => 'getAimeosSupportService',
+            'aimeos_view' => 'getAimeosViewService',
             'annotation_reader' => 'getAnnotationReaderService',
             'annotations.reader' => 'getAnnotations_ReaderService',
             'assetic.asset_factory' => 'getAssetic_AssetFactoryService',
@@ -207,6 +215,8 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.orm' => 'getSensioFrameworkExtra_Converter_Doctrine_OrmService',
             'sensio_framework_extra.converter.listener' => 'getSensioFrameworkExtra_Converter_ListenerService',
             'sensio_framework_extra.converter.manager' => 'getSensioFrameworkExtra_Converter_ManagerService',
+            'sensio_framework_extra.psr7.converter.server_request' => 'getSensioFrameworkExtra_Psr7_Converter_ServerRequestService',
+            'sensio_framework_extra.psr7.listener.response' => 'getSensioFrameworkExtra_Psr7_Listener_ResponseService',
             'sensio_framework_extra.security.listener' => 'getSensioFrameworkExtra_Security_ListenerService',
             'sensio_framework_extra.view.guesser' => 'getSensioFrameworkExtra_View_GuesserService',
             'sensio_framework_extra.view.listener' => 'getSensioFrameworkExtra_View_ListenerService',
@@ -356,6 +366,110 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'aimeos' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Aimeos A Aimeos\ShopBundle\Service\Aimeos instance
+     */
+    protected function getAimeosService()
+    {
+        return $this->services['aimeos'] = new \Aimeos\ShopBundle\Service\Aimeos($this);
+    }
+
+    /**
+     * Gets the 'aimeos_config' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Config A Aimeos\ShopBundle\Service\Config instance
+     */
+    protected function getAimeosConfigService()
+    {
+        return $this->services['aimeos_config'] = new \Aimeos\ShopBundle\Service\Config($this);
+    }
+
+    /**
+     * Gets the 'aimeos_context' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Context A Aimeos\ShopBundle\Service\Context instance
+     */
+    protected function getAimeosContextService()
+    {
+        return $this->services['aimeos_context'] = new \Aimeos\ShopBundle\Service\Context($this);
+    }
+
+    /**
+     * Gets the 'aimeos_i18n' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\I18n A Aimeos\ShopBundle\Service\I18n instance
+     */
+    protected function getAimeosI18nService()
+    {
+        return $this->services['aimeos_i18n'] = new \Aimeos\ShopBundle\Service\I18n($this);
+    }
+
+    /**
+     * Gets the 'aimeos_locale' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Locale A Aimeos\ShopBundle\Service\Locale instance
+     */
+    protected function getAimeosLocaleService()
+    {
+        return $this->services['aimeos_locale'] = new \Aimeos\ShopBundle\Service\Locale($this->get('request_stack'), $this);
+    }
+
+    /**
+     * Gets the 'aimeos_page' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Page A Aimeos\ShopBundle\Service\Page instance
+     */
+    protected function getAimeosPageService()
+    {
+        return $this->services['aimeos_page'] = new \Aimeos\ShopBundle\Service\Page($this);
+    }
+
+    /**
+     * Gets the 'aimeos_support' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\Support A Aimeos\ShopBundle\Service\Support instance
+     */
+    protected function getAimeosSupportService()
+    {
+        return $this->services['aimeos_support'] = new \Aimeos\ShopBundle\Service\Support();
+    }
+
+    /**
+     * Gets the 'aimeos_view' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Aimeos\ShopBundle\Service\View A Aimeos\ShopBundle\Service\View instance
+     */
+    protected function getAimeosViewService()
+    {
+        return $this->services['aimeos_view'] = new \Aimeos\ShopBundle\Service\View($this->get('request_stack'), $this);
+    }
+
+    /**
      * Gets the 'annotation_reader' service.
      *
      * This service is shared.
@@ -391,6 +505,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'DoctrineBundle', ($this->targetDirs[3].'/app/Resources/DoctrineBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'DoctrineBundle', ($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioFrameworkExtraBundle', ($this->targetDirs[3].'/app/Resources/SensioFrameworkExtraBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'SensioFrameworkExtraBundle', ($this->targetDirs[3].'/vendor/sensio/framework-extra-bundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FOSRestBundle', ($this->targetDirs[3].'/app/Resources/FOSRestBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FOSRestBundle', ($this->targetDirs[3].'/vendor/friendsofsymfony/rest-bundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AimeosShopBundle', ($this->targetDirs[3].'/app/Resources/AimeosShopBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AimeosShopBundle', ($this->targetDirs[3].'/vendor/aimeos/aimeos-symfony/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AppBundle', ($this->targetDirs[3].'/app/Resources/AppBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'AppBundle', ($this->targetDirs[3].'/src/AppBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'DebugBundle', ($this->targetDirs[3].'/app/Resources/DebugBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'DebugBundle', ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
         $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', ($this->targetDirs[3].'/app/Resources/WebProfilerBundle/views'), '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'WebProfilerBundle', ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), '/\\.[^.]+\\.twig$/'))), 'twig');
@@ -572,7 +687,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_SystemService()
     {
-        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('77e5w3UIne', 0, 'U9vENqW+f+DXyQCebnF-fQ', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('77e5w3UIne', 0, '9yJ1E4Jincz-Bvo1O+ajU-', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -603,7 +718,7 @@ class appDevDebugProjectContainer extends Container
 
         $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, ($this->targetDirs[3].'/app/Resources'));
 
-        return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, ${($_ = isset($this->services['templating.locator']) ? $this->services['templating.locator'] : $this->getTemplating_LocatorService()) && false ?: '_'}), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => $this->get('kernel.class_cache.cache_warmer'), 3 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer($this->get('translator')), 4 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer($this->get('validator.builder'), (__DIR__.'/validation.php'), \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('zoAc5NUaZt', 0, 'U9vENqW+f+DXyQCebnF-fQ', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE))), 5 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 6 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer(${($_ = isset($this->services['annotations.reader']) ? $this->services['annotations.reader'] : $this->getAnnotations_ReaderService()) && false ?: '_'}, (__DIR__.'/annotations.php'), ${($_ = isset($this->services['cache.annotations']) ? $this->services['cache.annotations'] : $this->getCache_AnnotationsService()) && false ?: '_'}), 7 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\SerializerCacheWarmer(array(), (__DIR__.'/serialization.php'), ${($_ = isset($this->services['cache.serializer']) ? $this->services['cache.serializer'] : $this->getCache_SerializerService()) && false ?: '_'}), 8 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c, array()), 9 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer($this->get('twig'), new \Symfony\Bundle\TwigBundle\TemplateIterator($a, ($this->targetDirs[3].'/app'), array())), 10 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
+        return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, ${($_ = isset($this->services['templating.locator']) ? $this->services['templating.locator'] : $this->getTemplating_LocatorService()) && false ?: '_'}), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => $this->get('kernel.class_cache.cache_warmer'), 3 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer($this->get('translator')), 4 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer($this->get('validator.builder'), (__DIR__.'/validation.php'), \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('zoAc5NUaZt', 0, '9yJ1E4Jincz-Bvo1O+ajU-', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE))), 5 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 6 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer(${($_ = isset($this->services['annotations.reader']) ? $this->services['annotations.reader'] : $this->getAnnotations_ReaderService()) && false ?: '_'}, (__DIR__.'/annotations.php'), ${($_ = isset($this->services['cache.annotations']) ? $this->services['cache.annotations'] : $this->getCache_AnnotationsService()) && false ?: '_'}), 7 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\SerializerCacheWarmer(array(), (__DIR__.'/serialization.php'), ${($_ = isset($this->services['cache.serializer']) ? $this->services['cache.serializer'] : $this->getCache_SerializerService()) && false ?: '_'}), 8 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c, array()), 9 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer($this->get('twig'), new \Symfony\Bundle\TwigBundle\TemplateIterator($a, ($this->targetDirs[3].'/app'), array())), 10 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
 
     /**
@@ -773,6 +888,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addSubscriberService('sensio_framework_extra.view.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener');
         $instance->addSubscriberService('sensio_framework_extra.cache.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\HttpCacheListener');
         $instance->addSubscriberService('sensio_framework_extra.security.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\SecurityListener');
+        $instance->addSubscriberService('sensio_framework_extra.psr7.listener.response', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\PsrResponseListener');
         $instance->addSubscriberService('debug.dump_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\DumpListener');
         $instance->addSubscriberService('web_profiler.debug_toolbar', 'Symfony\\Bundle\\WebProfilerBundle\\EventListener\\WebDebugToolbarListener');
 
@@ -838,7 +954,7 @@ class appDevDebugProjectContainer extends Container
         $c = new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this);
         $c->addEventListener(array(0 => 'loadClassMetadata'), $this->get('doctrine.orm.default_listeners.attach_entity_listeners'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'symfony', 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => 3306, 'dbname' => 'SiteBDECesi', 'user' => 'root', 'password' => 'root', 'charset' => 'UTF8', 'driverOptions' => array(), 'defaultTableOptions' => array()), $b, $c, array());
     }
 
     /**
@@ -866,22 +982,25 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService($lazyLoad = true)
     {
-        $a = new \Doctrine\ORM\Configuration();
-        $a->setEntityNamespaces(array());
-        $a->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
-        $a->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
-        $a->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
-        $a->setMetadataDriverImpl(new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain());
-        $a->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $a->setProxyNamespace('Proxies');
-        $a->setAutoGenerateProxyClasses(true);
-        $a->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $a->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $a->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
-        $a->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
-        $a->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+        $a = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
+        $a->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'/vendor/aimeos/aimeos-symfony/Entity'))), 'Aimeos\\ShopBundle\\Entity');
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $a);
+        $b = new \Doctrine\ORM\Configuration();
+        $b->setEntityNamespaces(array('AimeosShopBundle' => 'Aimeos\\ShopBundle\\Entity'));
+        $b->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
+        $b->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
+        $b->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
+        $b->setMetadataDriverImpl($a);
+        $b->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $b->setProxyNamespace('Proxies');
+        $b->setAutoGenerateProxyClasses(true);
+        $b->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $b->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $b->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
+        $b->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
+        $b->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $b);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -2604,7 +2723,7 @@ class appDevDebugProjectContainer extends Container
         $j = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $e, array(), $b);
         $j->setOptions(array('login_path' => 'login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => ${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}), 'main', $b, $c, $d), 2 => $h, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $e, 'main', $i, $j, array('check_path' => 'login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $b, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '58ef89e5cbc7d4.35875154', $b, $g), 5 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $d, $e, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $e, 'login', false), NULL, NULL, $b, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'security.user.provider.concrete.in_memory', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => ${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}), 'main', $b, $c, $d), 2 => $h, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($a, $g, new \Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy('migrate'), $e, 'main', $i, $j, array('check_path' => 'login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $b, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '58ef92d2032a07.12983185', $b, $g), 5 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $d, $e, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $e, 'login', false), NULL, NULL, $b, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'security.user.provider.concrete.in_memory', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
     }
 
     /**
@@ -2621,7 +2740,7 @@ class appDevDebugProjectContainer extends Container
         $b = $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE);
         $c = ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'};
 
-        return $this->services['security.firewall.map.context.main_login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => ${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}), 'main_login', $b, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE), $c), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '58ef89e5cbc7d4.35875154', $b, ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'}), 3 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $c, ${($_ = isset($this->services['security.http_utils']) ? $this->services['security.http_utils'] : $this->getSecurity_HttpUtilsService()) && false ?: '_'}, 'main_login', NULL, NULL, NULL, $b, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main_login', 'security.user_checker', 'security.request_matcher.761fab281fc602ab4d99cc073a438e93feab0da8b64b98bb0df6352243d9ba41902d9271', true, false, 'security.user.provider.concrete.in_memory', 'main_login', NULL, NULL, NULL, array(0 => 'anonymous')));
+        return $this->services['security.firewall.map.context.main_login'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => ${($_ = isset($this->services['security.channel_listener']) ? $this->services['security.channel_listener'] : $this->getSecurity_ChannelListenerService()) && false ?: '_'}, 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($a, array(0 => ${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}), 'main_login', $b, $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE), $c), 2 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($a, '58ef92d2032a07.12983185', $b, ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'}), 3 => ${($_ = isset($this->services['security.access_listener']) ? $this->services['security.access_listener'] : $this->getSecurity_AccessListenerService()) && false ?: '_'}), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($a, $c, ${($_ = isset($this->services['security.http_utils']) ? $this->services['security.http_utils'] : $this->getSecurity_HttpUtilsService()) && false ?: '_'}, 'main_login', NULL, NULL, NULL, $b, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main_login', 'security.user_checker', 'security.request_matcher.761fab281fc602ab4d99cc073a438e93feab0da8b64b98bb0df6352243d9ba41902d9271', true, false, 'security.user.provider.concrete.in_memory', 'main_login', NULL, NULL, NULL, array(0 => 'anonymous')));
     }
 
     /**
@@ -2781,8 +2900,35 @@ class appDevDebugProjectContainer extends Container
 
         $instance->add($this->get('sensio_framework_extra.converter.doctrine.orm'), 0, 'doctrine.orm');
         $instance->add($this->get('sensio_framework_extra.converter.datetime'), 0, 'datetime');
+        $instance->add($this->get('sensio_framework_extra.psr7.converter.server_request'), 0, 'psr.server_request');
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'sensio_framework_extra.psr7.converter.server_request' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\PsrServerRequestParamConverter A Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\PsrServerRequestParamConverter instance
+     */
+    protected function getSensioFrameworkExtra_Psr7_Converter_ServerRequestService()
+    {
+        return $this->services['sensio_framework_extra.psr7.converter.server_request'] = new \Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\PsrServerRequestParamConverter(new \Symfony\Bridge\PsrHttpMessage\Factory\DiactorosFactory());
+    }
+
+    /**
+     * Gets the 'sensio_framework_extra.psr7.listener.response' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Sensio\Bundle\FrameworkExtraBundle\EventListener\PsrResponseListener A Sensio\Bundle\FrameworkExtraBundle\EventListener\PsrResponseListener instance
+     */
+    protected function getSensioFrameworkExtra_Psr7_Listener_ResponseService()
+    {
+        return $this->services['sensio_framework_extra.psr7.listener.response'] = new \Sensio\Bundle\FrameworkExtraBundle\EventListener\PsrResponseListener(new \Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory());
     }
 
     /**
@@ -3592,7 +3738,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpFoundationExtension($c, ${($_ = isset($this->services['router.request_context']) ? $this->services['router.request_context'] : $this->getRouter_RequestContextService()) && false ?: '_'}));
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(array(0 => $this, 1 => 'twig.form.renderer')));
-        $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension(${($_ = isset($this->services['assetic.asset_factory']) ? $this->services['assetic.asset_factory'] : $this->getAssetic_AssetFactoryService()) && false ?: '_'}, $this->get('templating.name_parser'), true, array(), array(0 => 'FrameworkBundle', 1 => 'SecurityBundle', 2 => 'TwigBundle', 3 => 'MonologBundle', 4 => 'SwiftmailerBundle', 5 => 'AsseticBundle', 6 => 'DoctrineBundle', 7 => 'SensioFrameworkExtraBundle', 8 => 'FOSRestBundle', 9 => 'AppBundle', 10 => 'DebugBundle', 11 => 'WebProfilerBundle', 12 => 'SensioDistributionBundle', 13 => 'SensioGeneratorBundle', 14 => 'DoctrineFixturesBundle'), new \Symfony\Bundle\AsseticBundle\DefaultValueSupplier($this)));
+        $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension(${($_ = isset($this->services['assetic.asset_factory']) ? $this->services['assetic.asset_factory'] : $this->getAssetic_AssetFactoryService()) && false ?: '_'}, $this->get('templating.name_parser'), true, array(), array(0 => 'FrameworkBundle', 1 => 'SecurityBundle', 2 => 'TwigBundle', 3 => 'MonologBundle', 4 => 'SwiftmailerBundle', 5 => 'AsseticBundle', 6 => 'DoctrineBundle', 7 => 'SensioFrameworkExtraBundle', 8 => 'FOSRestBundle', 9 => 'AimeosShopBundle', 10 => 'AppBundle', 11 => 'DebugBundle', 12 => 'WebProfilerBundle', 13 => 'SensioDistributionBundle', 14 => 'SensioGeneratorBundle', 15 => 'DoctrineFixturesBundle'), new \Symfony\Bundle\AsseticBundle\DefaultValueSupplier($this)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\DumpExtension($this->get('var_dumper.cloner'), $d));
         $instance->addExtension(new \Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension($e));
@@ -3672,6 +3818,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views'), 'Twig');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/swiftmailer-bundle/Resources/views'), 'Swiftmailer');
         $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), 'Doctrine');
+        $instance->addPath(($this->targetDirs[3].'/vendor/aimeos/aimeos-symfony/Resources/views'), 'AimeosShop');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath(($this->targetDirs[3].'/app/Resources/views'));
@@ -3942,7 +4089,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_AnnotationsService()
     {
-        return $this->services['cache.annotations'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('OBRcLxGJY8', 0, 'U9vENqW+f+DXyQCebnF-fQ', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.annotations'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('OBRcLxGJY8', 0, '9yJ1E4Jincz-Bvo1O+ajU-', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -3959,7 +4106,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_SerializerService()
     {
-        return $this->services['cache.serializer'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3MDI1qEtgi', 0, 'U9vENqW+f+DXyQCebnF-fQ', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['cache.serializer'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('3MDI1qEtgi', 0, '9yJ1E4Jincz-Bvo1O+ajU-', (__DIR__.'/pools'), $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -4170,7 +4317,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58ef89e5cbc7d4.35875154'), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}, new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58ef89e5cbc7d4.35875154')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58ef92d2032a07.12983185'), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider(${($_ = isset($this->services['security.user.provider.concrete.in_memory']) ? $this->services['security.user.provider.concrete.in_memory'] : $this->getSecurity_User_Provider_Concrete_InMemoryService()) && false ?: '_'}, new \Symfony\Component\Security\Core\User\UserChecker(), 'main', $this->get('security.encoder_factory'), true), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('58ef92d2032a07.12983185')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -4452,6 +4599,8 @@ class appDevDebugProjectContainer extends Container
         'assetic.write_to' => false,
         'assetic.filter.yui_js.jar' => false,
         'assetic.filter.yui_css.jar' => false,
+        'aimeos_shop.extdir' => false,
+        'aimeos_shop.resource' => false,
     );
     private $dynamicParameters = array();
 
@@ -4515,6 +4664,11 @@ class appDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/friendsofsymfony/rest-bundle'),
                     'namespace' => 'FOS\\RestBundle',
                 ),
+                'AimeosShopBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/aimeos/aimeos-symfony'),
+                    'namespace' => 'Aimeos\\ShopBundle',
+                ),
                 'AppBundle' => array(
                     'parent' => NULL,
                     'path' => ($this->targetDirs[3].'/src/AppBundle'),
@@ -4551,6 +4705,42 @@ class appDevDebugProjectContainer extends Container
             case 'assetic.write_to': $value = ($this->targetDirs[3].'/app/../web'); break;
             case 'assetic.filter.yui_js.jar': $value = ($this->targetDirs[3].'/app/Resources/java/yuicompressor-2.4.9.jar'); break;
             case 'assetic.filter.yui_css.jar': $value = ($this->targetDirs[3].'/app/Resources/java/yuicompressor-2.4.9.jar'); break;
+            case 'aimeos_shop.extdir': $value = ($this->targetDirs[3].'/app/../ext'); break;
+            case 'aimeos_shop.resource': $value = array(
+                'db' => array(
+                    'adapter' => 'mysql',
+                    'host' => '127.0.0.1',
+                    'port' => 3306,
+                    'database' => 'SiteBDECesi',
+                    'username' => 'root',
+                    'password' => 'root',
+                    'stmt' => array(
+                        0 => 'SET NAMES \'utf8\'',
+                        1 => 'SET SESSION sql_mode=\'ANSI\'',
+                    ),
+                    'limit' => 2,
+                    'opt-persistent' => 0,
+                ),
+                'fs' => array(
+                    'adapter' => 'Standard',
+                    'basedir' => ($this->targetDirs[3].'/app/../web'),
+                    'tempdir' => __DIR__,
+                ),
+                'fs-admin' => array(
+                    'adapter' => 'Standard',
+                    'basedir' => ($this->targetDirs[3].'/app/../web/uploads'),
+                    'tempdir' => __DIR__,
+                ),
+                'fs-secure' => array(
+                    'adapter' => 'Standard',
+                    'basedir' => ($this->targetDirs[3].'/app/secure'),
+                    'tempdir' => __DIR__,
+                ),
+                'mq' => array(
+                    'adapter' => 'Standard',
+                    'db' => 'db',
+                ),
+            ); break;
             default: throw new InvalidArgumentException(sprintf('The dynamic parameter "%s" must be defined.', $name));
         }
         $this->loadedDynamicParameters[$name] = true;
@@ -4580,6 +4770,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'FOSRestBundle' => 'FOS\\RestBundle\\FOSRestBundle',
+                'AimeosShopBundle' => 'Aimeos\\ShopBundle\\AimeosShopBundle',
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
@@ -4590,10 +4781,10 @@ class appDevDebugProjectContainer extends Container
             'kernel.charset' => 'UTF-8',
             'kernel.container_class' => 'appDevDebugProjectContainer',
             'database_host' => '127.0.0.1',
-            'database_port' => NULL,
-            'database_name' => 'symfony',
+            'database_port' => 3306,
+            'database_name' => 'SiteBDECesi',
             'database_user' => 'root',
-            'database_password' => NULL,
+            'database_password' => 'root',
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => NULL,
@@ -4753,12 +4944,13 @@ class appDevDebugProjectContainer extends Container
                 6 => 'DoctrineBundle',
                 7 => 'SensioFrameworkExtraBundle',
                 8 => 'FOSRestBundle',
-                9 => 'AppBundle',
-                10 => 'DebugBundle',
-                11 => 'WebProfilerBundle',
-                12 => 'SensioDistributionBundle',
-                13 => 'SensioGeneratorBundle',
-                14 => 'DoctrineFixturesBundle',
+                9 => 'AimeosShopBundle',
+                10 => 'AppBundle',
+                11 => 'DebugBundle',
+                12 => 'WebProfilerBundle',
+                13 => 'SensioDistributionBundle',
+                14 => 'SensioGeneratorBundle',
+                15 => 'DoctrineFixturesBundle',
             ),
             'assetic.twig_extension.class' => 'Symfony\\Bundle\\AsseticBundle\\Twig\\AsseticExtension',
             'assetic.twig_formula_loader.class' => 'Assetic\\Extension\\Twig\\TwigFormulaLoader',
@@ -4772,7 +4964,7 @@ class appDevDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => '/usr/bin/java',
-            'assetic.node.bin' => '/usr/bin/node',
+            'assetic.node.bin' => '/Users/PierreKayou/.nvm/versions/node/v4.4.7/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.reactjsx.bin' => '/usr/bin/jsx',
@@ -4921,6 +5113,287 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'aimeos_shop.apc_prefix' => 'sf:',
+            'aimeos_shop.uploaddir' => '/',
+            'aimeos_shop.page' => array(
+                'account-index' => array(
+                    0 => 'account/profile',
+                    1 => 'account/history',
+                    2 => 'account/favorite',
+                    3 => 'account/watch',
+                    4 => 'basket/mini',
+                    5 => 'catalog/session',
+                ),
+                'basket-index' => array(
+                    0 => 'basket/standard',
+                    1 => 'basket/related',
+                ),
+                'catalog-count' => array(
+                    0 => 'catalog/count',
+                ),
+                'catalog-detail' => array(
+                    0 => 'basket/mini',
+                    1 => 'catalog/stage',
+                    2 => 'catalog/detail',
+                    3 => 'catalog/session',
+                ),
+                'catalog-list' => array(
+                    0 => 'basket/mini',
+                    1 => 'catalog/filter',
+                    2 => 'catalog/stage',
+                    3 => 'catalog/lists',
+                ),
+                'catalog-suggest' => array(
+                    0 => 'catalog/suggest',
+                ),
+                'catalog-stock' => array(
+                    0 => 'catalog/stock',
+                ),
+                'checkout-confirm' => array(
+                    0 => 'checkout/confirm',
+                ),
+                'checkout-index' => array(
+                    0 => 'checkout/standard',
+                ),
+                'checkout-update' => array(
+                    0 => 'checkout/update',
+                ),
+            ),
+            'aimeos_shop.admin' => array(
+                'extjs' => array(
+                    'url' => array(
+                        'target' => 'aimeos_shop_extadm',
+                    ),
+                ),
+                'jqadm' => array(
+                    'url' => array(
+                        'copy' => array(
+                            'target' => 'aimeos_shop_jqadm_copy',
+                        ),
+                        'create' => array(
+                            'target' => 'aimeos_shop_jqadm_create',
+                        ),
+                        'delete' => array(
+                            'target' => 'aimeos_shop_jqadm_delete',
+                        ),
+                        'get' => array(
+                            'target' => 'aimeos_shop_jqadm_get',
+                        ),
+                        'save' => array(
+                            'target' => 'aimeos_shop_jqadm_save',
+                        ),
+                        'search' => array(
+                            'target' => 'aimeos_shop_jqadm_search',
+                        ),
+                    ),
+                ),
+                'jsonadm' => array(
+                    'url' => array(
+                        'target' => 'aimeos_shop_jsonadm_get',
+                        'config' => array(
+                            'absoluteUri' => true,
+                        ),
+                        'options' => array(
+                            'target' => 'aimeos_shop_jsonadm_options',
+                            'config' => array(
+                                'absoluteUri' => true,
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'aimeos_shop.client' => array(
+                'html' => array(
+                    'account' => array(
+                        'history' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_account',
+                            ),
+                        ),
+                        'favorite' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_account_favorite',
+                            ),
+                        ),
+                        'watch' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_account_watch',
+                            ),
+                        ),
+                        'download' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_account_download',
+                            ),
+                        ),
+                    ),
+                    'catalog' => array(
+                        'count' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_count',
+                            ),
+                        ),
+                        'detail' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_detail',
+                            ),
+                        ),
+                        'lists' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_list',
+                            ),
+                        ),
+                        'session' => array(
+                            'pinned' => array(
+                                'url' => array(
+                                    'target' => 'aimeos_shop_session_pinned',
+                                ),
+                            ),
+                        ),
+                        'stock' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_stock',
+                            ),
+                        ),
+                        'suggest' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_suggest',
+                            ),
+                        ),
+                    ),
+                    'common' => array(
+                        'content' => array(
+                            'baseurl' => '/',
+                        ),
+                        'template' => array(
+                            'baseurl' => 'bundles/aimeosshop/elegance',
+                        ),
+                    ),
+                    'basket' => array(
+                        'standard' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_basket',
+                            ),
+                        ),
+                    ),
+                    'checkout' => array(
+                        'confirm' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_confirm',
+                            ),
+                        ),
+                        'standard' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_checkout',
+                            ),
+                            'summary' => array(
+                                'option' => array(
+                                    'terms' => array(
+                                        'url' => array(
+                                            'target' => 'aimeos_shop_terms',
+                                        ),
+                                        'privacy' => array(
+                                            'url' => array(
+                                                'target' => 'aimeos_shop_privacy',
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                        'update' => array(
+                            'url' => array(
+                                'target' => 'aimeos_shop_update',
+                            ),
+                        ),
+                    ),
+                ),
+                'jsonapi' => array(
+                    'url' => array(
+                        'target' => 'aimeos_shop_jsonapi_get',
+                        'options' => array(
+                            'target' => 'aimeos_shop_jsonapi_options',
+                        ),
+                    ),
+                ),
+            ),
+            'aimeos_shop.controller' => array(
+                'common' => array(
+                    'media' => array(
+                        'standard' => array(
+                            'mimeicon' => array(
+                                'directory' => 'bundles/aimeosshop/mimeicons',
+                                'extension' => '.png',
+                            ),
+                            'files' => NULL,
+                            'preview' => NULL,
+                        ),
+                    ),
+                ),
+                'extjs' => array(
+                    'attribute' => array(
+                        'export' => array(
+                            'text' => array(
+                                'default' => array(
+                                    'downloaddir' => '/uploads',
+                                ),
+                            ),
+                        ),
+                    ),
+                    'catalog' => array(
+                        'export' => array(
+                            'text' => array(
+                                'default' => array(
+                                    'downloaddir' => '/uploads',
+                                ),
+                            ),
+                        ),
+                    ),
+                    'product' => array(
+                        'export' => array(
+                            'text' => array(
+                                'default' => array(
+                                    'downloaddir' => '/uploads',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            'aimeos_shop.i18n' => NULL,
+            'aimeos_shop.madmin' => NULL,
+            'aimeos_shop.mshop' => array(
+                'customer' => array(
+                    'manager' => array(
+                        'password' => array(
+                            'options' => array(
+                                'format' => '%1$s{%2$s}',
+                            ),
+                        ),
+                    ),
+                ),
+                'index' => array(
+                    'manager' => array(
+                        'name' => 'MySQL',
+                        'attribute' => array(
+                            'name' => 'MySQL',
+                        ),
+                        'catalog' => array(
+                            'name' => 'MySQL',
+                        ),
+                        'price' => array(
+                            'name' => 'MySQL',
+                        ),
+                        'text' => array(
+                            'name' => 'MySQL',
+                        ),
+                    ),
+                ),
+            ),
+            'aimeos_shop.command' => NULL,
+            'aimeos_shop.backend' => NULL,
+            'aimeos_shop.frontend' => NULL,
+            'aimeos_shop.disable_sites' => true,
+            'aimeos_shop.apc_enable' => false,
             'web_profiler.debug_toolbar.position' => 'bottom',
             'web_profiler.debug_toolbar.intercept_redirects' => false,
             'web_profiler.debug_toolbar.mode' => 2,
