@@ -9,13 +9,13 @@ parameters:
     locale: en
 
 framework:
-    #esi: ~
+    #esi:            ~
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
         strict_requirements: ~
-    form: ~
+    form:            ~
     csrf_protection: ~
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
@@ -33,10 +33,12 @@ framework:
     assets: ~
     php_errors:
         log: true
+    serializer:
+                enabled: true
 
 # Twig Configuration
 twig:
-    debug: '%kernel.debug%'
+    debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
 
 # Doctrine Configuration
@@ -68,3 +70,13 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+        yui_js:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.9.jar
+        yui_css:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.9.jar

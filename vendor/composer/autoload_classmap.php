@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AppCache' => $baseDir . '/../../../mamp/htdocs/ProjetWebA2/app/AppCache.php',
-    'AppKernel' => $baseDir . '/../../../mamp/htdocs/ProjetWebA2/app/AppKernel.php',
+    'AppCache' => $baseDir . '/app/AppCache.php',
+    'AppKernel' => $baseDir . '/app/AppKernel.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'Collator' => $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Collator.php',

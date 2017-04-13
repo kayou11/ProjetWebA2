@@ -1,11 +1,25 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
 security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    encoders:
+        UserBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+
+    role_hierarchy:
+            ROLE_ADMIN:       ROLE_USER
+            ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -13,12 +27,19 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        # On crée un pare-feu uniquement pour le formulaire
+        main_login:
+            # Cette expression régulière permet de prendre /login (mais pas /login_check !)
+            pattern:   ^/login$
+            anonymous: true # On autorise alors les anonymes sur ce pare-feu
+
         main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-            #form_login: ~
+            pattern:   ^/
+            anonymous: true
+            provider: in_memory
+            form_login:
+                login_path: login
+                check_path: login_check
+            logout:
+                path: logout
+                target: /
