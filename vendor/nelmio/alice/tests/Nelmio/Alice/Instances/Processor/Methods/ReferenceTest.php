@@ -12,12 +12,11 @@
 namespace Nelmio\Alice\Instances\Processor\Methods;
 
 use Nelmio\Alice\Instances\Processor\Processable;
-use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Nelmio\Alice\Instances\Processor\Methods\Reference
+ * @covers Nelmio\Alice\Instances\Processor\Methods\Reference
  */
-class ReferenceTest extends TestCase
+class ReferenceTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Reference

@@ -11,7 +11,6 @@
 
 namespace Nelmio\Alice\Fixtures;
 
-use Nelmio\Alice\support\extensions;
 use Nelmio\Alice\support\extensions\FakerProviderWithRequiredParameter;
 use Nelmio\Alice\support\models\DummyWithVariadicConstructor;
 use Nelmio\Alice\support\models\Group;
@@ -20,9 +19,9 @@ use Nelmio\Alice\support\models\typehint\Dummy;
 use Nelmio\Alice\support\models\typehint\DummyWithInterface;
 use Nelmio\Alice\support\models\typehint\RelatedDummy;
 use Nelmio\Alice\support\models\User;
-use PHPUnit\Framework\TestCase;
+use Nelmio\Alice\support\extensions;
 
-class LoaderTest extends TestCase
+class LoaderTest extends \PHPUnit_Framework_TestCase
 {
     const USER = 'Nelmio\Alice\support\models\User';
     const MAGIC_USER = 'Nelmio\Alice\support\models\MagicUser';
@@ -108,7 +107,7 @@ class LoaderTest extends TestCase
     public function testLoadUnparsableFile()
     {
         $file = __DIR__.'/../support/fixtures/not-parsable';
-        $this->expectException(
+        $this->setExpectedException(
             '\UnexpectedValueException',
             sprintf('%s cannot be parsed - no parser exists that can handle it.', $file)
         );
@@ -182,7 +181,7 @@ class LoaderTest extends TestCase
     public function testLoadInvalidFile()
     {
         $file = __DIR__.'/../support/fixtures/invalid.php';
-        $this->expectException(
+        $this->setExpectedException(
             '\UnexpectedValueException',
             sprintf('Included file "%s" must return an array of data', $file)
         );

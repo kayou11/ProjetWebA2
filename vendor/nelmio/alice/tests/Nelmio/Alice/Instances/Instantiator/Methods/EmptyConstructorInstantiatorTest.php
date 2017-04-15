@@ -12,12 +12,11 @@
 namespace Nelmio\Alice\Instances\Instantiator\Methods;
 
 use Nelmio\Alice\Fixtures\Fixture;
-use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Nelmio\Alice\Instances\Instantiator\Methods\EmptyConstructor
+ * @covers Nelmio\Alice\Instances\Instantiator\Methods\EmptyConstructor
  */
-class EmptyConstructorInstantiatorTest extends TestCase
+class EmptyConstructorInstantiatorTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var EmptyConstructor

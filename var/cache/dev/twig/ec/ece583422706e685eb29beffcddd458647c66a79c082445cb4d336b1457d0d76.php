@@ -15,11 +15,11 @@ class __TwigTemplate_24abebe5ad0c2478a86d5e512be818ae98f28c62389bea7d1e815d157da
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_52800252e71bc33e3f7047b3f19db97a910a071ac060ebdf19f9d999f1631b08 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_52800252e71bc33e3f7047b3f19db97a910a071ac060ebdf19f9d999f1631b08->enter($__internal_52800252e71bc33e3f7047b3f19db97a910a071ac060ebdf19f9d999f1631b08_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_mainImage.html.twig"));
+        $__internal_c10a3908b03f5d4be757f35f957e319dd834de13244830cb85b6dbca33ade6c7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c10a3908b03f5d4be757f35f957e319dd834de13244830cb85b6dbca33ade6c7->enter($__internal_c10a3908b03f5d4be757f35f957e319dd834de13244830cb85b6dbca33ade6c7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_mainImage.html.twig"));
 
-        $__internal_f0e4216e8c606d25680ce8caa3e3a0fc4c95fc7f258aa1cffba6c7c947c4271b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f0e4216e8c606d25680ce8caa3e3a0fc4c95fc7f258aa1cffba6c7c947c4271b->enter($__internal_f0e4216e8c606d25680ce8caa3e3a0fc4c95fc7f258aa1cffba6c7c947c4271b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_mainImage.html.twig"));
+        $__internal_b530b93e11ba9d529a751c1576c5fe9b344a29bbe2096f70e057e1beea3c27b6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b530b93e11ba9d529a751c1576c5fe9b344a29bbe2096f70e057e1beea3c27b6->enter($__internal_b530b93e11ba9d529a751c1576c5fe9b344a29bbe2096f70e057e1beea3c27b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_mainImage.html.twig"));
 
         // line 1
         if ( !twig_test_empty($this->getAttribute(($context["product"] ?? $this->getContext($context, "product")), "imagesByType", array(0 => "thumbnail"), "method"))) {
@@ -44,10 +44,10 @@ class __TwigTemplate_24abebe5ad0c2478a86d5e512be818ae98f28c62389bea7d1e815d157da
         echo "\" alt=\"\" class=\"ui bordered image\" />
 ";
         
-        $__internal_52800252e71bc33e3f7047b3f19db97a910a071ac060ebdf19f9d999f1631b08->leave($__internal_52800252e71bc33e3f7047b3f19db97a910a071ac060ebdf19f9d999f1631b08_prof);
+        $__internal_c10a3908b03f5d4be757f35f957e319dd834de13244830cb85b6dbca33ade6c7->leave($__internal_c10a3908b03f5d4be757f35f957e319dd834de13244830cb85b6dbca33ade6c7_prof);
 
         
-        $__internal_f0e4216e8c606d25680ce8caa3e3a0fc4c95fc7f258aa1cffba6c7c947c4271b->leave($__internal_f0e4216e8c606d25680ce8caa3e3a0fc4c95fc7f258aa1cffba6c7c947c4271b_prof);
+        $__internal_b530b93e11ba9d529a751c1576c5fe9b344a29bbe2096f70e057e1beea3c27b6->leave($__internal_b530b93e11ba9d529a751c1576c5fe9b344a29bbe2096f70e057e1beea3c27b6_prof);
 
     }
 

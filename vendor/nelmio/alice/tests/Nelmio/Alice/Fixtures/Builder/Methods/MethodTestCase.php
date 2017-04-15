@@ -12,9 +12,8 @@
 namespace Nelmio\Alice\Fixtures\Builder\Methods;
 
 use Nelmio\Alice\Fixtures\Builder\BuilderProviderTrait;
-use PHPUnit\Framework\TestCase;
 
-abstract class MethodTestCase extends TestCase
+abstract class MethodTestCase extends \PHPUnit_Framework_TestCase
 {
     use BuilderProviderTrait;
 

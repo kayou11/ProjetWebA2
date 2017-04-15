@@ -11,17 +11,16 @@
 
 namespace Nelmio\Alice\Instances\Populator;
 
-use Nelmio\Alice\Fixtures\Fixture;
 use Nelmio\Alice\Fixtures\ParameterBag;
 use Nelmio\Alice\Instances\Collection;
+use Nelmio\Alice\Fixtures\Fixture;
 use Nelmio\Alice\Instances\Populator\Methods\ArrayAdd;
 use Nelmio\Alice\Instances\Populator\Methods\Property;
 use Nelmio\Alice\Instances\Processor\Processor;
 use Nelmio\Alice\support\extensions\CustomPopulator;
 use Nelmio\Alice\Util\TypeHintChecker;
-use PHPUnit\Framework\TestCase;
 
-class PopulatorTest extends TestCase
+class PopulatorTest extends \PHPUnit_Framework_TestCase
 {
     const CONTACT = 'Nelmio\Alice\support\models\Contact';
     const PLURAL = 'Nelmio\Alice\support\models\PluralProperties';

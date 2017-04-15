@@ -15,17 +15,17 @@ class __TwigTemplate_c1268c9a5d8f87f1e71e166d8608d5432f3b8fa9cf5de4c861bebe42f72
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bc5b603b326d4fbc8029c9e66b5b6e94f77dc20f095235007412a2e5decbdd6f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_bc5b603b326d4fbc8029c9e66b5b6e94f77dc20f095235007412a2e5decbdd6f->enter($__internal_bc5b603b326d4fbc8029c9e66b5b6e94f77dc20f095235007412a2e5decbdd6f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Common/Macro/money.html.twig"));
+        $__internal_a232964a9d14c6e0925f6acab22c976b5ce8fdbf502addbb1abad386281a20be = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a232964a9d14c6e0925f6acab22c976b5ce8fdbf502addbb1abad386281a20be->enter($__internal_a232964a9d14c6e0925f6acab22c976b5ce8fdbf502addbb1abad386281a20be_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Common/Macro/money.html.twig"));
 
-        $__internal_11983abf0629725bbdcb059fec92e805eb89611feb54fcb6fa485821575af913 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_11983abf0629725bbdcb059fec92e805eb89611feb54fcb6fa485821575af913->enter($__internal_11983abf0629725bbdcb059fec92e805eb89611feb54fcb6fa485821575af913_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Common/Macro/money.html.twig"));
-
-        
-        $__internal_bc5b603b326d4fbc8029c9e66b5b6e94f77dc20f095235007412a2e5decbdd6f->leave($__internal_bc5b603b326d4fbc8029c9e66b5b6e94f77dc20f095235007412a2e5decbdd6f_prof);
+        $__internal_c1b58fd284c54fe65727eb76783885d405f9a78bc53dba8bc61255344bd7f679 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c1b58fd284c54fe65727eb76783885d405f9a78bc53dba8bc61255344bd7f679->enter($__internal_c1b58fd284c54fe65727eb76783885d405f9a78bc53dba8bc61255344bd7f679_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Common/Macro/money.html.twig"));
 
         
-        $__internal_11983abf0629725bbdcb059fec92e805eb89611feb54fcb6fa485821575af913->leave($__internal_11983abf0629725bbdcb059fec92e805eb89611feb54fcb6fa485821575af913_prof);
+        $__internal_a232964a9d14c6e0925f6acab22c976b5ce8fdbf502addbb1abad386281a20be->leave($__internal_a232964a9d14c6e0925f6acab22c976b5ce8fdbf502addbb1abad386281a20be_prof);
+
+        
+        $__internal_c1b58fd284c54fe65727eb76783885d405f9a78bc53dba8bc61255344bd7f679->leave($__internal_c1b58fd284c54fe65727eb76783885d405f9a78bc53dba8bc61255344bd7f679_prof);
 
     }
 
@@ -42,19 +42,19 @@ class __TwigTemplate_c1268c9a5d8f87f1e71e166d8608d5432f3b8fa9cf5de4c861bebe42f72
 
         ob_start();
         try {
-            $__internal_69461d69a59fe6fcedccf5756380de649005658e0161dc9dced579ffc9c7b0cc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-            $__internal_69461d69a59fe6fcedccf5756380de649005658e0161dc9dced579ffc9c7b0cc->enter($__internal_69461d69a59fe6fcedccf5756380de649005658e0161dc9dced579ffc9c7b0cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "format"));
+            $__internal_361e823c5ac9f58a45a14645b52eb53b8923742066adbe139d4c38716f0d55d2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+            $__internal_361e823c5ac9f58a45a14645b52eb53b8923742066adbe139d4c38716f0d55d2->enter($__internal_361e823c5ac9f58a45a14645b52eb53b8923742066adbe139d4c38716f0d55d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "format"));
 
-            $__internal_07474385cfb03b601e54c38509ad6647af3ea580154159fd38f9fa5c7aa2d7a6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-            $__internal_07474385cfb03b601e54c38509ad6647af3ea580154159fd38f9fa5c7aa2d7a6->enter($__internal_07474385cfb03b601e54c38509ad6647af3ea580154159fd38f9fa5c7aa2d7a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "format"));
+            $__internal_2afefb01a944475c65a26aaf9168028f8c882e4bc17f089d89d792fbce7dc3bc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+            $__internal_2afefb01a944475c65a26aaf9168028f8c882e4bc17f089d89d792fbce7dc3bc->enter($__internal_2afefb01a944475c65a26aaf9168028f8c882e4bc17f089d89d792fbce7dc3bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "format"));
 
             // line 2
             echo twig_escape_filter($this->env, call_user_func_array($this->env->getFilter('sylius_format_money')->getCallable(), array(($context["amount"] ?? $this->getContext($context, "amount")), ($context["currency_code"] ?? $this->getContext($context, "currency_code")), $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "localeCode", array()))), "html", null, true);
             
-            $__internal_07474385cfb03b601e54c38509ad6647af3ea580154159fd38f9fa5c7aa2d7a6->leave($__internal_07474385cfb03b601e54c38509ad6647af3ea580154159fd38f9fa5c7aa2d7a6_prof);
+            $__internal_2afefb01a944475c65a26aaf9168028f8c882e4bc17f089d89d792fbce7dc3bc->leave($__internal_2afefb01a944475c65a26aaf9168028f8c882e4bc17f089d89d792fbce7dc3bc_prof);
 
             
-            $__internal_69461d69a59fe6fcedccf5756380de649005658e0161dc9dced579ffc9c7b0cc->leave($__internal_69461d69a59fe6fcedccf5756380de649005658e0161dc9dced579ffc9c7b0cc_prof);
+            $__internal_361e823c5ac9f58a45a14645b52eb53b8923742066adbe139d4c38716f0d55d2->leave($__internal_361e823c5ac9f58a45a14645b52eb53b8923742066adbe139d4c38716f0d55d2_prof);
 
         } catch (Exception $e) {
             ob_end_clean();
@@ -81,21 +81,21 @@ class __TwigTemplate_c1268c9a5d8f87f1e71e166d8608d5432f3b8fa9cf5de4c861bebe42f72
 
         ob_start();
         try {
-            $__internal_2235ce89eb3bc7b1debb8b70850042ea3dd1ea4b016440627d67339085f57655 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-            $__internal_2235ce89eb3bc7b1debb8b70850042ea3dd1ea4b016440627d67339085f57655->enter($__internal_2235ce89eb3bc7b1debb8b70850042ea3dd1ea4b016440627d67339085f57655_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "convertAndFormat"));
+            $__internal_1778e40555fc04a08e2fe921eeaf2a75549e56daaf6531641a59126431eb365c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+            $__internal_1778e40555fc04a08e2fe921eeaf2a75549e56daaf6531641a59126431eb365c->enter($__internal_1778e40555fc04a08e2fe921eeaf2a75549e56daaf6531641a59126431eb365c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "convertAndFormat"));
 
-            $__internal_ab12a7fbcea8c3988fba8bd57a17d79afc6f4c155bf6cdecdb1575ed90ebe41b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-            $__internal_ab12a7fbcea8c3988fba8bd57a17d79afc6f4c155bf6cdecdb1575ed90ebe41b->enter($__internal_ab12a7fbcea8c3988fba8bd57a17d79afc6f4c155bf6cdecdb1575ed90ebe41b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "convertAndFormat"));
+            $__internal_2a355127cec509e6f7d5c6c8c43b12f17c693c7c6f8e296f8fe0e6dc885aa850 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+            $__internal_2a355127cec509e6f7d5c6c8c43b12f17c693c7c6f8e296f8fe0e6dc885aa850->enter($__internal_2a355127cec509e6f7d5c6c8c43b12f17c693c7c6f8e296f8fe0e6dc885aa850_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "convertAndFormat"));
 
             // line 6
-            $context["__internal_4f10fb63d55d928d2a269ff22c95bd91fec170bf9b28c7afb828f1a2bf8a26a8"] = $this;
+            $context["__internal_430fce3ef5e4d5892be13c7602dec515abd8b940904731e6161823d39ad5d814"] = $this;
             // line 8
-            echo $context["__internal_4f10fb63d55d928d2a269ff22c95bd91fec170bf9b28c7afb828f1a2bf8a26a8"]->getformat(call_user_func_array($this->env->getFilter('sylius_convert_money')->getCallable(), array(($context["amount"] ?? $this->getContext($context, "amount")), $this->getAttribute($this->getAttribute($this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "channel", array()), "baseCurrency", array()), "code", array()), $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "currencyCode", array()))), $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "currencyCode", array()));
+            echo $context["__internal_430fce3ef5e4d5892be13c7602dec515abd8b940904731e6161823d39ad5d814"]->getformat(call_user_func_array($this->env->getFilter('sylius_convert_money')->getCallable(), array(($context["amount"] ?? $this->getContext($context, "amount")), $this->getAttribute($this->getAttribute($this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "channel", array()), "baseCurrency", array()), "code", array()), $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "currencyCode", array()))), $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "currencyCode", array()));
             
-            $__internal_ab12a7fbcea8c3988fba8bd57a17d79afc6f4c155bf6cdecdb1575ed90ebe41b->leave($__internal_ab12a7fbcea8c3988fba8bd57a17d79afc6f4c155bf6cdecdb1575ed90ebe41b_prof);
+            $__internal_2a355127cec509e6f7d5c6c8c43b12f17c693c7c6f8e296f8fe0e6dc885aa850->leave($__internal_2a355127cec509e6f7d5c6c8c43b12f17c693c7c6f8e296f8fe0e6dc885aa850_prof);
 
             
-            $__internal_2235ce89eb3bc7b1debb8b70850042ea3dd1ea4b016440627d67339085f57655->leave($__internal_2235ce89eb3bc7b1debb8b70850042ea3dd1ea4b016440627d67339085f57655_prof);
+            $__internal_1778e40555fc04a08e2fe921eeaf2a75549e56daaf6531641a59126431eb365c->leave($__internal_1778e40555fc04a08e2fe921eeaf2a75549e56daaf6531641a59126431eb365c_prof);
 
         } catch (Exception $e) {
             ob_end_clean();
@@ -122,21 +122,21 @@ class __TwigTemplate_c1268c9a5d8f87f1e71e166d8608d5432f3b8fa9cf5de4c861bebe42f72
 
         ob_start();
         try {
-            $__internal_c77a99764ac612b131a20e6c14cde60fa50482519b358931654f719cc1d2e5c1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-            $__internal_c77a99764ac612b131a20e6c14cde60fa50482519b358931654f719cc1d2e5c1->enter($__internal_c77a99764ac612b131a20e6c14cde60fa50482519b358931654f719cc1d2e5c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "calculatePrice"));
+            $__internal_4dfa10589b7645a2828c0d4e46c0c0d19af953a4f02992d74c082d45f803bb3a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+            $__internal_4dfa10589b7645a2828c0d4e46c0c0d19af953a4f02992d74c082d45f803bb3a->enter($__internal_4dfa10589b7645a2828c0d4e46c0c0d19af953a4f02992d74c082d45f803bb3a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "calculatePrice"));
 
-            $__internal_76d9196863ef1cdfa1e46bcf9cdf827915f4bdc276120cbafff41486366b4755 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-            $__internal_76d9196863ef1cdfa1e46bcf9cdf827915f4bdc276120cbafff41486366b4755->enter($__internal_76d9196863ef1cdfa1e46bcf9cdf827915f4bdc276120cbafff41486366b4755_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "calculatePrice"));
+            $__internal_206b6fb27cb9e7abc1a705cb4251788142ad20fb8165e3bb2eb38fbf23c6fad0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+            $__internal_206b6fb27cb9e7abc1a705cb4251788142ad20fb8165e3bb2eb38fbf23c6fad0->enter($__internal_206b6fb27cb9e7abc1a705cb4251788142ad20fb8165e3bb2eb38fbf23c6fad0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "macro", "calculatePrice"));
 
             // line 12
-            $context["__internal_6fc7d9ca742cf54f785ce3ebc78896d5b8a27b1a1c9a050bf3fb8ff3cf39008a"] = $this;
+            $context["__internal_d40e18413bf56d1af2afcc6e9c795e8ed06bbeb3f22ce2fdd82fc1984f067b30"] = $this;
             // line 14
-            echo $context["__internal_6fc7d9ca742cf54f785ce3ebc78896d5b8a27b1a1c9a050bf3fb8ff3cf39008a"]->getconvertAndFormat(call_user_func_array($this->env->getFilter('sylius_calculate_price')->getCallable(), array(($context["variant"] ?? $this->getContext($context, "variant")), array("channel" => $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "channel", array())))));
+            echo $context["__internal_d40e18413bf56d1af2afcc6e9c795e8ed06bbeb3f22ce2fdd82fc1984f067b30"]->getconvertAndFormat(call_user_func_array($this->env->getFilter('sylius_calculate_price')->getCallable(), array(($context["variant"] ?? $this->getContext($context, "variant")), array("channel" => $this->getAttribute(($context["sylius"] ?? $this->getContext($context, "sylius")), "channel", array())))));
             
-            $__internal_76d9196863ef1cdfa1e46bcf9cdf827915f4bdc276120cbafff41486366b4755->leave($__internal_76d9196863ef1cdfa1e46bcf9cdf827915f4bdc276120cbafff41486366b4755_prof);
+            $__internal_206b6fb27cb9e7abc1a705cb4251788142ad20fb8165e3bb2eb38fbf23c6fad0->leave($__internal_206b6fb27cb9e7abc1a705cb4251788142ad20fb8165e3bb2eb38fbf23c6fad0_prof);
 
             
-            $__internal_c77a99764ac612b131a20e6c14cde60fa50482519b358931654f719cc1d2e5c1->leave($__internal_c77a99764ac612b131a20e6c14cde60fa50482519b358931654f719cc1d2e5c1_prof);
+            $__internal_4dfa10589b7645a2828c0d4e46c0c0d19af953a4f02992d74c082d45f803bb3a->leave($__internal_4dfa10589b7645a2828c0d4e46c0c0d19af953a4f02992d74c082d45f803bb3a_prof);
 
         } catch (Exception $e) {
             ob_end_clean();

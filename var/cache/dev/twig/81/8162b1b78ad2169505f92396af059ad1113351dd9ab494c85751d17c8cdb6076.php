@@ -15,11 +15,11 @@ class __TwigTemplate_54f6c7dced74f6e39430d9602041affab6d7e226c9151802f025ab69367
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_91cff06eab1ef22f0629031c9454d190d34fb5b1ba99d237c29f5d27f895638b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_91cff06eab1ef22f0629031c9454d190d34fb5b1ba99d237c29f5d27f895638b->enter($__internal_91cff06eab1ef22f0629031c9454d190d34fb5b1ba99d237c29f5d27f895638b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusUi/Modal/_confirmation.html.twig"));
+        $__internal_c7b63969506079d0d3454e1a349d104cde184fd898f0b7ea1a0d4ede435bc9e1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c7b63969506079d0d3454e1a349d104cde184fd898f0b7ea1a0d4ede435bc9e1->enter($__internal_c7b63969506079d0d3454e1a349d104cde184fd898f0b7ea1a0d4ede435bc9e1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusUi/Modal/_confirmation.html.twig"));
 
-        $__internal_2036123f0b826fed0630788947bc3bd224c76206ccce75545214cbb4e55d878d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2036123f0b826fed0630788947bc3bd224c76206ccce75545214cbb4e55d878d->enter($__internal_2036123f0b826fed0630788947bc3bd224c76206ccce75545214cbb4e55d878d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusUi/Modal/_confirmation.html.twig"));
+        $__internal_b20b7979b9e9d302128c15146d3494a42932e6a3c6fbb4aa557637ae9dfff861 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b20b7979b9e9d302128c15146d3494a42932e6a3c6fbb4aa557637ae9dfff861->enter($__internal_b20b7979b9e9d302128c15146d3494a42932e6a3c6fbb4aa557637ae9dfff861_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusUi/Modal/_confirmation.html.twig"));
 
         // line 1
         echo "<div class=\"ui small basic modal\" id=\"confirmation-modal\">
@@ -55,10 +55,10 @@ class __TwigTemplate_54f6c7dced74f6e39430d9602041affab6d7e226c9151802f025ab69367
 </div>
 ";
         
-        $__internal_91cff06eab1ef22f0629031c9454d190d34fb5b1ba99d237c29f5d27f895638b->leave($__internal_91cff06eab1ef22f0629031c9454d190d34fb5b1ba99d237c29f5d27f895638b_prof);
+        $__internal_c7b63969506079d0d3454e1a349d104cde184fd898f0b7ea1a0d4ede435bc9e1->leave($__internal_c7b63969506079d0d3454e1a349d104cde184fd898f0b7ea1a0d4ede435bc9e1_prof);
 
         
-        $__internal_2036123f0b826fed0630788947bc3bd224c76206ccce75545214cbb4e55d878d->leave($__internal_2036123f0b826fed0630788947bc3bd224c76206ccce75545214cbb4e55d878d_prof);
+        $__internal_b20b7979b9e9d302128c15146d3494a42932e6a3c6fbb4aa557637ae9dfff861->leave($__internal_b20b7979b9e9d302128c15146d3494a42932e6a3c6fbb4aa557637ae9dfff861_prof);
 
     }
 

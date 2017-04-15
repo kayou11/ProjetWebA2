@@ -72,7 +72,7 @@ class Serializer implements SerializerInterface, ArrayTransformerInterface
      * @param \PhpCollection\MapInterface $deserializationVisitors of VisitorInterface
      * @param EventDispatcher\EventDispatcherInterface $dispatcher
      * @param TypeParser $typeParser
-     * @param ExpressionEvaluatorInterface|null $expressionEvaluator
+     * @param ExpressionEvaluatorInterface $expressionLanguage
      */
     public function __construct(
         MetadataFactoryInterface $factory,

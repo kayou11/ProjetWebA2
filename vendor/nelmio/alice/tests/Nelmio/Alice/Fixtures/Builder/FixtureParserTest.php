@@ -12,9 +12,8 @@
 namespace Nelmio\Alice\Fixtures\Parser;
 
 use Nelmio\Alice\support\extensions\CustomParser;
-use PHPUnit\Framework\TestCase;
 
-class ParserTest extends TestCase
+class ParserTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Parser

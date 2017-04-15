@@ -15,9 +15,8 @@ use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\Mapping\ClassMetadataFactory;
 use Doctrine\Common\Persistence\ObjectManager;
 use Nelmio\Alice\support\models\User;
-use PHPUnit\Framework\TestCase;
 
-class FixturesTest extends TestCase
+class FixturesTest extends \PHPUnit_Framework_TestCase
 {
     const USER = 'Nelmio\Alice\support\models\User';
     const GROUP = 'Nelmio\Alice\support\models\Group';
@@ -250,7 +249,7 @@ class FixturesTest extends TestCase
         $om->expects($this->any())
             ->method('find')->will($this->returnValue(new User()));
 
-        $this->expectException(
+        $this->setExpectedException(
             '\InvalidArgumentException',
             'The provider should be a string or an object, got array instead'
         );

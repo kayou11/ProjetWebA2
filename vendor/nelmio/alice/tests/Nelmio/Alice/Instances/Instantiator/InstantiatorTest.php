@@ -13,9 +13,8 @@ namespace Nelmio\Alice\Instances\Instantiator;
 
 use Nelmio\Alice\Fixtures\Fixture;
 use Nelmio\Alice\support\extensions\CustomInstantiator;
-use PHPUnit\Framework\TestCase;
 
-class InstantiatorTest extends TestCase
+class InstantiatorTest extends \PHPUnit_Framework_TestCase
 {
     const USER = 'Nelmio\Alice\support\models\User';
 

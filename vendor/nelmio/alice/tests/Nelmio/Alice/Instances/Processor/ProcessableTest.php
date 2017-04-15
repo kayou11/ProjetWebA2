@@ -11,9 +11,7 @@
 
 namespace Nelmio\Alice\Instances\Processor;
 
-use PHPUnit\Framework\TestCase;
-
-class ProcessableTest extends TestCase
+class ProcessableTest extends \PHPUnit_Framework_TestCase
 {
     public function testValueMatchesWillReturnIfTheProcessablesValueMatchesAGivenRegex()
     {

@@ -15,11 +15,11 @@ class __TwigTemplate_2550993cf1a0fb8f987ddfdf994be2248d26fa27f54d9aa499abd415e99
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a69aee96e0dcb4929151029f2ee4e9a3bc27539716c86b74257933c31fe4dec8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a69aee96e0dcb4929151029f2ee4e9a3bc27539716c86b74257933c31fe4dec8->enter($__internal_a69aee96e0dcb4929151029f2ee4e9a3bc27539716c86b74257933c31fe4dec8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_currencySwitch.html.twig"));
+        $__internal_f1cb7446d675ea633673461d2691006497f72088a07149bf9e7f0918ce9253ad = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f1cb7446d675ea633673461d2691006497f72088a07149bf9e7f0918ce9253ad->enter($__internal_f1cb7446d675ea633673461d2691006497f72088a07149bf9e7f0918ce9253ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_currencySwitch.html.twig"));
 
-        $__internal_9bc3bdad13779bf011d042c28af9e64d5693a8d05e2e8afe77aee451af83ad18 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9bc3bdad13779bf011d042c28af9e64d5693a8d05e2e8afe77aee451af83ad18->enter($__internal_9bc3bdad13779bf011d042c28af9e64d5693a8d05e2e8afe77aee451af83ad18_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_currencySwitch.html.twig"));
+        $__internal_0ba6deaeccb90f7d6463bc9c922902a40dc15de29c624c0ccc761522baea34b3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0ba6deaeccb90f7d6463bc9c922902a40dc15de29c624c0ccc761522baea34b3->enter($__internal_0ba6deaeccb90f7d6463bc9c922902a40dc15de29c624c0ccc761522baea34b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_currencySwitch.html.twig"));
 
         // line 1
         if ((twig_length_filter($this->env, ($context["currencies"] ?? $this->getContext($context, "currencies"))) > 1)) {
@@ -62,10 +62,10 @@ class __TwigTemplate_2550993cf1a0fb8f987ddfdf994be2248d26fa27f54d9aa499abd415e99
 ";
         }
         
-        $__internal_a69aee96e0dcb4929151029f2ee4e9a3bc27539716c86b74257933c31fe4dec8->leave($__internal_a69aee96e0dcb4929151029f2ee4e9a3bc27539716c86b74257933c31fe4dec8_prof);
+        $__internal_f1cb7446d675ea633673461d2691006497f72088a07149bf9e7f0918ce9253ad->leave($__internal_f1cb7446d675ea633673461d2691006497f72088a07149bf9e7f0918ce9253ad_prof);
 
         
-        $__internal_9bc3bdad13779bf011d042c28af9e64d5693a8d05e2e8afe77aee451af83ad18->leave($__internal_9bc3bdad13779bf011d042c28af9e64d5693a8d05e2e8afe77aee451af83ad18_prof);
+        $__internal_0ba6deaeccb90f7d6463bc9c922902a40dc15de29c624c0ccc761522baea34b3->leave($__internal_0ba6deaeccb90f7d6463bc9c922902a40dc15de29c624c0ccc761522baea34b3_prof);
 
     }
 

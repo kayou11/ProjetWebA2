@@ -23,13 +23,12 @@ use Nelmio\Alice\Instances\Populator\Fixtures\Direct\PublicDummy;
 use Nelmio\Alice\Instances\Populator\Fixtures\Direct\SimpleCamelCaseDummy;
 use Nelmio\Alice\Instances\Populator\Fixtures\Direct\SimpleSnakeCaseDummy;
 use Nelmio\Alice\Util\TypeHintChecker;
-use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 
 /**
- * @covers \Nelmio\Alice\Instances\Populator\Methods\Direct
+ * @covers Nelmio\Alice\Instances\Populator\Methods\Direct
  */
-class DirectTest extends TestCase
+class DirectTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var Fixture

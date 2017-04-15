@@ -136,7 +136,7 @@ class User implements UserInterface
         $this->createdAt = new \DateTime();
 
         // Set here to overwrite default value from trait
-        $this->enabled = false;
+        $this->enabled = true;
     }
 
     /**

@@ -45,8 +45,7 @@ doctrine_migrations:
     name: Sylius Migrations
 
 swiftmailer:
-    transport: "%mailer_transport%"
-    host: "%mailer_host%"
+    transport: gmail
     username: "%mailer_user%"
     password: "%mailer_password%"
 
@@ -61,3 +60,8 @@ fos_rest:
         rules:
             - { path: '^/api', priorities: ['json', 'xml'], fallback_format: json, prefer_extension: true }
             - { path: '^/', stop: true }
+
+sylius_mailer:
+    emails:
+        order_confirmation:
+            enabled: false

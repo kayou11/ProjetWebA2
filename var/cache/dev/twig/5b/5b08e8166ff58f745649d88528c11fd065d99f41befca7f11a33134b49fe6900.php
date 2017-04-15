@@ -15,11 +15,11 @@ class __TwigTemplate_d552c1146d1cfa1cd52a8758bc4381cf07a927023eaf951e19b90483c5a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d56146d47bf9790248e1d0a00054c09b0988135c564cb43b40a9275bcc669a5c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d56146d47bf9790248e1d0a00054c09b0988135c564cb43b40a9275bcc669a5c->enter($__internal_d56146d47bf9790248e1d0a00054c09b0988135c564cb43b40a9275bcc669a5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_horizontalList.html.twig"));
+        $__internal_4bd6295c10bad94495c829301f028318b6b1ee4fffe40284feb4c11ab60b4949 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4bd6295c10bad94495c829301f028318b6b1ee4fffe40284feb4c11ab60b4949->enter($__internal_4bd6295c10bad94495c829301f028318b6b1ee4fffe40284feb4c11ab60b4949_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_horizontalList.html.twig"));
 
-        $__internal_396c28b561063ff9baae711dbc3b803791e5189e31648d33982de4af4265bbca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_396c28b561063ff9baae711dbc3b803791e5189e31648d33982de4af4265bbca->enter($__internal_396c28b561063ff9baae711dbc3b803791e5189e31648d33982de4af4265bbca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_horizontalList.html.twig"));
+        $__internal_2c1f7a72c4f3251a662c8cb5851b09ebe3aa63df80f6145f164e9b8cc0b40307 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2c1f7a72c4f3251a662c8cb5851b09ebe3aa63df80f6145f164e9b8cc0b40307->enter($__internal_2c1f7a72c4f3251a662c8cb5851b09ebe3aa63df80f6145f164e9b8cc0b40307_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Product/_horizontalList.html.twig"));
 
         // line 1
         echo "<div class=\"ui four column stackable grid\">
@@ -76,10 +76,10 @@ class __TwigTemplate_d552c1146d1cfa1cd52a8758bc4381cf07a927023eaf951e19b90483c5a
 </div>
 ";
         
-        $__internal_d56146d47bf9790248e1d0a00054c09b0988135c564cb43b40a9275bcc669a5c->leave($__internal_d56146d47bf9790248e1d0a00054c09b0988135c564cb43b40a9275bcc669a5c_prof);
+        $__internal_4bd6295c10bad94495c829301f028318b6b1ee4fffe40284feb4c11ab60b4949->leave($__internal_4bd6295c10bad94495c829301f028318b6b1ee4fffe40284feb4c11ab60b4949_prof);
 
         
-        $__internal_396c28b561063ff9baae711dbc3b803791e5189e31648d33982de4af4265bbca->leave($__internal_396c28b561063ff9baae711dbc3b803791e5189e31648d33982de4af4265bbca_prof);
+        $__internal_2c1f7a72c4f3251a662c8cb5851b09ebe3aa63df80f6145f164e9b8cc0b40307->leave($__internal_2c1f7a72c4f3251a662c8cb5851b09ebe3aa63df80f6145f164e9b8cc0b40307_prof);
 
     }
 

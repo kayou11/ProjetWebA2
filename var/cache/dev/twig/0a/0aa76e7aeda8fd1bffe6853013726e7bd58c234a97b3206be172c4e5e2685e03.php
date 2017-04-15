@@ -15,11 +15,11 @@ class __TwigTemplate_1310288ddfae2df1e9161a7032fe012d19da397f4947e05a1162f0bd019
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b758fc8987996295aaa852e5f32b2c89d553d665ed381873463b4c475690fea5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b758fc8987996295aaa852e5f32b2c89d553d665ed381873463b4c475690fea5->enter($__internal_b758fc8987996295aaa852e5f32b2c89d553d665ed381873463b4c475690fea5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/_footer.html.twig"));
+        $__internal_02d66d3d5c022addedc7a95d43ac2a7f2f5eab40def0c14e8b802441266b6528 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_02d66d3d5c022addedc7a95d43ac2a7f2f5eab40def0c14e8b802441266b6528->enter($__internal_02d66d3d5c022addedc7a95d43ac2a7f2f5eab40def0c14e8b802441266b6528_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/_footer.html.twig"));
 
-        $__internal_dc968ed457361542706f4f157e8ff9f49f9b93c944597c412fb38cc0661e88d5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dc968ed457361542706f4f157e8ff9f49f9b93c944597c412fb38cc0661e88d5->enter($__internal_dc968ed457361542706f4f157e8ff9f49f9b93c944597c412fb38cc0661e88d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/_footer.html.twig"));
+        $__internal_a7f5d478c306ec18db2eac743287c7840a755e8c118c81c3dc3e45c00a23156e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a7f5d478c306ec18db2eac743287c7840a755e8c118c81c3dc3e45c00a23156e->enter($__internal_a7f5d478c306ec18db2eac743287c7840a755e8c118c81c3dc3e45c00a23156e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/_footer.html.twig"));
 
         // line 1
         echo "<footer id=\"footer\" class=\"ui inverted vertical footer segment\">
@@ -96,10 +96,10 @@ class __TwigTemplate_1310288ddfae2df1e9161a7032fe012d19da397f4947e05a1162f0bd019
 </footer>
 ";
         
-        $__internal_b758fc8987996295aaa852e5f32b2c89d553d665ed381873463b4c475690fea5->leave($__internal_b758fc8987996295aaa852e5f32b2c89d553d665ed381873463b4c475690fea5_prof);
+        $__internal_02d66d3d5c022addedc7a95d43ac2a7f2f5eab40def0c14e8b802441266b6528->leave($__internal_02d66d3d5c022addedc7a95d43ac2a7f2f5eab40def0c14e8b802441266b6528_prof);
 
         
-        $__internal_dc968ed457361542706f4f157e8ff9f49f9b93c944597c412fb38cc0661e88d5->leave($__internal_dc968ed457361542706f4f157e8ff9f49f9b93c944597c412fb38cc0661e88d5_prof);
+        $__internal_a7f5d478c306ec18db2eac743287c7840a755e8c118c81c3dc3e45c00a23156e->leave($__internal_a7f5d478c306ec18db2eac743287c7840a755e8c118c81c3dc3e45c00a23156e_prof);
 
     }
 

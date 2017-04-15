@@ -3303,623 +3303,620 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        if (0 === strpos($pathinfo, '/shop')) {
-            // sylius_shop_ajax_user_check_action
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/users/check$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_ajax_user_check_action;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_user_check_action')), array (  '_controller' => 'sylius.controller.shop_user:showAction',  '_format' => 'json',  '_sylius' =>   array (    'repository' =>     array (      'method' => 'findOneByEmail',      'arguments' =>       array (        'email' => '$email',      ),    ),    'serialization_groups' =>     array (      0 => 'Secured',    ),  ),));
+        // sylius_shop_ajax_user_check_action
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/users/check$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_ajax_user_check_action;
             }
-            not_sylius_shop_ajax_user_check_action:
 
-            // sylius_shop_ajax_cart_add_item
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/cart/add$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_sylius_shop_ajax_cart_add_item;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_cart_add_item')), array (  '_controller' => 'sylius.controller.order_item:addAction',  '_format' => 'json',  '_sylius' =>   array (    'factory' =>     array (      'method' => 'createForProduct',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Order\\AddToCartType',      'options' =>       array (        'product' => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_cart_summary',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.cart.add_item',  ),));
-            }
-            not_sylius_shop_ajax_cart_add_item:
-
-            // sylius_shop_ajax_cart_item_remove
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/cart/(?P<id>[^/]++)/remove$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_sylius_shop_ajax_cart_item_remove;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_cart_item_remove')), array (  '_controller' => 'sylius.controller.order_item:removeAction',  '_format' => 'json',  '_sylius' =>   array (    'flash' => 'sylius.cart.remove_item',  ),));
-            }
-            not_sylius_shop_ajax_cart_item_remove:
-
-            // sylius_shop_ajax_render_province_form
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/render\\-province\\-form$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_ajax_render_province_form;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_render_province_form')), array (  '_controller' => 'sylius.controller.province:choiceOrTextFieldFormAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Common/Form/_province.html.twig',  ),));
-            }
-            not_sylius_shop_ajax_render_province_form:
-
-            // sylius_shop_partial_taxon_show_by_slug
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/taxons/by\\-slug/(?P<slug>.+)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_taxon_show_by_slug;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_taxon_show_by_slug')), array (  '_controller' => 'sylius.controller.taxon:showAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findOneBySlug',      'arguments' =>       array (        0 => '$slug',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',      ),    ),  ),));
-            }
-            not_sylius_shop_partial_taxon_show_by_slug:
-
-            // sylius_shop_partial_taxon_index_by_code
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/taxons/by\\-code/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_taxon_index_by_code;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_taxon_index_by_code')), array (  '_controller' => 'sylius.controller.taxon:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findChildren',      'arguments' =>       array (        0 => '$code',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',      ),    ),  ),));
-            }
-            not_sylius_shop_partial_taxon_index_by_code:
-
-            // sylius_shop_partial_cart_summary
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/cart/summary$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_cart_summary;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_cart_summary')), array (  '_controller' => 'sylius.controller.order:widgetAction',  '_sylius' =>   array (    'template' => '$template',  ),));
-            }
-            not_sylius_shop_partial_cart_summary:
-
-            // sylius_shop_partial_cart_add_item
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/cart/add\\-item$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_cart_add_item;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_cart_add_item')), array (  '_controller' => 'sylius.controller.order_item:addAction',  '_sylius' =>   array (    'template' => '$template',    'factory' =>     array (      'method' => 'createForProduct',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Order\\AddToCartType',      'options' =>       array (        'product' => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_cart_summary',      'parameters' =>       array (      ),    ),  ),));
-            }
-            not_sylius_shop_partial_cart_add_item:
-
-            // sylius_shop_partial_product_index_latest
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/latest/(?P<count>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_product_index_latest;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_index_latest')), array (  '_controller' => 'sylius.controller.product:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findLatestByChannel',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$count',      ),    ),  ),));
-            }
-            not_sylius_shop_partial_product_index_latest:
-
-            // sylius_shop_partial_product_show_by_slug
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_product_show_by_slug;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_show_by_slug')), array (  '_controller' => 'sylius.controller.product:showAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findOneByChannelAndSlug',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$slug',      ),    ),  ),));
-            }
-            not_sylius_shop_partial_product_show_by_slug:
-
-            // sylius_shop_partial_product_review_latest
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<productId>[^/]++)/reviews/latest(?:/(?P<count>[^/]++))?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_product_review_latest;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_review_latest')), array (  '_controller' => 'sylius.controller.product_review:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findLatestByProductId',      'arguments' =>       array (        0 => '$productId',        1 => '$count',      ),    ),  ),  'count' => 3,));
-            }
-            not_sylius_shop_partial_product_review_latest:
-
-            // sylius_shop_partial_product_association_show
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<productId>[^/]++)/associations/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_partial_product_association_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_association_show')), array (  '_controller' => 'sylius.controller.product_association:showAction',  '_sylius' =>   array (    'template' => '$template',  ),));
-            }
-            not_sylius_shop_partial_product_association_show:
-
-            // sylius_shop_homepage
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_homepage;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_homepage');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_homepage')), array (  '_controller' => 'sylius.controller.shop.homepage:indexAction',));
-            }
-            not_sylius_shop_homepage:
-
-            // sylius_shop_login
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/login$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_login;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_login')), array (  '_controller' => 'sylius.controller.security:loginAction',  '_sylius' =>   array (    'template' => '@SyliusShop/login.html.twig',  ),));
-            }
-            not_sylius_shop_login:
-
-            // sylius_shop_login_check
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/login\\-check$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_sylius_shop_login_check;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_login_check')), array (  '_controller' => 'sylius.controller.security:checkAction',));
-            }
-            not_sylius_shop_login_check:
-
-            // sylius_shop_logout
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/logout$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_logout;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_logout')), array ());
-            }
-            not_sylius_shop_logout:
-
-            // sylius_shop_register
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/register$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_register;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_register')), array (  '_controller' => 'sylius.controller.customer:createAction',  '_sylius' =>   array (    'template' => '@SyliusShop/register.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Customer\\CustomerRegistrationType',    'event' => 'register',    'redirect' =>     array (      'route' => 'sylius_shop_account_dashboard',    ),    'flash' => 'sylius.customer.register',  ),));
-            }
-            not_sylius_shop_register:
-
-            // sylius_shop_request_password_reset_token
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/forgotten\\-password$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_request_password_reset_token;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_request_password_reset_token')), array (  '_controller' => 'sylius.controller.shop_user:requestPasswordResetTokenAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/requestPasswordReset.html.twig',    'redirect' => 'sylius_shop_login',  ),));
-            }
-            not_sylius_shop_request_password_reset_token:
-
-            // sylius_shop_password_reset
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/forgotten\\-password/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_password_reset;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_password_reset')), array (  '_controller' => 'sylius.controller.shop_user:resetPasswordAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/resetPassword.html.twig',    'redirect' => 'sylius_shop_login',  ),));
-            }
-            not_sylius_shop_password_reset:
-
-            // sylius_shop_user_request_verification_token
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/verify$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_sylius_shop_user_request_verification_token;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_user_request_verification_token')), array (  '_controller' => 'sylius.controller.shop_user:requestVerificationTokenAction',));
-            }
-            not_sylius_shop_user_request_verification_token:
-
-            // sylius_shop_user_verification
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/verify/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_user_verification;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_user_verification')), array (  '_controller' => 'sylius.controller.shop_user:verifyAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_homepage',  ),));
-            }
-            not_sylius_shop_user_verification:
-
-            // sylius_shop_product_show
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_product_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_show')), array (  '_controller' => 'sylius.controller.product:showAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Product/show.html.twig',    'repository' =>     array (      'method' => 'findOneByChannelAndSlug',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$slug',      ),    ),  ),));
-            }
-            not_sylius_shop_product_show:
-
-            // sylius_shop_product_index
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/taxons/(?P<slug>.+)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_product_index;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_index')), array (  '_controller' => 'sylius.controller.product:indexAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Product/index.html.twig',    'grid' => 'sylius_shop_product',  ),));
-            }
-            not_sylius_shop_product_index:
-
-            // sylius_shop_product_review_index
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)/reviews/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_product_review_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_product_review_index');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_review_index')), array (  '_controller' => 'sylius.controller.product_review:indexAction',  '_sylius' =>   array (    'template' => '@SyliusShop/ProductReview/index.html.twig',    'repository' =>     array (      'method' => 'findAcceptedByProductSlugAndChannel',      'arguments' =>       array (        0 => '$slug',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => 'expr:service(\'sylius.context.channel\').getChannel()',      ),    ),  ),));
-            }
-            not_sylius_shop_product_review_index:
-
-            // sylius_shop_product_review_create
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)/reviews/new$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_product_review_create;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_review_create')), array (  '_controller' => 'sylius.controller.product_review:createAction',  '_sylius' =>   array (    'template' => '@SyliusShop/ProductReview/create.html.twig',    'form' =>     array (      'options' =>       array (        'validation_groups' =>         array (          0 => 'sylius',          1 => 'sylius_review',        ),      ),    ),    'factory' =>     array (      'method' => 'createForSubjectWithReviewer',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').findOneByChannelAndSlug(service(\'sylius.context.channel\').getChannel(), service(\'sylius.context.locale\').getLocaleCode(), $slug))',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_product_show',      'parameters' =>       array (        'slug' => '$slug',      ),    ),    'flash' => 'sylius.review.wait_for_the_acceptation',  ),));
-            }
-            not_sylius_shop_product_review_create:
-
-            // sylius_shop_cart_summary
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_cart_summary;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_cart_summary');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_summary')), array (  '_controller' => 'sylius.controller.order:summaryAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Cart/summary.html.twig',    'form' => 'Sylius\\Bundle\\OrderBundle\\Form\\Type\\CartType',  ),));
-            }
-            not_sylius_shop_cart_summary:
-
-            // sylius_shop_cart_save
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('PUT', 'PATCH'))) {
-                    $allow = array_merge($allow, array('PUT', 'PATCH'));
-                    goto not_sylius_shop_cart_save;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_save')), array (  '_controller' => 'sylius.controller.order:saveAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Cart/summary.html.twig',    'redirect' => 'sylius_shop_cart_summary',    'form' => 'Sylius\\Bundle\\OrderBundle\\Form\\Type\\CartType',    'flash' => 'sylius.cart.save',  ),));
-            }
-            not_sylius_shop_cart_save:
-
-            // sylius_shop_cart_clear
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_sylius_shop_cart_clear;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_clear')), array (  '_controller' => 'sylius.controller.order:clearAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_cart_summary',  ),));
-            }
-            not_sylius_shop_cart_clear:
-
-            // sylius_shop_checkout_start
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_checkout_start;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_checkout_start');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_start')), array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction',  'route' => 'sylius_shop_checkout_address',));
-            }
-            not_sylius_shop_checkout_start:
-
-            // sylius_shop_checkout_address
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/address$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_checkout_address;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_address')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'address',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:address.html.twig',    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\AddressType',      'options' =>       array (        'customer' => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'repository' =>     array (      'method' => 'findCartForAddressing',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'address',    ),  ),));
-            }
-            not_sylius_shop_checkout_address:
-
-            // sylius_shop_checkout_select_shipping
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/select\\-shipping$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_checkout_select_shipping;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_select_shipping')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'select_shipping',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:selectShipping.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectShippingType',    'repository' =>     array (      'method' => 'findCartForSelectingShipping',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'select_shipping',    ),  ),));
-            }
-            not_sylius_shop_checkout_select_shipping:
-
-            // sylius_shop_checkout_select_payment
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/select\\-payment$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_checkout_select_payment;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_select_payment')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'payment',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:selectPayment.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectPaymentType',    'repository' =>     array (      'method' => 'findCartForSelectingPayment',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'select_payment',    ),  ),));
-            }
-            not_sylius_shop_checkout_select_payment:
-
-            // sylius_shop_checkout_complete
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/complete$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_checkout_complete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_complete')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'complete',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:complete.html.twig',    'repository' =>     array (      'method' => 'findCartForSummary',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'complete',    ),    'redirect' =>     array (      'route' => 'sylius_shop_order_pay',      'parameters' =>       array (        'tokenValue' => 'resource.tokenValue',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\CompleteType',      'options' =>       array (        'validation_groups' => 'sylius_checkout_complete',      ),    ),  ),));
-            }
-            not_sylius_shop_checkout_complete:
-
-            // sylius_shop_contact_request
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/contact/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_contact_request;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_contact_request');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_contact_request')), array (  '_controller' => 'sylius.controller.shop.contact:requestAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_homepage',  ),));
-            }
-            not_sylius_shop_contact_request:
-
-            // sylius_shop_order_thank_you
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/thank\\-you$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_order_thank_you;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_thank_you')), array (  '_controller' => 'sylius.controller.order:thankYouAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Order/thankYou.html.twig',  ),));
-            }
-            not_sylius_shop_order_thank_you:
-
-            // sylius_shop_order_pay
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/(?P<tokenValue>[^/]++)/pay$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_order_pay;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_pay')), array (  '_controller' => 'sylius.controller.payum:prepareCaptureAction',  '_sylius' =>   array (    'redirect' =>     array (      'route' => 'sylius_shop_order_after_pay',    ),  ),));
-            }
-            not_sylius_shop_order_pay:
-
-            // sylius_shop_order_after_pay
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/after\\-pay$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_order_after_pay;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_after_pay')), array (  '_controller' => 'sylius.controller.payum:afterCaptureAction',));
-            }
-            not_sylius_shop_order_after_pay:
-
-            // sylius_shop_order_show
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/(?P<tokenValue>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_order_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_show')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Order/show.html.twig',    'repository' =>     array (      'method' => 'findOneBy',      'arguments' =>       array (        0 =>         array (          'tokenValue' => '$tokenValue',        ),      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectPaymentType',      'options' =>       array (        'validation_groups' =>         array (        ),      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_order_pay',      'parameters' =>       array (        'tokenValue' => 'resource.tokenValue',      ),    ),    'flash' => false,  ),));
-            }
-            not_sylius_shop_order_show:
-
-            // sylius_shop_account_order_index
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/orders/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_account_order_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_account_order_index');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_order_index')), array (  '_controller' => 'sylius.controller.order:indexAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/Order/index.html.twig',    'grid' => 'sylius_shop_account_order',  ),));
-            }
-            not_sylius_shop_account_order_index:
-
-            // sylius_shop_account_order_show
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/orders/(?P<number>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_account_order_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_order_show')), array (  '_controller' => 'sylius.controller.order:showAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/Order/show.html.twig',    'repository' =>     array (      'method' => 'findOneByNumberAndCustomer',      'arguments' =>       array (        0 => '$number',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
-            }
-            not_sylius_shop_account_order_show:
-
-            // sylius_shop_account_address_book_index
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_account_address_book_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_account_address_book_index');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_index')), array (  '_controller' => 'sylius.controller.address:indexAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/index.html.twig',    'paginate' => false,    'repository' =>     array (      'method' => 'findByCustomer',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
-            }
-            not_sylius_shop_account_address_book_index:
-
-            // sylius_shop_account_address_book_create
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/add$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_account_address_book_create;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_create')), array (  '_controller' => 'sylius.controller.address:createAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/create.html.twig',    'factory' =>     array (      'method' => 'createForCustomer',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.customer.add_address',  ),));
-            }
-            not_sylius_shop_account_address_book_create:
-
-            // sylius_shop_account_address_book_update
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_account_address_book_update;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_update')), array (  '_controller' => 'sylius.controller.address:updateAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/update.html.twig',    'repository' =>     array (      'method' => 'findOneByCustomer',      'arguments' =>       array (        0 => '$id',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),  ),));
-            }
-            not_sylius_shop_account_address_book_update:
-
-            // sylius_shop_account_address_book_delete
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_sylius_shop_account_address_book_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_delete')), array (  '_controller' => 'sylius.controller.address:deleteAction',  '_sylius' =>   array (    'section' => 'shop_account',    'repository' =>     array (      'method' => 'findOneByCustomer',      'arguments' =>       array (        0 => '$id',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' => 'sylius_shop_account_address_book_index',  ),));
-            }
-            not_sylius_shop_account_address_book_delete:
-
-            // sylius_shop_account_address_book_set_as_default
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)/set\\-as\\-default$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PATCH', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PATCH', 'HEAD'));
-                    goto not_sylius_shop_account_address_book_set_as_default;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_set_as_default')), array (  '_controller' => 'sylius.controller.customer:updateAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/_defaultAddressForm.html.twig',    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Customer\\CustomerDefaultAddressType',      'options' =>       array (        'customer' => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.customer.set_address_as_default',  ),));
-            }
-            not_sylius_shop_account_address_book_set_as_default:
-
-            // sylius_shop_account_root
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/?$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_account_root;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'sylius_shop_account_root');
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_root')), array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction',  'route' => 'sylius_shop_account_dashboard',  'permanent' => true,));
-            }
-            not_sylius_shop_account_root:
-
-            // sylius_shop_account_dashboard
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/dashboard$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_account_dashboard;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_dashboard')), array (  '_controller' => 'sylius.controller.customer:showAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/dashboard.html.twig',    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
-            }
-            not_sylius_shop_account_dashboard:
-
-            // sylius_shop_account_profile_update
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/profile/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
-                    goto not_sylius_shop_account_profile_update;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_profile_update')), array (  '_controller' => 'sylius.controller.customer:updateAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/profileUpdate.html.twig',    'form' => 'Sylius\\Bundle\\CustomerBundle\\Form\\Type\\CustomerProfileType',    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_profile_update',      'parameters' =>       array (      ),    ),  ),));
-            }
-            not_sylius_shop_account_profile_update:
-
-            // sylius_shop_account_change_password
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/change\\-password$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_sylius_shop_account_change_password;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_change_password')), array (  '_controller' => 'sylius.controller.shop_user:changePasswordAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/changePassword.html.twig',    'redirect' => 'sylius_shop_account_dashboard',  ),));
-            }
-            not_sylius_shop_account_change_password:
-
-            // sylius_shop_switch_currency
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/switch\\-currency/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_switch_currency;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_switch_currency')), array (  '_controller' => 'sylius.controller.shop.currency_switch:switchAction',));
-            }
-            not_sylius_shop_switch_currency:
-
-            // sylius_shop_switch_locale
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/switch\\-locale/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_sylius_shop_switch_locale;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_switch_locale')), array (  '_controller' => 'sylius.controller.shop.locale_switch:switchAction',));
-            }
-            not_sylius_shop_switch_locale:
-
-            // liip_imagine_filter_runtime
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/media/cache/resolve/(?P<filter>[A-z0-9_\\-]*)/rc/(?P<hash>[^/]++)/(?P<path>.+)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_liip_imagine_filter_runtime;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter_runtime')), array (  '_controller' => 'liip_imagine.controller:filterRuntimeAction',));
-            }
-            not_liip_imagine_filter_runtime:
-
-            // liip_imagine_filter
-            if (preg_match('#^/shop/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/media/cache/resolve/(?P<filter>[A-z0-9_\\-]*)/(?P<path>.+)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_liip_imagine_filter;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter')), array (  '_controller' => 'liip_imagine.controller:filterAction',));
-            }
-            not_liip_imagine_filter:
-
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_user_check_action')), array (  '_controller' => 'sylius.controller.shop_user:showAction',  '_format' => 'json',  '_sylius' =>   array (    'repository' =>     array (      'method' => 'findOneByEmail',      'arguments' =>       array (        'email' => '$email',      ),    ),    'serialization_groups' =>     array (      0 => 'Secured',    ),  ),));
         }
+        not_sylius_shop_ajax_user_check_action:
+
+        // sylius_shop_ajax_cart_add_item
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/cart/add$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_sylius_shop_ajax_cart_add_item;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_cart_add_item')), array (  '_controller' => 'sylius.controller.order_item:addAction',  '_format' => 'json',  '_sylius' =>   array (    'factory' =>     array (      'method' => 'createForProduct',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Order\\AddToCartType',      'options' =>       array (        'product' => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_cart_summary',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.cart.add_item',  ),));
+        }
+        not_sylius_shop_ajax_cart_add_item:
+
+        // sylius_shop_ajax_cart_item_remove
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/cart/(?P<id>[^/]++)/remove$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'DELETE') {
+                $allow[] = 'DELETE';
+                goto not_sylius_shop_ajax_cart_item_remove;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_cart_item_remove')), array (  '_controller' => 'sylius.controller.order_item:removeAction',  '_format' => 'json',  '_sylius' =>   array (    'flash' => 'sylius.cart.remove_item',  ),));
+        }
+        not_sylius_shop_ajax_cart_item_remove:
+
+        // sylius_shop_ajax_render_province_form
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/ajax/render\\-province\\-form$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_ajax_render_province_form;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_ajax_render_province_form')), array (  '_controller' => 'sylius.controller.province:choiceOrTextFieldFormAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Common/Form/_province.html.twig',  ),));
+        }
+        not_sylius_shop_ajax_render_province_form:
+
+        // sylius_shop_partial_taxon_show_by_slug
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/taxons/by\\-slug/(?P<slug>.+)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_taxon_show_by_slug;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_taxon_show_by_slug')), array (  '_controller' => 'sylius.controller.taxon:showAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findOneBySlug',      'arguments' =>       array (        0 => '$slug',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',      ),    ),  ),));
+        }
+        not_sylius_shop_partial_taxon_show_by_slug:
+
+        // sylius_shop_partial_taxon_index_by_code
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/taxons/by\\-code/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_taxon_index_by_code;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_taxon_index_by_code')), array (  '_controller' => 'sylius.controller.taxon:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findChildren',      'arguments' =>       array (        0 => '$code',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',      ),    ),  ),));
+        }
+        not_sylius_shop_partial_taxon_index_by_code:
+
+        // sylius_shop_partial_cart_summary
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/cart/summary$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_cart_summary;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_cart_summary')), array (  '_controller' => 'sylius.controller.order:widgetAction',  '_sylius' =>   array (    'template' => '$template',  ),));
+        }
+        not_sylius_shop_partial_cart_summary:
+
+        // sylius_shop_partial_cart_add_item
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/cart/add\\-item$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_cart_add_item;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_cart_add_item')), array (  '_controller' => 'sylius.controller.order_item:addAction',  '_sylius' =>   array (    'template' => '$template',    'factory' =>     array (      'method' => 'createForProduct',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Order\\AddToCartType',      'options' =>       array (        'product' => 'expr:notFoundOnNull(service(\'sylius.repository.product\').find($productId))',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_cart_summary',      'parameters' =>       array (      ),    ),  ),));
+        }
+        not_sylius_shop_partial_cart_add_item:
+
+        // sylius_shop_partial_product_index_latest
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/latest/(?P<count>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_product_index_latest;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_index_latest')), array (  '_controller' => 'sylius.controller.product:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findLatestByChannel',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$count',      ),    ),  ),));
+        }
+        not_sylius_shop_partial_product_index_latest:
+
+        // sylius_shop_partial_product_show_by_slug
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_product_show_by_slug;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_show_by_slug')), array (  '_controller' => 'sylius.controller.product:showAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findOneByChannelAndSlug',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$slug',      ),    ),  ),));
+        }
+        not_sylius_shop_partial_product_show_by_slug:
+
+        // sylius_shop_partial_product_review_latest
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<productId>[^/]++)/reviews/latest(?:/(?P<count>[^/]++))?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_product_review_latest;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_review_latest')), array (  '_controller' => 'sylius.controller.product_review:indexAction',  '_sylius' =>   array (    'template' => '$template',    'repository' =>     array (      'method' => 'findLatestByProductId',      'arguments' =>       array (        0 => '$productId',        1 => '$count',      ),    ),  ),  'count' => 3,));
+        }
+        not_sylius_shop_partial_product_review_latest:
+
+        // sylius_shop_partial_product_association_show
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/_partial/products/(?P<productId>[^/]++)/associations/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_partial_product_association_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_partial_product_association_show')), array (  '_controller' => 'sylius.controller.product_association:showAction',  '_sylius' =>   array (    'template' => '$template',  ),));
+        }
+        not_sylius_shop_partial_product_association_show:
+
+        // sylius_shop_homepage
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_homepage;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_homepage');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_homepage')), array (  '_controller' => 'sylius.controller.shop.homepage:indexAction',));
+        }
+        not_sylius_shop_homepage:
+
+        // sylius_shop_login
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/login$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_login;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_login')), array (  '_controller' => 'sylius.controller.security:loginAction',  '_sylius' =>   array (    'template' => '@SyliusShop/login.html.twig',  ),));
+        }
+        not_sylius_shop_login:
+
+        // sylius_shop_login_check
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/login\\-check$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_sylius_shop_login_check;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_login_check')), array (  '_controller' => 'sylius.controller.security:checkAction',));
+        }
+        not_sylius_shop_login_check:
+
+        // sylius_shop_logout
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/logout$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_logout;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_logout')), array ());
+        }
+        not_sylius_shop_logout:
+
+        // sylius_shop_register
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/register$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_register;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_register')), array (  '_controller' => 'sylius.controller.customer:createAction',  '_sylius' =>   array (    'template' => '@SyliusShop/register.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Customer\\CustomerRegistrationType',    'event' => 'register',    'redirect' =>     array (      'route' => 'sylius_shop_account_dashboard',    ),    'flash' => 'sylius.customer.register',  ),));
+        }
+        not_sylius_shop_register:
+
+        // sylius_shop_request_password_reset_token
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/forgotten\\-password$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_request_password_reset_token;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_request_password_reset_token')), array (  '_controller' => 'sylius.controller.shop_user:requestPasswordResetTokenAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/requestPasswordReset.html.twig',    'redirect' => 'sylius_shop_login',  ),));
+        }
+        not_sylius_shop_request_password_reset_token:
+
+        // sylius_shop_password_reset
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/forgotten\\-password/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_password_reset;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_password_reset')), array (  '_controller' => 'sylius.controller.shop_user:resetPasswordAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/resetPassword.html.twig',    'redirect' => 'sylius_shop_login',  ),));
+        }
+        not_sylius_shop_password_reset:
+
+        // sylius_shop_user_request_verification_token
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/verify$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_sylius_shop_user_request_verification_token;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_user_request_verification_token')), array (  '_controller' => 'sylius.controller.shop_user:requestVerificationTokenAction',));
+        }
+        not_sylius_shop_user_request_verification_token:
+
+        // sylius_shop_user_verification
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/verify/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_user_verification;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_user_verification')), array (  '_controller' => 'sylius.controller.shop_user:verifyAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_homepage',  ),));
+        }
+        not_sylius_shop_user_verification:
+
+        // sylius_shop_product_show
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_product_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_show')), array (  '_controller' => 'sylius.controller.product:showAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Product/show.html.twig',    'repository' =>     array (      'method' => 'findOneByChannelAndSlug',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.channel\').getChannel()',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => '$slug',      ),    ),  ),));
+        }
+        not_sylius_shop_product_show:
+
+        // sylius_shop_product_index
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/taxons/(?P<slug>.+)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_product_index;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_index')), array (  '_controller' => 'sylius.controller.product:indexAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Product/index.html.twig',    'grid' => 'sylius_shop_product',  ),));
+        }
+        not_sylius_shop_product_index:
+
+        // sylius_shop_product_review_index
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)/reviews/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_product_review_index;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_product_review_index');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_review_index')), array (  '_controller' => 'sylius.controller.product_review:indexAction',  '_sylius' =>   array (    'template' => '@SyliusShop/ProductReview/index.html.twig',    'repository' =>     array (      'method' => 'findAcceptedByProductSlugAndChannel',      'arguments' =>       array (        0 => '$slug',        1 => 'expr:service(\'sylius.context.locale\').getLocaleCode()',        2 => 'expr:service(\'sylius.context.channel\').getChannel()',      ),    ),  ),));
+        }
+        not_sylius_shop_product_review_index:
+
+        // sylius_shop_product_review_create
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/products/(?P<slug>[^/]++)/reviews/new$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_product_review_create;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_product_review_create')), array (  '_controller' => 'sylius.controller.product_review:createAction',  '_sylius' =>   array (    'template' => '@SyliusShop/ProductReview/create.html.twig',    'form' =>     array (      'options' =>       array (        'validation_groups' =>         array (          0 => 'sylius',          1 => 'sylius_review',        ),      ),    ),    'factory' =>     array (      'method' => 'createForSubjectWithReviewer',      'arguments' =>       array (        0 => 'expr:notFoundOnNull(service(\'sylius.repository.product\').findOneByChannelAndSlug(service(\'sylius.context.channel\').getChannel(), service(\'sylius.context.locale\').getLocaleCode(), $slug))',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_product_show',      'parameters' =>       array (        'slug' => '$slug',      ),    ),    'flash' => 'sylius.review.wait_for_the_acceptation',  ),));
+        }
+        not_sylius_shop_product_review_create:
+
+        // sylius_shop_cart_summary
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_cart_summary;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_cart_summary');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_summary')), array (  '_controller' => 'sylius.controller.order:summaryAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Cart/summary.html.twig',    'form' => 'Sylius\\Bundle\\OrderBundle\\Form\\Type\\CartType',  ),));
+        }
+        not_sylius_shop_cart_summary:
+
+        // sylius_shop_cart_save
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('PUT', 'PATCH'))) {
+                $allow = array_merge($allow, array('PUT', 'PATCH'));
+                goto not_sylius_shop_cart_save;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_save')), array (  '_controller' => 'sylius.controller.order:saveAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Cart/summary.html.twig',    'redirect' => 'sylius_shop_cart_summary',    'form' => 'Sylius\\Bundle\\OrderBundle\\Form\\Type\\CartType',    'flash' => 'sylius.cart.save',  ),));
+        }
+        not_sylius_shop_cart_save:
+
+        // sylius_shop_cart_clear
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/cart/$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'DELETE') {
+                $allow[] = 'DELETE';
+                goto not_sylius_shop_cart_clear;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_cart_clear')), array (  '_controller' => 'sylius.controller.order:clearAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_cart_summary',  ),));
+        }
+        not_sylius_shop_cart_clear:
+
+        // sylius_shop_checkout_start
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_checkout_start;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_checkout_start');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_start')), array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction',  'route' => 'sylius_shop_checkout_address',));
+        }
+        not_sylius_shop_checkout_start:
+
+        // sylius_shop_checkout_address
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/address$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_checkout_address;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_address')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'address',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:address.html.twig',    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\AddressType',      'options' =>       array (        'customer' => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'repository' =>     array (      'method' => 'findCartForAddressing',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'address',    ),  ),));
+        }
+        not_sylius_shop_checkout_address:
+
+        // sylius_shop_checkout_select_shipping
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/select\\-shipping$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_checkout_select_shipping;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_select_shipping')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'select_shipping',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:selectShipping.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectShippingType',    'repository' =>     array (      'method' => 'findCartForSelectingShipping',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'select_shipping',    ),  ),));
+        }
+        not_sylius_shop_checkout_select_shipping:
+
+        // sylius_shop_checkout_select_payment
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/select\\-payment$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_checkout_select_payment;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_select_payment')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'payment',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:selectPayment.html.twig',    'form' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectPaymentType',    'repository' =>     array (      'method' => 'findCartForSelectingPayment',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'select_payment',    ),  ),));
+        }
+        not_sylius_shop_checkout_select_payment:
+
+        // sylius_shop_checkout_complete
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/checkout/complete$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_checkout_complete;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_checkout_complete')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'event' => 'complete',    'flash' => false,    'template' => 'SyliusShopBundle:Checkout:complete.html.twig',    'repository' =>     array (      'method' => 'findCartForSummary',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.cart\').getCart().getId()',      ),    ),    'state_machine' =>     array (      'graph' => 'sylius_order_checkout',      'transition' => 'complete',    ),    'redirect' =>     array (      'route' => 'sylius_shop_order_pay',      'parameters' =>       array (        'tokenValue' => 'resource.tokenValue',      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\CompleteType',      'options' =>       array (        'validation_groups' => 'sylius_checkout_complete',      ),    ),  ),));
+        }
+        not_sylius_shop_checkout_complete:
+
+        // sylius_shop_contact_request
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/contact/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_contact_request;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_contact_request');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_contact_request')), array (  '_controller' => 'sylius.controller.shop.contact:requestAction',  '_sylius' =>   array (    'redirect' => 'sylius_shop_homepage',  ),));
+        }
+        not_sylius_shop_contact_request:
+
+        // sylius_shop_order_thank_you
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/thank\\-you$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_order_thank_you;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_thank_you')), array (  '_controller' => 'sylius.controller.order:thankYouAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Order/thankYou.html.twig',  ),));
+        }
+        not_sylius_shop_order_thank_you:
+
+        // sylius_shop_order_pay
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/(?P<tokenValue>[^/]++)/pay$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_order_pay;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_pay')), array (  '_controller' => 'sylius.controller.payum:prepareCaptureAction',  '_sylius' =>   array (    'redirect' =>     array (      'route' => 'sylius_shop_order_after_pay',    ),  ),));
+        }
+        not_sylius_shop_order_pay:
+
+        // sylius_shop_order_after_pay
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/after\\-pay$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_order_after_pay;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_after_pay')), array (  '_controller' => 'sylius.controller.payum:afterCaptureAction',));
+        }
+        not_sylius_shop_order_after_pay:
+
+        // sylius_shop_order_show
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/order/(?P<tokenValue>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_order_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_order_show')), array (  '_controller' => 'sylius.controller.order:updateAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Order/show.html.twig',    'repository' =>     array (      'method' => 'findOneBy',      'arguments' =>       array (        0 =>         array (          'tokenValue' => '$tokenValue',        ),      ),    ),    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Checkout\\SelectPaymentType',      'options' =>       array (        'validation_groups' =>         array (        ),      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_order_pay',      'parameters' =>       array (        'tokenValue' => 'resource.tokenValue',      ),    ),    'flash' => false,  ),));
+        }
+        not_sylius_shop_order_show:
+
+        // sylius_shop_account_order_index
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/orders/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_account_order_index;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_account_order_index');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_order_index')), array (  '_controller' => 'sylius.controller.order:indexAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/Order/index.html.twig',    'grid' => 'sylius_shop_account_order',  ),));
+        }
+        not_sylius_shop_account_order_index:
+
+        // sylius_shop_account_order_show
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/orders/(?P<number>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_account_order_show;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_order_show')), array (  '_controller' => 'sylius.controller.order:showAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/Order/show.html.twig',    'repository' =>     array (      'method' => 'findOneByNumberAndCustomer',      'arguments' =>       array (        0 => '$number',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
+        }
+        not_sylius_shop_account_order_show:
+
+        // sylius_shop_account_address_book_index
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_account_address_book_index;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_account_address_book_index');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_index')), array (  '_controller' => 'sylius.controller.address:indexAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/index.html.twig',    'paginate' => false,    'repository' =>     array (      'method' => 'findByCustomer',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
+        }
+        not_sylius_shop_account_address_book_index:
+
+        // sylius_shop_account_address_book_create
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/add$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_account_address_book_create;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_create')), array (  '_controller' => 'sylius.controller.address:createAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/create.html.twig',    'factory' =>     array (      'method' => 'createForCustomer',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.customer.add_address',  ),));
+        }
+        not_sylius_shop_account_address_book_create:
+
+        // sylius_shop_account_address_book_update
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_account_address_book_update;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_update')), array (  '_controller' => 'sylius.controller.address:updateAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/update.html.twig',    'repository' =>     array (      'method' => 'findOneByCustomer',      'arguments' =>       array (        0 => '$id',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),  ),));
+        }
+        not_sylius_shop_account_address_book_update:
+
+        // sylius_shop_account_address_book_delete
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'DELETE') {
+                $allow[] = 'DELETE';
+                goto not_sylius_shop_account_address_book_delete;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_delete')), array (  '_controller' => 'sylius.controller.address:deleteAction',  '_sylius' =>   array (    'section' => 'shop_account',    'repository' =>     array (      'method' => 'findOneByCustomer',      'arguments' =>       array (        0 => '$id',        1 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' => 'sylius_shop_account_address_book_index',  ),));
+        }
+        not_sylius_shop_account_address_book_delete:
+
+        // sylius_shop_account_address_book_set_as_default
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/address\\-book/(?P<id>[^/]++)/set\\-as\\-default$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PATCH', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PATCH', 'HEAD'));
+                goto not_sylius_shop_account_address_book_set_as_default;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_address_book_set_as_default')), array (  '_controller' => 'sylius.controller.customer:updateAction',  '_sylius' =>   array (    'section' => 'shop_account',    'template' => '@SyliusShop/Account/AddressBook/_defaultAddressForm.html.twig',    'form' =>     array (      'type' => 'Sylius\\Bundle\\CoreBundle\\Form\\Type\\Customer\\CustomerDefaultAddressType',      'options' =>       array (        'customer' => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_address_book_index',      'parameters' =>       array (      ),    ),    'flash' => 'sylius.customer.set_address_as_default',  ),));
+        }
+        not_sylius_shop_account_address_book_set_as_default:
+
+        // sylius_shop_account_root
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_account_root;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_account_root');
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_root')), array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction',  'route' => 'sylius_shop_account_dashboard',  'permanent' => true,));
+        }
+        not_sylius_shop_account_root:
+
+        // sylius_shop_account_dashboard
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/dashboard$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_account_dashboard;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_dashboard')), array (  '_controller' => 'sylius.controller.customer:showAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/dashboard.html.twig',    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),  ),));
+        }
+        not_sylius_shop_account_dashboard:
+
+        // sylius_shop_account_profile_update
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/profile/edit$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'PUT', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'PUT', 'HEAD'));
+                goto not_sylius_shop_account_profile_update;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_profile_update')), array (  '_controller' => 'sylius.controller.customer:updateAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/profileUpdate.html.twig',    'form' => 'Sylius\\Bundle\\CustomerBundle\\Form\\Type\\CustomerProfileType',    'repository' =>     array (      'method' => 'find',      'arguments' =>       array (        0 => 'expr:service(\'sylius.context.customer\').getCustomer()',      ),    ),    'redirect' =>     array (      'route' => 'sylius_shop_account_profile_update',      'parameters' =>       array (      ),    ),  ),));
+        }
+        not_sylius_shop_account_profile_update:
+
+        // sylius_shop_account_change_password
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/account/change\\-password$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_sylius_shop_account_change_password;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_account_change_password')), array (  '_controller' => 'sylius.controller.shop_user:changePasswordAction',  '_sylius' =>   array (    'template' => '@SyliusShop/Account/changePassword.html.twig',    'redirect' => 'sylius_shop_account_dashboard',  ),));
+        }
+        not_sylius_shop_account_change_password:
+
+        // sylius_shop_switch_currency
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/switch\\-currency/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_switch_currency;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_switch_currency')), array (  '_controller' => 'sylius.controller.shop.currency_switch:switchAction',));
+        }
+        not_sylius_shop_switch_currency:
+
+        // sylius_shop_switch_locale
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/switch\\-locale/(?P<code>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_sylius_shop_switch_locale;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'sylius_shop_switch_locale')), array (  '_controller' => 'sylius.controller.shop.locale_switch:switchAction',));
+        }
+        not_sylius_shop_switch_locale:
+
+        // liip_imagine_filter_runtime
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/media/cache/resolve/(?P<filter>[A-z0-9_\\-]*)/rc/(?P<hash>[^/]++)/(?P<path>.+)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_liip_imagine_filter_runtime;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter_runtime')), array (  '_controller' => 'liip_imagine.controller:filterRuntimeAction',));
+        }
+        not_liip_imagine_filter_runtime:
+
+        // liip_imagine_filter
+        if (preg_match('#^/(?P<_locale>[a-z]{2}(?:_[A-Z]{2})?)/media/cache/resolve/(?P<filter>[A-z0-9_\\-]*)/(?P<path>.+)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_liip_imagine_filter;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter')), array (  '_controller' => 'liip_imagine.controller:filterAction',));
+        }
+        not_liip_imagine_filter:
 
         if (0 === strpos($pathinfo, '/payment')) {
             if (0 === strpos($pathinfo, '/payment/capture')) {
@@ -3951,10 +3948,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // sylius_shop_default_locale
-        if ($pathinfo === '/shop') {
+        if (rtrim($pathinfo, '/') === '') {
             if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                 $allow = array_merge($allow, array('GET', 'HEAD'));
                 goto not_sylius_shop_default_locale;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sylius_shop_default_locale');
             }
 
             return array (  '_controller' => 'sylius.controller.shop.locale_switch:switchAction',  '_route' => 'sylius_shop_default_locale',);

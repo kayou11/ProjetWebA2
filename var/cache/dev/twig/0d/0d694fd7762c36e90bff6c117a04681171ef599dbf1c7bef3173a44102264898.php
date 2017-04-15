@@ -15,11 +15,11 @@ class __TwigTemplate_4dc7ed3602f158a75634aa10bdc79880357858860c33d9c11fe6d040ed3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c58abbaf546dfeffb25c1070916c27d6776d0b1bba411952adb6483b69540f3f = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c58abbaf546dfeffb25c1070916c27d6776d0b1bba411952adb6483b69540f3f->enter($__internal_c58abbaf546dfeffb25c1070916c27d6776d0b1bba411952adb6483b69540f3f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_localeSwitch.html.twig"));
+        $__internal_32389e1be2da0457a578fce7ab8685465f74e4911c87651ece317730dff58555 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_32389e1be2da0457a578fce7ab8685465f74e4911c87651ece317730dff58555->enter($__internal_32389e1be2da0457a578fce7ab8685465f74e4911c87651ece317730dff58555_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_localeSwitch.html.twig"));
 
-        $__internal_c9e6b3832d237b2068709c8e3fe5dcf95bc814693bad9870ad0a15b37e36cb72 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c9e6b3832d237b2068709c8e3fe5dcf95bc814693bad9870ad0a15b37e36cb72->enter($__internal_c9e6b3832d237b2068709c8e3fe5dcf95bc814693bad9870ad0a15b37e36cb72_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_localeSwitch.html.twig"));
+        $__internal_123325e71c6a081a6c86fdb3a6d78c680d5cfced0ea8f44dfc7d1f8c8695913f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_123325e71c6a081a6c86fdb3a6d78c680d5cfced0ea8f44dfc7d1f8c8695913f->enter($__internal_123325e71c6a081a6c86fdb3a6d78c680d5cfced0ea8f44dfc7d1f8c8695913f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_localeSwitch.html.twig"));
 
         // line 1
         if ((twig_length_filter($this->env, ($context["locales"] ?? $this->getContext($context, "locales"))) > 1)) {
@@ -62,10 +62,10 @@ class __TwigTemplate_4dc7ed3602f158a75634aa10bdc79880357858860c33d9c11fe6d040ed3
 ";
         }
         
-        $__internal_c58abbaf546dfeffb25c1070916c27d6776d0b1bba411952adb6483b69540f3f->leave($__internal_c58abbaf546dfeffb25c1070916c27d6776d0b1bba411952adb6483b69540f3f_prof);
+        $__internal_32389e1be2da0457a578fce7ab8685465f74e4911c87651ece317730dff58555->leave($__internal_32389e1be2da0457a578fce7ab8685465f74e4911c87651ece317730dff58555_prof);
 
         
-        $__internal_c9e6b3832d237b2068709c8e3fe5dcf95bc814693bad9870ad0a15b37e36cb72->leave($__internal_c9e6b3832d237b2068709c8e3fe5dcf95bc814693bad9870ad0a15b37e36cb72_prof);
+        $__internal_123325e71c6a081a6c86fdb3a6d78c680d5cfced0ea8f44dfc7d1f8c8695913f->leave($__internal_123325e71c6a081a6c86fdb3a6d78c680d5cfced0ea8f44dfc7d1f8c8695913f_prof);
 
     }
 

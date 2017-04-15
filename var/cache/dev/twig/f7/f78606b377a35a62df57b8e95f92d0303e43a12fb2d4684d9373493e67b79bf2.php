@@ -15,11 +15,11 @@ class __TwigTemplate_54a504ad711a65cea4b1e06e14095bb1065afa502f24b09ee7c02423b45
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fac6b62cf9d562c93ee7aea9840012f68acf4e4cf4374044e1537effaba0cafd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_fac6b62cf9d562c93ee7aea9840012f68acf4e4cf4374044e1537effaba0cafd->enter($__internal_fac6b62cf9d562c93ee7aea9840012f68acf4e4cf4374044e1537effaba0cafd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Cart/_widget.html.twig"));
+        $__internal_86c2dbd205d27b8bc9dd4ed16fd829df02adc1f960112472cc74d47891c0b0fa = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_86c2dbd205d27b8bc9dd4ed16fd829df02adc1f960112472cc74d47891c0b0fa->enter($__internal_86c2dbd205d27b8bc9dd4ed16fd829df02adc1f960112472cc74d47891c0b0fa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Cart/_widget.html.twig"));
 
-        $__internal_8c85de04cbbe52b7c5827816bdf693d6e1459b1e740ddca95d439468b4b763a8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8c85de04cbbe52b7c5827816bdf693d6e1459b1e740ddca95d439468b4b763a8->enter($__internal_8c85de04cbbe52b7c5827816bdf693d6e1459b1e740ddca95d439468b4b763a8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Cart/_widget.html.twig"));
+        $__internal_c6af1e7feb731821ec6ea800e24f7523bbeb11f1ae7dbb5f32230d41005efb46 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c6af1e7feb731821ec6ea800e24f7523bbeb11f1ae7dbb5f32230d41005efb46->enter($__internal_c6af1e7feb731821ec6ea800e24f7523bbeb11f1ae7dbb5f32230d41005efb46_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Cart/_widget.html.twig"));
 
         // line 1
         $context["money"] = $this->loadTemplate("@SyliusShop/Common/Macro/money.html.twig", "@SyliusShop/Cart/_widget.html.twig", 1);
@@ -114,10 +114,10 @@ class __TwigTemplate_54a504ad711a65cea4b1e06e14095bb1065afa502f24b09ee7c02423b45
 </div>
 ";
         
-        $__internal_fac6b62cf9d562c93ee7aea9840012f68acf4e4cf4374044e1537effaba0cafd->leave($__internal_fac6b62cf9d562c93ee7aea9840012f68acf4e4cf4374044e1537effaba0cafd_prof);
+        $__internal_86c2dbd205d27b8bc9dd4ed16fd829df02adc1f960112472cc74d47891c0b0fa->leave($__internal_86c2dbd205d27b8bc9dd4ed16fd829df02adc1f960112472cc74d47891c0b0fa_prof);
 
         
-        $__internal_8c85de04cbbe52b7c5827816bdf693d6e1459b1e740ddca95d439468b4b763a8->leave($__internal_8c85de04cbbe52b7c5827816bdf693d6e1459b1e740ddca95d439468b4b763a8_prof);
+        $__internal_c6af1e7feb731821ec6ea800e24f7523bbeb11f1ae7dbb5f32230d41005efb46->leave($__internal_c6af1e7feb731821ec6ea800e24f7523bbeb11f1ae7dbb5f32230d41005efb46_prof);
 
     }
 

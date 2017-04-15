@@ -15,11 +15,11 @@ class __TwigTemplate_a584deef3b06940aaf6a99a6244d502e860ed7e0bb44c7b25c3de214adf
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_931665704d2e4062be067d4f854d88d34e92a8a0fea5fa9f0d08c5cefba9b603 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_931665704d2e4062be067d4f854d88d34e92a8a0fea5fa9f0d08c5cefba9b603->enter($__internal_931665704d2e4062be067d4f854d88d34e92a8a0fea5fa9f0d08c5cefba9b603_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_security.html.twig"));
+        $__internal_60c2e087737ae7ff7815112920d68a15193cbafeff2a3e1c35bff7df5dce9bde = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_60c2e087737ae7ff7815112920d68a15193cbafeff2a3e1c35bff7df5dce9bde->enter($__internal_60c2e087737ae7ff7815112920d68a15193cbafeff2a3e1c35bff7df5dce9bde_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_security.html.twig"));
 
-        $__internal_1533e6d9967009ff2cec657edc1daf28e8431f0290c057523cdf6654dffbe24d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1533e6d9967009ff2cec657edc1daf28e8431f0290c057523cdf6654dffbe24d->enter($__internal_1533e6d9967009ff2cec657edc1daf28e8431f0290c057523cdf6654dffbe24d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_security.html.twig"));
+        $__internal_3b482947a3b7d28c01b1ab7fa431ddf49698c95ae645441ee71d3d871161223f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3b482947a3b7d28c01b1ab7fa431ddf49698c95ae645441ee71d3d871161223f->enter($__internal_3b482947a3b7d28c01b1ab7fa431ddf49698c95ae645441ee71d3d871161223f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@SyliusShop/Menu/_security.html.twig"));
 
         // line 1
         echo "<div class=\"ui right stackable inverted menu\">
@@ -64,10 +64,10 @@ class __TwigTemplate_a584deef3b06940aaf6a99a6244d502e860ed7e0bb44c7b25c3de214adf
         echo "</div>
 ";
         
-        $__internal_931665704d2e4062be067d4f854d88d34e92a8a0fea5fa9f0d08c5cefba9b603->leave($__internal_931665704d2e4062be067d4f854d88d34e92a8a0fea5fa9f0d08c5cefba9b603_prof);
+        $__internal_60c2e087737ae7ff7815112920d68a15193cbafeff2a3e1c35bff7df5dce9bde->leave($__internal_60c2e087737ae7ff7815112920d68a15193cbafeff2a3e1c35bff7df5dce9bde_prof);
 
         
-        $__internal_1533e6d9967009ff2cec657edc1daf28e8431f0290c057523cdf6654dffbe24d->leave($__internal_1533e6d9967009ff2cec657edc1daf28e8431f0290c057523cdf6654dffbe24d_prof);
+        $__internal_3b482947a3b7d28c01b1ab7fa431ddf49698c95ae645441ee71d3d871161223f->leave($__internal_3b482947a3b7d28c01b1ab7fa431ddf49698c95ae645441ee71d3d871161223f_prof);
 
     }
 
