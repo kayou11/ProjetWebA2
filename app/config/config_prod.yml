@@ -1,11 +1,8 @@
-imports:
-    - { resource: config.yml }
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
 
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
+imports:
+    - { resource: "config.yml" }
 
 monolog:
     handlers:
@@ -15,7 +12,5 @@ monolog:
             handler: nested
         nested:
             type: stream
-            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
-        console:
-            type: console
