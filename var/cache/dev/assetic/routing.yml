@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: 'C:\MAMP\htdocs\ProjetWebA2\app/config/routing_dev.yml'
+    resource: '/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/config/routing_dev.yml'

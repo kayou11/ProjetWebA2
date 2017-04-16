@@ -711,3 +711,11 @@ f0ad0f,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/Beautiful-gard
 083f8e,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg,1492371593,,404
 d44c61,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/full-hd-images-wallpaper-9.jpg,1492371593,c96812,200
 c96812,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/full-hd-images-wallpaper-9.jpg,1492371593,,404
+a5d6d4,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492373951,,200
+814714,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492373951,,200
+39a10c,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg,1492373953,e547d9,200
+e547d9,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg,1492373953,,404
+20f7ff,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/full-hd-images-wallpaper-9.jpg,1492373953,f3df1d,200
+6399fc,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/Beautiful-garden-pavilion_1920x1080.jpg,1492373953,918d5d,200
+f3df1d,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/full-hd-images-wallpaper-9.jpg,1492373953,,404
+918d5d,::1,GET,http://localhost/ProjetWebA2/web/app_dev.php/Beautiful-garden-pavilion_1920x1080.jpg,1492373953,,404
