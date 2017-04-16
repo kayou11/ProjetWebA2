@@ -2,13 +2,15 @@
 
 // SiteBundle:Default:index.html.twig
 return array (
-  '7c71cdb' => 
+  'a080c53' => 
   array (
     0 => 
     array (
-      0 => 'assets/css/bootstrap.css',
-      1 => 'assets/css/bootstrap-theme.min.css',
-      2 => 'assets/css/main.css',
+      0 => 'public/css/bootstrap.css',
+      1 => 'public/css/bootstrap-theme.min.css',
+      2 => 'public/css/main.css',
+      3 => 'public/css/boostrap-social.css',
+      4 => 'public/css/pages/index.css',
     ),
     1 => 
     array (
@@ -16,8 +18,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/7c71cdb.css',
-      'name' => '7c71cdb',
+      'output' => '_controller/css/a080c53.css',
+      'name' => 'a080c53',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
@@ -25,12 +27,11 @@ return array (
       ),
     ),
   ),
-  'a7059d5' => 
+  '04f180e' => 
   array (
     0 => 
     array (
-      0 => 'assets/js/bootstrap.js',
-      1 => 'assets/js/jquery.js',
+      0 => 'public/js/bootstrap.js',
     ),
     1 => 
     array (
@@ -38,8 +39,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/js/a7059d5.js',
-      'name' => 'a7059d5',
+      'output' => '_controller/js/04f180e.js',
+      'name' => '04f180e',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

@@ -2,7 +2,7 @@
 
 // SiteBundle::base.html.twig
 return array (
-  '53f9639' => 
+  'a080c53' => 
   array (
     0 => 
     array (
@@ -10,6 +10,7 @@ return array (
       1 => 'public/css/bootstrap-theme.min.css',
       2 => 'public/css/main.css',
       3 => 'public/css/boostrap-social.css',
+      4 => 'public/css/pages/index.css',
     ),
     1 => 
     array (
@@ -17,8 +18,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/53f9639.css',
-      'name' => '53f9639',
+      'output' => '_controller/css/a080c53.css',
+      'name' => 'a080c53',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

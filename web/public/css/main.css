@@ -68,21 +68,28 @@ html, body{
     padding: 10px;
     background-color: #F8241F;
 }
-
 span.glyphicon{
     font-size: 3em;
     color: white ;
 }
-
 .footer{
-    position: fixed;
+    display: block;
+    position: relative;
     bottom: 0em;
-    left: 10em;
-    right: 10em;
+    margin-left: 10em;
+    margin-right: 10em;
     height: 13.5em;
     background: rgba(9, 9, 9, 0.83);
 }
-
+.content{
+     display: inline-flex;
+     justify-content: space-between;
+     /*padding: 0px 50px 0px 10px;*/
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     margin-right: inherit;
+     margin-left: inherit;
+ }
 .col-md-5{
     color: #ffffff;
     margin-left: 4em;
@@ -91,29 +98,18 @@ span.glyphicon{
     padding-right: 10px;
     position: relative;
 }
-
 .col-md-5 a {
     color: #ffffff;
 
 }
-
 .HyperTextFooter a{
     color: #F8241F;
     text-decoration: none;
 }
-
 .col-md-5 a:hover{
     color: #ffffff;
 }
 
-
-.row{
-    display: inline-flex;
-    justify-content: space-between;
-    /*padding: 0px 50px 0px 10px;*/
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
 .FooterTitle{
     font-size: 1.65em;
     color: #ffffff;
