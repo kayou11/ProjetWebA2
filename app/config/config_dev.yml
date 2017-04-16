@@ -1,30 +1,34 @@
-# This file is part of the Sylius package.
-# (c) Paweł Jędrzejewski
-
 imports:
-    - { resource: "config.yml" }
+    - { resource: config.yml }
 
 framework:
-    router: { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    router:
+        resource: '%kernel.root_dir%/config/routing_dev.yml'
+        strict_requirements: true
     profiler: { only_exceptions: false }
 
-doctrine:
-    dbal:
-        dbname: "%database_name%_dev"
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
 
 monolog:
     handlers:
         main:
             type: stream
-            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
-        firephp:
-            type: firephp
-            level: info
+            channels: ['!event']
+        console:
+            type: console
+            channels: ['!event', '!doctrine']
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type: firephp
+        #    level: info
+        #chromephp:
+        #    type: chromephp
+        #    level: info
 
-swiftmailer:
-    disable_delivery: true
-
-web_profiler:
-    toolbar: true
-    intercept_redirects: false
+#swiftmailer:
+#    delivery_addresses: ['me@example.com']
