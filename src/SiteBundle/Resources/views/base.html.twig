@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% stylesheets filter='cssrewrite'
+    'public/css/bootstrap.css'
+    'public/css/bootstrap-theme.min.css'
+    'public/css/main.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="top">
+    <div class='logo_bde'>
+        <a href="#"><img src="../public/img/logo_bde.jpg" width="100" height="100"> </a>
+    </div>
+    <div class="msg_bde">
+        <h1>BDE CESI BORDEAUX</h1>
+    </div>
+    <div class="profil">
+        <a href="#" class="dropdown-toggle square" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true" width="200" height="200"></span></a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="#">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">MDP</span>
+                        <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                    </div>
+                </a>
+
+            </li>
+            <li><a href="#">Proposez vos activités</a></li>
+            <li><a href="#">Archives</a></li>
+        </ul>
+    </div>
+    <div class="basket">
+        <a class="square" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" width="100" height="100"></span></a>
+    </div>
+</div>
+
+<nav class="navbar navbar-cesi">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="container-fluid">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">ACCUEIL<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Le BDE</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activités<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Planning</a></li>
+                        <li><a href="#">Proposez vos activités</a></li>
+                        <li><a href="#">Archives</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Associations</a></li>
+                <li><a href="#">Galerie</a></li>
+                <li><a href="#">Boutique</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Rechercher">
+                </div>
+                <button type="submit" class="btn btn-default">Envoyer</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="footer">
+    <div class="row">
+        <div class="col-md-5">
+            <h2 class="FooterTitle">Nous contacter</h2>
+            <p>Adresse : 60 rue de Maurian</p>
+            <p>Blanquefort, France</p>
+            <p>Téléphone : 06 69 69 69 69</p>
+            <p>Email : bdecesibordeaux@viacesi.fr</p>
+
+        </div>
+
+        <div class="col-md-5">
+            <h2 class="FooterTitle">BDE CESI BORDEAUX</h2>
+            <p><a href="#">L'équipe</a> </p>
+            <p><a href="#">Galerie</a> </p>
+            <p><a href="#">Boutique</a> </p>
+
+        </div>
+
+        <div class="col-md-5">
+            <h2 class="FooterTitle">Notre réseau d'école</h2>
+            <img src="../public/img/LogoAlternance.png" class="logoFooter" style=>
+            <img src="../public/img/LogoCertification.jpg" class="logoFooter">
+            <img src="../public/img/LogoCesi.png" class="logoFooter">
+            <img src="../public/img/LogoEi.png" class="logoFooter">
+            <img src="../public/img/LogoEntreprises.png" class="logoFooter">
+            <img src="../public/img/LogoExia.png" class="logoFooter">
+        </div>
+
+        <div class="col-md-5">
+            <h2 class="FooterTitle">Nous contacter</h2>
+            <p>Adresse : 60 rue de Maurian</p>
+            <p>Blanquefort, France</p>
+            <p>Téléphone : 06 69 69 69 69</p>
+            <p>Email : bdecesibordeaux@viacesi.fr</p>
+
+        </div>
+    </div>
+</div>
+{% block content  %}
+
+{% endblock %}
+
+{%  javascripts filter='?yui_js'
+    'public/js/bootstrap.js'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+</body>
+
+
+</html>
+
+
