@@ -2,13 +2,14 @@
 
 // SiteBundle::base.html.twig
 return array (
-  '6feb9a0' => 
+  '53f9639' => 
   array (
     0 => 
     array (
       0 => 'public/css/bootstrap.css',
       1 => 'public/css/bootstrap-theme.min.css',
       2 => 'public/css/main.css',
+      3 => 'public/css/boostrap-social.css',
     ),
     1 => 
     array (
@@ -16,8 +17,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/6feb9a0.css',
-      'name' => '6feb9a0',
+      'output' => '_controller/css/53f9639.css',
+      'name' => '53f9639',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
