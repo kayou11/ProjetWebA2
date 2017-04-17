@@ -22,47 +22,47 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_da14b2de1a1529bb8fb5a540b21294ff6d67eab3709df663c4715dbd3e99a295 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_da14b2de1a1529bb8fb5a540b21294ff6d67eab3709df663c4715dbd3e99a295->enter($__internal_da14b2de1a1529bb8fb5a540b21294ff6d67eab3709df663c4715dbd3e99a295_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
+        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6->enter($__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
 
-        $__internal_985abe91db82106ffeda4391d4bc38026e07a6a345f05740155870aa23f529f8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_985abe91db82106ffeda4391d4bc38026e07a6a345f05740155870aa23f529f8->enter($__internal_985abe91db82106ffeda4391d4bc38026e07a6a345f05740155870aa23f529f8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
+        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509->enter($__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_da14b2de1a1529bb8fb5a540b21294ff6d67eab3709df663c4715dbd3e99a295->leave($__internal_da14b2de1a1529bb8fb5a540b21294ff6d67eab3709df663c4715dbd3e99a295_prof);
+        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6->leave($__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6_prof);
 
         
-        $__internal_985abe91db82106ffeda4391d4bc38026e07a6a345f05740155870aa23f529f8->leave($__internal_985abe91db82106ffeda4391d4bc38026e07a6a345f05740155870aa23f529f8_prof);
+        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509->leave($__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_93241718396981ab4e6946aedeee88d11f36b3127a147839ca4b76442d1cf2f6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_93241718396981ab4e6946aedeee88d11f36b3127a147839ca4b76442d1cf2f6->enter($__internal_93241718396981ab4e6946aedeee88d11f36b3127a147839ca4b76442d1cf2f6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228->enter($__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_1eca44496bdc757f1d03cc8cde7a76fa9ff926ef725e80896127fe4e7a50131a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1eca44496bdc757f1d03cc8cde7a76fa9ff926ef725e80896127fe4e7a50131a->enter($__internal_1eca44496bdc757f1d03cc8cde7a76fa9ff926ef725e80896127fe4e7a50131a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae->enter($__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "BDE Cesi Bordeaux";
         
-        $__internal_1eca44496bdc757f1d03cc8cde7a76fa9ff926ef725e80896127fe4e7a50131a->leave($__internal_1eca44496bdc757f1d03cc8cde7a76fa9ff926ef725e80896127fe4e7a50131a_prof);
+        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae->leave($__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae_prof);
 
         
-        $__internal_93241718396981ab4e6946aedeee88d11f36b3127a147839ca4b76442d1cf2f6->leave($__internal_93241718396981ab4e6946aedeee88d11f36b3127a147839ca4b76442d1cf2f6_prof);
+        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228->leave($__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228_prof);
 
     }
 
     // line 5
     public function block_content($context, array $blocks = array())
     {
-        $__internal_29a69c1a8a4bce357b56b8e6aba147e75bef0a157413c2c767b7a436e1001bce = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_29a69c1a8a4bce357b56b8e6aba147e75bef0a157413c2c767b7a436e1001bce->enter($__internal_29a69c1a8a4bce357b56b8e6aba147e75bef0a157413c2c767b7a436e1001bce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90->enter($__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_b035edc84539819df3547784c1dc0115b5a545982c9578b2257d45dacb3aebec = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b035edc84539819df3547784c1dc0115b5a545982c9578b2257d45dacb3aebec->enter($__internal_b035edc84539819df3547784c1dc0115b5a545982c9578b2257d45dacb3aebec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df->enter($__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
         echo "    <div class=\"container\">
@@ -77,22 +77,22 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
                 <div class=\"item active\">
                     <img src=\"Beautiful-garden-pavilion_1920x1080.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>Pavillon</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Kayak</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
                     <img src=\"rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>Landscape</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Foot</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
                     <img src=\"full-hd-images-wallpaper-9.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>City</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Musique</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
             </div>
@@ -109,32 +109,32 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-md-4\">
-                <h2>Test1</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\" onclick=\"\">Details »</a></p>
+                <h2>Planning</h2>
+                <div class=\"glyphicon glyphicon-calendar\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>La liste des activités est disponible ici !<br></br></p>
+                </div>
             </div>
             <div class=\"col-md-4\">
-                <h2>Test2</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\" onclick=\"test()\">Details »</a></p>
+                <h2>Proposez vos activités</h2>
+                <div class=\"glyphicon glyphicon-list\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
+                </div>
             </div>
             <div class=\"col-md-4\">
-                <h2>Test3</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\">Details »</a></p>
+                <h2>Boutique</h2>
+                <div class=\"glyphicon glyphicon-shopping-cart\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>Retrouvez tous nos articles ici !<br></br></p>
+                </div>
             </div>
         </div>
         <hr>
     </div>
 ";
         
-        $__internal_b035edc84539819df3547784c1dc0115b5a545982c9578b2257d45dacb3aebec->leave($__internal_b035edc84539819df3547784c1dc0115b5a545982c9578b2257d45dacb3aebec_prof);
+        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df->leave($__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df_prof);
 
         
-        $__internal_29a69c1a8a4bce357b56b8e6aba147e75bef0a157413c2c767b7a436e1001bce->leave($__internal_29a69c1a8a4bce357b56b8e6aba147e75bef0a157413c2c767b7a436e1001bce_prof);
+        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90->leave($__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90_prof);
 
     }
 
@@ -172,22 +172,22 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
                 <div class=\"item active\">
                     <img src=\"Beautiful-garden-pavilion_1920x1080.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>Pavillon</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Kayak</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
                     <img src=\"rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>Landscape</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Foot</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
                     <img src=\"full-hd-images-wallpaper-9.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
-                        <h3>City</h3>
-                        <p><button class=\"btn btn-primary\">More</button></p>
+                        <h3>Musique</h3>
+                        <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
             </div>
@@ -204,22 +204,22 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-md-4\">
-                <h2>Test1</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\" onclick=\"\">Details »</a></p>
+                <h2>Planning</h2>
+                <div class=\"glyphicon glyphicon-calendar\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>La liste des activités est disponible ici !<br></br></p>
+                </div>
             </div>
             <div class=\"col-md-4\">
-                <h2>Test2</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\" onclick=\"test()\">Details »</a></p>
+                <h2>Proposez vos activités</h2>
+                <div class=\"glyphicon glyphicon-list\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
+                </div>
             </div>
             <div class=\"col-md-4\">
-                <h2>Test3</h2>
-                <img src=\"#\" class=\"peinture\">
-                <p>Sejumlah text seragam Lorem Ipsum yang digunakan semenjak 1500an di terbitkan di bawah ini untuk mereka yang berminat. Seksyen 1.10.32 dan 1.10.33 from \"de Finibus Bonorum et Malorum\" oleh Cicero juga disertakan seperti kandungan asal, dan disusuli dengan versi Inggeris semenjak tahun 1914, yang di terjemah oleh H. Rackham.</p>
-                <p><a class=\"btn btn-default\" href=\"#\" role=\"button\">Details »</a></p>
+                <h2>Boutique</h2>
+                <div class=\"glyphicon glyphicon-shopping-cart\" href=\"#\" role=\"button\" onclick=\"\">
+                    <p>Retrouvez tous nos articles ici !<br></br></p>
+                </div>
             </div>
         </div>
         <hr>
