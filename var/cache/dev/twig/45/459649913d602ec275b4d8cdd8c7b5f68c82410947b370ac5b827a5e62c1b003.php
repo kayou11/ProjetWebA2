@@ -22,47 +22,47 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6->enter($__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
+        $__internal_12dd814ca11c790135def72bc6390b8bee9a56a256094905ccf256ff75bc1055 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_12dd814ca11c790135def72bc6390b8bee9a56a256094905ccf256ff75bc1055->enter($__internal_12dd814ca11c790135def72bc6390b8bee9a56a256094905ccf256ff75bc1055_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
 
-        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509->enter($__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
+        $__internal_dd17e7c95df709a62faafcd98cad9e00b23d6df17006b683ca9bd3c1353770d8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_dd17e7c95df709a62faafcd98cad9e00b23d6df17006b683ca9bd3c1353770d8->enter($__internal_dd17e7c95df709a62faafcd98cad9e00b23d6df17006b683ca9bd3c1353770d8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle:Default:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6->leave($__internal_50e3219d158a71f3976fef8e6960bf74fa4383fb1431ad24b8e538df76fdf9a6_prof);
+        $__internal_12dd814ca11c790135def72bc6390b8bee9a56a256094905ccf256ff75bc1055->leave($__internal_12dd814ca11c790135def72bc6390b8bee9a56a256094905ccf256ff75bc1055_prof);
 
         
-        $__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509->leave($__internal_22b455556f1fced4d24b26172d2b1d7b506c121411d1f8ad09694aa2ee20b509_prof);
+        $__internal_dd17e7c95df709a62faafcd98cad9e00b23d6df17006b683ca9bd3c1353770d8->leave($__internal_dd17e7c95df709a62faafcd98cad9e00b23d6df17006b683ca9bd3c1353770d8_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228->enter($__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_ad05a95d567a91bbdcd0c06cefdfcba9d1ee1fb722d23b54ada9aff96eb9c504 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ad05a95d567a91bbdcd0c06cefdfcba9d1ee1fb722d23b54ada9aff96eb9c504->enter($__internal_ad05a95d567a91bbdcd0c06cefdfcba9d1ee1fb722d23b54ada9aff96eb9c504_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae->enter($__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_575338aa231ef44aa33395dccc034604c70b05e257b253b713b9ec7514434b7e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_575338aa231ef44aa33395dccc034604c70b05e257b253b713b9ec7514434b7e->enter($__internal_575338aa231ef44aa33395dccc034604c70b05e257b253b713b9ec7514434b7e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "BDE Cesi Bordeaux";
         
-        $__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae->leave($__internal_a776ee1a4aab855359ddee662bf39843f60865e0f5b3a79ea1a8bb81232902ae_prof);
+        $__internal_575338aa231ef44aa33395dccc034604c70b05e257b253b713b9ec7514434b7e->leave($__internal_575338aa231ef44aa33395dccc034604c70b05e257b253b713b9ec7514434b7e_prof);
 
         
-        $__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228->leave($__internal_1ba74ea6736cf343eae4b32fe3fe86ebbaa35a0d20c45444e49ec93b0f919228_prof);
+        $__internal_ad05a95d567a91bbdcd0c06cefdfcba9d1ee1fb722d23b54ada9aff96eb9c504->leave($__internal_ad05a95d567a91bbdcd0c06cefdfcba9d1ee1fb722d23b54ada9aff96eb9c504_prof);
 
     }
 
     // line 5
     public function block_content($context, array $blocks = array())
     {
-        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90->enter($__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_6fa4e58a58f9e6045bcb73d9f9bf83667443c54b2eff5d77baa5b57d3dfdce03 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6fa4e58a58f9e6045bcb73d9f9bf83667443c54b2eff5d77baa5b57d3dfdce03->enter($__internal_6fa4e58a58f9e6045bcb73d9f9bf83667443c54b2eff5d77baa5b57d3dfdce03_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df->enter($__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_73d3b03219146156da94c1ad5d643b77095dfe2f2ea8470aff15653305639bcf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_73d3b03219146156da94c1ad5d643b77095dfe2f2ea8470aff15653305639bcf->enter($__internal_73d3b03219146156da94c1ad5d643b77095dfe2f2ea8470aff15653305639bcf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
         echo "    <div class=\"container\">
@@ -75,21 +75,21 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
             <div class=\"carousel-inner\">
                 <!-- classe active pour déterminer la première image du diaporama -->
                 <div class=\"item active\">
-                    <img src=\"Beautiful-garden-pavilion_1920x1080.jpg\" alt=\"\">
+                    <img src=\"../public/img/kayak.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Kayak</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
-                    <img src=\"rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg\" alt=\"\">
+                    <img src=\"../public/img/foot.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Foot</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
-                    <img src=\"full-hd-images-wallpaper-9.jpg\" alt=\"\">
+                    <img src=\"../public/img/guitare.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Musique</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
@@ -110,31 +110,28 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
         <div class=\"row\">
             <div class=\"col-md-4\">
                 <h2>Planning</h2>
-                <div class=\"glyphicon glyphicon-calendar\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>La liste des activités est disponible ici !<br></br></p>
-                </div>
+                    <span class=\"glyphicon glyphicon-calendar\" role=\"button\" href=\"#\" width=\"200\" height=\"200\" ></span>
+                        <p>La liste des activités est disponible ici !<br></br></p>
             </div>
             <div class=\"col-md-4\">
                 <h2>Proposez vos activités</h2>
-                <div class=\"glyphicon glyphicon-list\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
-                </div>
+                    <span class=\"glyphicon glyphicon-list\" role=\"button\" href=\"#\" width=\"200\" height=\"200\"></span>
+                        <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
             </div>
             <div class=\"col-md-4\">
                 <h2>Boutique</h2>
-                <div class=\"glyphicon glyphicon-shopping-cart\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>Retrouvez tous nos articles ici !<br></br></p>
-                </div>
+                    <span class=\"glyphicon glyphicon-shopping-cart\" role=\"button\" href=\"#\" width=\"200\" height=\"200\"></span>
+                        <p>Retrouvez tous nos articles ici !<br></br></p>
             </div>
         </div>
         <hr>
     </div>
 ";
         
-        $__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df->leave($__internal_dfe3795b5f286252c123df93e40f6da47df3a2c341a45c5a8e045da1c3b170df_prof);
+        $__internal_73d3b03219146156da94c1ad5d643b77095dfe2f2ea8470aff15653305639bcf->leave($__internal_73d3b03219146156da94c1ad5d643b77095dfe2f2ea8470aff15653305639bcf_prof);
 
         
-        $__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90->leave($__internal_ac3010e56859fe6dd9773365af678b09b020f763133c8befea072c7d03af4b90_prof);
+        $__internal_6fa4e58a58f9e6045bcb73d9f9bf83667443c54b2eff5d77baa5b57d3dfdce03->leave($__internal_6fa4e58a58f9e6045bcb73d9f9bf83667443c54b2eff5d77baa5b57d3dfdce03_prof);
 
     }
 
@@ -170,21 +167,21 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
             <div class=\"carousel-inner\">
                 <!-- classe active pour déterminer la première image du diaporama -->
                 <div class=\"item active\">
-                    <img src=\"Beautiful-garden-pavilion_1920x1080.jpg\" alt=\"\">
+                    <img src=\"../public/img/kayak.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Kayak</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
-                    <img src=\"rainbow-garden-nature-colorful-trees-reflection-landscape-rocks-green-lake-1920x1080.jpg\" alt=\"\">
+                    <img src=\"../public/img/foot.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Foot</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
                     </div>
                 </div>
                 <div class=\"item\">
-                    <img src=\"full-hd-images-wallpaper-9.jpg\" alt=\"\">
+                    <img src=\"../public/img/guitare.jpg\" alt=\"\">
                     <div class=\"carousel-caption\">
                         <h3>Musique</h3>
                         <p><button class=\"btn btn-primary\">Plus</button></p>
@@ -205,21 +202,18 @@ class __TwigTemplate_11a9c43d65eb825fe5169e1d1f81179ebade9e5a89892b9c4a4b5e4e495
         <div class=\"row\">
             <div class=\"col-md-4\">
                 <h2>Planning</h2>
-                <div class=\"glyphicon glyphicon-calendar\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>La liste des activités est disponible ici !<br></br></p>
-                </div>
+                    <span class=\"glyphicon glyphicon-calendar\" role=\"button\" href=\"#\" width=\"200\" height=\"200\" ></span>
+                        <p>La liste des activités est disponible ici !<br></br></p>
             </div>
             <div class=\"col-md-4\">
                 <h2>Proposez vos activités</h2>
-                <div class=\"glyphicon glyphicon-list\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
-                </div>
+                    <span class=\"glyphicon glyphicon-list\" role=\"button\" href=\"#\" width=\"200\" height=\"200\"></span>
+                        <p>L'équipe du BDE est à l'écoute de toute proposition que vous ne ferez !</p>
             </div>
             <div class=\"col-md-4\">
                 <h2>Boutique</h2>
-                <div class=\"glyphicon glyphicon-shopping-cart\" href=\"#\" role=\"button\" onclick=\"\">
-                    <p>Retrouvez tous nos articles ici !<br></br></p>
-                </div>
+                    <span class=\"glyphicon glyphicon-shopping-cart\" role=\"button\" href=\"#\" width=\"200\" height=\"200\"></span>
+                        <p>Retrouvez tous nos articles ici !<br></br></p>
             </div>
         </div>
         <hr>
