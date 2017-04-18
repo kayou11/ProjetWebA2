@@ -34,7 +34,8 @@
         "twig/twig": "^1.0||^2.0",
         "symfony/assetic-bundle": "^2.8",
         "guzzlehttp/guzzle": "4.2.*@dev",
-        "guzzlehttp/guzzle-services": "0.3.*@dev"
+        "guzzlehttp/guzzle-services": "0.3.*@dev",
+        "friendsofsymfony/user-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

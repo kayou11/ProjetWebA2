@@ -33,6 +33,7 @@ return array(
     'GuzzleHttp\\Command\\Guzzle\\' => array($vendorDir . '/guzzlehttp/guzzle-services/src'),
     'GuzzleHttp\\Command\\' => array($vendorDir . '/guzzlehttp/command/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+    'FOS\\UserBundle\\' => array($vendorDir . '/friendsofsymfony/user-bundle'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Common\\Cache\\' => array($vendorDir . '/doctrine/cache/lib/Doctrine/Common/Cache'),
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations'),
