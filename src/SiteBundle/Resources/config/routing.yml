@@ -5,3 +5,11 @@ site_homepage:
 site_galerie:
     path:     /galerie
     defaults: { _controller: SiteBundle:Galerie:view }
+
+site_le_bde:
+    path:     /lebde
+    defaults: { _controller: SiteBundle:BDE:bde }
+
+site_contact:
+    path:     /contact
+    defaults: { _controller: SiteBundle:BDE:contact }

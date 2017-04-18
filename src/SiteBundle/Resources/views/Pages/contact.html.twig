@@ -1,0 +1,34 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="public/css/pages/index.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Galerie photos{% endblock %}
+
+{% block content %}
+    <div id="content">
+
+        <div class="container">
+            <h2 class="BodyTitle">Contact</h2>
+            <div class="PositionBoutton">
+                <a href="Membresbde.html"><button onclick="PassageBDERouge()" id="BouttonMembreBDE">Membres du BDE</button></a>
+                <button onclick="PassageContactRouge()" id="BouttonContact">Contact</button><br>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Envoyer un mail au BDE pour soumettre une activité ou pour toutes autres informations </p>
+                        <br>
+                        <p>Sujet : </p>
+                        <input type="text" name="Objet">
+                        <br>
+                        <br>
+                        <br>
+                        <p>Message : </p><textarea name="comments" id="comments" cols="50" rows="6" placeholder="Notez votre message ici!"></textarea><br>
+                        <button type="">Pièce jointe</button><br><br>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../public/css/pages/membresbde.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Galerie photos{% endblock %}
+
+{% block content %}
+    <div id="content">
+        <div class="container">
+            <h2 class="BodyTitle">Contact</h2>
+            <div class="PositionBoutton">
+                <button onclick="PassageContactRouge()" id="BouttonMembreBDE">Membres du BDE</button>
+                <a href="{{ path('site_le_bde') }}"><button onclick="PassageBDERouge()" id="BouttonContact">Contact</button></a><br>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Président : JeanKévin</p>
+                        <p>Mail : Jean@Jean.aa</p>
+                        <p>Promo : A2</p>
+                    </div>
+                    <img src="kk.kk" class="BorderImage">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-md-8">
+                        <p>Vice-Président : JeanKévin</p>
+                        <p>Mail : Jean@Jean.aa</p>
+                        <p>Promo : A2</p>
+                    </div>
+                    <img src="kk.kk" class="BorderImage">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-md-8">
+                        <p>Secrétaire : JeanKévin</p>
+                        <p>Mail : Jean@Jean.aa</p>
+                        <p>Promo : A2</p>
+                    </div>
+                    <img src="kk.kk" class="BorderImage">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-md-8">
+                        <p>Trésorier : JeanKévin</p>
+                        <p>Mail : Jean@Jean.aa</p>
+                        <p>Promo : A2</p>
+                    </div>
+                    <img src="kk.kk" class="BorderImage">
+                </div>
+            </div>
+        </div>
+{% endblock %}

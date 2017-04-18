@@ -1,0 +1,47 @@
+.BodyTitle{
+    text-align: center;
+    font-size: 2em;
+}
+#BouttonMembreBDE{
+    background-color: red;
+    color: white;
+    border: 3px solid black;
+}
+#BouttonContact{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+}
+.PositionBoutton{
+    text-align: left;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-right: 1em;
+}
+.row{
+    border: 3px solid black;
+    margin-left: 0.1em;
+}
+.BorderImage{
+    float: right;
+    margin-right: 3em;
+    margin-top: 3em;
+    border: 1px solid black;
+}
+.col-md-8{
+    margin-bottom: 3em;
+    margin-top: 3em;
+    text-align: left;
+}
+
+.comments {
+    width: 100%;
+    height: auto;
+}
+
+.btn-primary, .btn-primary:hover {
+    background-color: red;
+    float: left;
+    margin-left: 18em;
+}

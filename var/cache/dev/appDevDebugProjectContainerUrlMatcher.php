@@ -171,6 +171,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
         }
 
+        // site_le_bde
+        if ($pathinfo === '/lebde') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\BDEController::bdeAction',  '_route' => 'site_le_bde',);
+        }
+
+        // site_contact
+        if ($pathinfo === '/contact') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\BDEController::contactAction',  '_route' => 'site_contact',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
