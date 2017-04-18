@@ -2,15 +2,16 @@
 
 // SiteBundle::base.html.twig
 return array (
-  'a080c53' => 
+  '4ef02f9' => 
   array (
     0 => 
     array (
       0 => 'public/css/bootstrap.css',
-      1 => 'public/css/bootstrap-theme.min.css',
+      1 => 'public/css/bootstrap-theme.css',
       2 => 'public/css/main.css',
       3 => 'public/css/boostrap-social.css',
       4 => 'public/css/pages/index.css',
+      5 => 'public/css/bootstrap-gallery.css',
     ),
     1 => 
     array (
@@ -18,8 +19,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/a080c53.css',
-      'name' => 'a080c53',
+      'output' => '_controller/css/4ef02f9.css',
+      'name' => '4ef02f9',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
@@ -27,11 +28,12 @@ return array (
       ),
     ),
   ),
-  '04f180e' => 
+  'a900f2a' => 
   array (
     0 => 
     array (
       0 => 'public/js/bootstrap.js',
+      1 => 'public/js/bootstrap-gallery.js',
     ),
     1 => 
     array (
@@ -39,8 +41,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/js/04f180e.js',
-      'name' => '04f180e',
+      'output' => '_controller/js/a900f2a.js',
+      'name' => 'a900f2a',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 
