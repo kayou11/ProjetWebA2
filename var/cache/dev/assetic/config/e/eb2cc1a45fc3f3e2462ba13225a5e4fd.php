@@ -2,12 +2,12 @@
 
 // SiteBundle:Default:index.html.twig
 return array (
-  'a080c53' => 
+  'c6d7f5d' => 
   array (
     0 => 
     array (
       0 => 'public/css/bootstrap.css',
-      1 => 'public/css/bootstrap-theme.min.css',
+      1 => 'public/css/bootstrap-theme.css',
       2 => 'public/css/main.css',
       3 => 'public/css/boostrap-social.css',
       4 => 'public/css/pages/index.css',
@@ -18,8 +18,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/a080c53.css',
-      'name' => 'a080c53',
+      'output' => '_controller/css/c6d7f5d.css',
+      'name' => 'c6d7f5d',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

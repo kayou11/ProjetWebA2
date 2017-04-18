@@ -17,11 +17,11 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bf01c805a7cd607256f10b27c4168125f612968b47a48199cdb44c4886ce7914 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_bf01c805a7cd607256f10b27c4168125f612968b47a48199cdb44c4886ce7914->enter($__internal_bf01c805a7cd607256f10b27c4168125f612968b47a48199cdb44c4886ce7914_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle::base.html.twig"));
+        $__internal_73a9927304e02518e8e46957f6efb103a17037c0f5952129dc60136ddc9f40d5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_73a9927304e02518e8e46957f6efb103a17037c0f5952129dc60136ddc9f40d5->enter($__internal_73a9927304e02518e8e46957f6efb103a17037c0f5952129dc60136ddc9f40d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle::base.html.twig"));
 
-        $__internal_cfa1c790dcbbc4081a74ff27acd1d9e7fd049120fdaa7509a31d88dd477a8c7f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cfa1c790dcbbc4081a74ff27acd1d9e7fd049120fdaa7509a31d88dd477a8c7f->enter($__internal_cfa1c790dcbbc4081a74ff27acd1d9e7fd049120fdaa7509a31d88dd477a8c7f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle::base.html.twig"));
+        $__internal_6c51c37e10a559c4aabd651d36db2d4e7d62b0d0fcb05ca76d03fc84072c299d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6c51c37e10a559c4aabd651d36db2d4e7d62b0d0fcb05ca76d03fc84072c299d->enter($__internal_6c51c37e10a559c4aabd651d36db2d4e7d62b0d0fcb05ca76d03fc84072c299d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SiteBundle::base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -38,47 +38,53 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
     ";
         // line 9
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "a080c53_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53_bootstrap_1.css");
-            // line 16
+            // asset "4ef02f9_0"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_bootstrap_1.css");
+            // line 17
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
-            // asset "a080c53_1"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53_1") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53_bootstrap-theme.min_2.css");
+            // asset "4ef02f9_1"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_1") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_bootstrap-theme_2.css");
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
-            // asset "a080c53_2"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53_2") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53_main_3.css");
+            // asset "4ef02f9_2"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_2") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_main_3.css");
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
-            // asset "a080c53_3"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53_3") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53_boostrap-social_4.css");
+            // asset "4ef02f9_3"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_3") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_boostrap-social_4.css");
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
-            // asset "a080c53_4"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53_4") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53_index_5.css");
+            // asset "4ef02f9_4"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_4") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_index_5.css");
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
+            echo "\" type=\"text/css\" />
+    ";
+            // asset "4ef02f9_5"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9_5") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9_bootstrap-gallery_6.css");
+            echo "    <link rel=\"stylesheet\" href=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
         } else {
-            // asset "a080c53"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a080c53") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/a080c53.css");
+            // asset "4ef02f9"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_4ef02f9") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/css/4ef02f9.css");
             echo "    <link rel=\"stylesheet\" href=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 16, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 17, $this->getSourceContext()); })()), "html", null, true);
             echo "\" type=\"text/css\" />
     ";
         }
         unset($context["asset_url"]);
-        // line 18
+        // line 19
         echo "
     <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
     <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
@@ -143,7 +149,10 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
                     </ul>
                 </li>
                 <li><a href=\"#\">Associations</a></li>
-                <li><a href=\"#\">Galerie</a></li>
+                <li><a href=\"";
+        // line 83
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("site_galerie");
+        echo "\">Galerie</a></li>
                 <li><a href=\"#\">Boutique</a></li>
             </ul>
             <form class=\"navbar-form navbar-right\">
@@ -156,9 +165,9 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
     </div><!-- /.container-fluid -->
 </nav>
 ";
-        // line 94
+        // line 95
         $this->displayBlock('content', $context, $blocks);
-        // line 97
+        // line 98
         echo "<div class=\"footer\">
     <div class=\"content\">
         <div class=\"col-md-5\">
@@ -197,25 +206,31 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
     </div>
 </div>
 ";
-        // line 134
+        // line 135
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
-            // asset "04f180e_0"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_04f180e_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/04f180e_bootstrap_1.js");
-            // line 137
+            // asset "a900f2a_0"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a900f2a_0") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/a900f2a_bootstrap_1.js");
+            // line 139
             echo "<script type=\"text/javascript\" src=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 137, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 139, $this->getSourceContext()); })()), "html", null, true);
+            echo "\"></script>
+";
+            // asset "a900f2a_1"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a900f2a_1") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/a900f2a_bootstrap-gallery_2.js");
+            echo "<script type=\"text/javascript\" src=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 139, $this->getSourceContext()); })()), "html", null, true);
             echo "\"></script>
 ";
         } else {
-            // asset "04f180e"
-            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_04f180e") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/04f180e.js");
+            // asset "a900f2a"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("_assetic_a900f2a") : $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("_controller/js/a900f2a.js");
             echo "<script type=\"text/javascript\" src=\"";
-            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 137, $this->getSourceContext()); })()), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) || array_key_exists("asset_url", $context) ? $context["asset_url"] : (function () { throw new Twig_Error_Runtime('Variable "asset_url" does not exist.', 139, $this->getSourceContext()); })()), "html", null, true);
             echo "\"></script>
 ";
         }
         unset($context["asset_url"]);
-        // line 139
+        // line 141
         echo "
 </body>
 
@@ -225,47 +240,47 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
 
 ";
         
-        $__internal_bf01c805a7cd607256f10b27c4168125f612968b47a48199cdb44c4886ce7914->leave($__internal_bf01c805a7cd607256f10b27c4168125f612968b47a48199cdb44c4886ce7914_prof);
+        $__internal_73a9927304e02518e8e46957f6efb103a17037c0f5952129dc60136ddc9f40d5->leave($__internal_73a9927304e02518e8e46957f6efb103a17037c0f5952129dc60136ddc9f40d5_prof);
 
         
-        $__internal_cfa1c790dcbbc4081a74ff27acd1d9e7fd049120fdaa7509a31d88dd477a8c7f->leave($__internal_cfa1c790dcbbc4081a74ff27acd1d9e7fd049120fdaa7509a31d88dd477a8c7f_prof);
+        $__internal_6c51c37e10a559c4aabd651d36db2d4e7d62b0d0fcb05ca76d03fc84072c299d->leave($__internal_6c51c37e10a559c4aabd651d36db2d4e7d62b0d0fcb05ca76d03fc84072c299d_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_d728db68f0d9810448e166991b1e756c29d90ce338e3486461e557e0ab25363c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_d728db68f0d9810448e166991b1e756c29d90ce338e3486461e557e0ab25363c->enter($__internal_d728db68f0d9810448e166991b1e756c29d90ce338e3486461e557e0ab25363c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_3c6a7be80bd158cc64fadd272f49813ff0b49230d9b521ed456b737585e275c1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3c6a7be80bd158cc64fadd272f49813ff0b49230d9b521ed456b737585e275c1->enter($__internal_3c6a7be80bd158cc64fadd272f49813ff0b49230d9b521ed456b737585e275c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_fd78c1a5fea185740d8df9de74929de4f099725d78b17b8f1820562d7b6c23d2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fd78c1a5fea185740d8df9de74929de4f099725d78b17b8f1820562d7b6c23d2->enter($__internal_fd78c1a5fea185740d8df9de74929de4f099725d78b17b8f1820562d7b6c23d2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
-
-        
-        $__internal_fd78c1a5fea185740d8df9de74929de4f099725d78b17b8f1820562d7b6c23d2->leave($__internal_fd78c1a5fea185740d8df9de74929de4f099725d78b17b8f1820562d7b6c23d2_prof);
+        $__internal_c205b68aa29badfc4faa6de6ff1f207ce9984dbfd077f352e4a1f951704501b3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c205b68aa29badfc4faa6de6ff1f207ce9984dbfd077f352e4a1f951704501b3->enter($__internal_c205b68aa29badfc4faa6de6ff1f207ce9984dbfd077f352e4a1f951704501b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         
-        $__internal_d728db68f0d9810448e166991b1e756c29d90ce338e3486461e557e0ab25363c->leave($__internal_d728db68f0d9810448e166991b1e756c29d90ce338e3486461e557e0ab25363c_prof);
+        $__internal_c205b68aa29badfc4faa6de6ff1f207ce9984dbfd077f352e4a1f951704501b3->leave($__internal_c205b68aa29badfc4faa6de6ff1f207ce9984dbfd077f352e4a1f951704501b3_prof);
+
+        
+        $__internal_3c6a7be80bd158cc64fadd272f49813ff0b49230d9b521ed456b737585e275c1->leave($__internal_3c6a7be80bd158cc64fadd272f49813ff0b49230d9b521ed456b737585e275c1_prof);
 
     }
 
-    // line 94
+    // line 95
     public function block_content($context, array $blocks = array())
     {
-        $__internal_1b81d3a567f506b8add05b9665171657fc4cd838f2447f05ac2c6eb006f2fda9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1b81d3a567f506b8add05b9665171657fc4cd838f2447f05ac2c6eb006f2fda9->enter($__internal_1b81d3a567f506b8add05b9665171657fc4cd838f2447f05ac2c6eb006f2fda9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_e6aa8d8c30b91c3b98127403c6174c7340730a225317d29bcb17f5c07b02fd64 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e6aa8d8c30b91c3b98127403c6174c7340730a225317d29bcb17f5c07b02fd64->enter($__internal_e6aa8d8c30b91c3b98127403c6174c7340730a225317d29bcb17f5c07b02fd64_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_aa412c3d79ed274afbae129fdaa104da2823aafc6e889f710cd5d3625d7a52d5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_aa412c3d79ed274afbae129fdaa104da2823aafc6e889f710cd5d3625d7a52d5->enter($__internal_aa412c3d79ed274afbae129fdaa104da2823aafc6e889f710cd5d3625d7a52d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_6736631b8d9128e94a65a6a8fd341975a2d9c4765fd06d620de7ed0f52568f2c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6736631b8d9128e94a65a6a8fd341975a2d9c4765fd06d620de7ed0f52568f2c->enter($__internal_6736631b8d9128e94a65a6a8fd341975a2d9c4765fd06d620de7ed0f52568f2c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 95
+        // line 96
         echo "
 ";
         
-        $__internal_aa412c3d79ed274afbae129fdaa104da2823aafc6e889f710cd5d3625d7a52d5->leave($__internal_aa412c3d79ed274afbae129fdaa104da2823aafc6e889f710cd5d3625d7a52d5_prof);
+        $__internal_6736631b8d9128e94a65a6a8fd341975a2d9c4765fd06d620de7ed0f52568f2c->leave($__internal_6736631b8d9128e94a65a6a8fd341975a2d9c4765fd06d620de7ed0f52568f2c_prof);
 
         
-        $__internal_1b81d3a567f506b8add05b9665171657fc4cd838f2447f05ac2c6eb006f2fda9->leave($__internal_1b81d3a567f506b8add05b9665171657fc4cd838f2447f05ac2c6eb006f2fda9_prof);
+        $__internal_e6aa8d8c30b91c3b98127403c6174c7340730a225317d29bcb17f5c07b02fd64->leave($__internal_e6aa8d8c30b91c3b98127403c6174c7340730a225317d29bcb17f5c07b02fd64_prof);
 
     }
 
@@ -281,7 +296,7 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
 
     public function getDebugInfo()
     {
-        return array (  262 => 95,  253 => 94,  236 => 4,  219 => 139,  205 => 137,  201 => 134,  162 => 97,  160 => 94,  82 => 18,  44 => 16,  40 => 9,  32 => 4,  27 => 1,);
+        return array (  277 => 96,  268 => 95,  251 => 4,  234 => 141,  214 => 139,  210 => 135,  171 => 98,  169 => 95,  154 => 83,  88 => 19,  44 => 17,  40 => 9,  32 => 4,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -296,10 +311,11 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
 
     {% stylesheets filter='cssrewrite'
     'public/css/bootstrap.css'
-    'public/css/bootstrap-theme.min.css'
+    'public/css/bootstrap-theme.css'
     'public/css/main.css'
     'public/css/boostrap-social.css'
     'public/css/pages/index.css'
+    'public/css/bootstrap-gallery.css'
     %}
     <link rel=\"stylesheet\" href=\"{{ asset_url }}\" type=\"text/css\" />
     {% endstylesheets %}
@@ -367,7 +383,7 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
                     </ul>
                 </li>
                 <li><a href=\"#\">Associations</a></li>
-                <li><a href=\"#\">Galerie</a></li>
+                <li><a href=\"{{ path('site_galerie') }}\">Galerie</a></li>
                 <li><a href=\"#\">Boutique</a></li>
             </ul>
             <form class=\"navbar-form navbar-right\">
@@ -421,6 +437,7 @@ class __TwigTemplate_3bab9fb941b3ea0cdc1a70ab734ca698dae5f4f6920370cdc89d0647dc7
 </div>
 {%  javascripts filter='?yui_js'
     'public/js/bootstrap.js'
+    'public/js/bootstrap-gallery.js'
 %}
 <script type=\"text/javascript\" src=\"{{ asset_url }}\"></script>
 {% endjavascripts %}
