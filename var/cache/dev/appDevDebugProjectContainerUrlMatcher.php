@@ -166,6 +166,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
         }
 
+        // site_galerie
+        if ($pathinfo === '/galerie') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

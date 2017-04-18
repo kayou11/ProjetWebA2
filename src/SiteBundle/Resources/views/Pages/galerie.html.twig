@@ -1,0 +1,83 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="public/css/pages/index.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Galerie photos{% endblock %}
+
+{% block content %}
+
+    <h1 align="center">Galerie photos</h1>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/autumn-thumb.jpg" class="thumbnail">
+                <img src="../public/img/autumn-thumb.jpg" alt="Small picture : Autumn" />
+            </a>
+            <button class="btn btn-default" style="text-align: right;">Supprimer</button>
+            <button class="btn btn-default" style="text-align: left;">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/landscape.jpg" class="thumbnail">
+                <img src="../public/img/landscape-thumb.jpg" alt="Landscape" />
+
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/london.jpg" class="thumbnail" >
+                <img src="../public/img/london-thumb.jpg" alt="London" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/sunrise.jpg" class="thumbnail">
+                <img src="../public/img/sunrise-thumb.jpg" alt="Sunrise" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/autumn-thumb.jpg" class="thumbnail">
+                <img src="../public/img/autumn-thumb.jpg" alt="Small picture : Autumn" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/landscape.jpg" class="thumbnail">
+                <img src="../public/img/landscape-thumb.jpg" alt="Landscape" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/london.jpg" class="thumbnail" >
+                <img src="../public/img/london-thumb.jpg" alt="London" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+            <a href="../public/img/sunrise.jpg" class="thumbnail">
+                <img src="../public/img/sunrise-thumb.jpg" alt="Sunrise" />
+            </a>
+            <button class="btn btn-default">Supprimer</button>
+            <button class="btn btn-default">Selectionner</button>
+        </div>
+    </div>
+
+
+{% endblock %}
