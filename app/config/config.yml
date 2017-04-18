@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@SiteBundle/Resources/config/services.yml" }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -34,8 +35,8 @@ framework:
     assets: ~
     php_errors:
         log: true
-    serializer:
-        { enable_annotations: true }
+    serializer:     { enable_annotations: true }
+    translator:     { fallback: %locale% }
 
 # Twig Configuration
 twig:
@@ -81,3 +82,14 @@ assetic:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.9.jar
         yui_css:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.9.jar
+
+fos_user:
+    db_driver:     orm
+    firewall_name: main
+    user_class:    UserBundle\Entity\User
+    from_email:
+        address: "noreply@yourcompany.com"
+        sender_name: "No Reply"
+    registration:
+            form:
+                name: app_user_registration
