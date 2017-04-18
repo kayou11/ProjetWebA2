@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: '/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/config/routing_dev.yml'
+    resource: '/Users/PierreKayou/Documents/Sites Web/ProjetWebA2-4fe7ed3d9c097db3dab42172aecb7f84afabeae3/app/config/routing_dev.yml'

@@ -1,7 +1,3 @@
 site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
-
-site_galerie:
-    path:     /galerie
-    defaults: { _controller: SiteBundle:Galerie:view }
