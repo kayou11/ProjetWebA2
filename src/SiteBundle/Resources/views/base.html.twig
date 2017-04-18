@@ -12,6 +12,7 @@
     'public/css/main.css'
     'public/css/boostrap-social.css'
     'public/css/pages/index.css'
+    'public/css/bootstrap-gallery.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
@@ -79,7 +80,7 @@
                     </ul>
                 </li>
                 <li><a href="#">Associations</a></li>
-                <li><a href="#">Galerie</a></li>
+                <li><a href="{{ path('site_galerie') }}">Galerie</a></li>
                 <li><a href="#">Boutique</a></li>
             </ul>
             <form class="navbar-form navbar-right">
@@ -133,6 +134,7 @@
 </div>
 {%  javascripts filter='?yui_js'
     'public/js/bootstrap.js'
+    'public/js/bootstrap-gallery.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}

@@ -27,6 +27,71 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/css/4ef02f9')) {
+            // _assetic_4ef02f9
+            if ($pathinfo === '/css/4ef02f9.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_4ef02f9',);
+            }
+
+            if (0 === strpos($pathinfo, '/css/4ef02f9_')) {
+                if (0 === strpos($pathinfo, '/css/4ef02f9_bootstrap')) {
+                    // _assetic_4ef02f9_0
+                    if ($pathinfo === '/css/4ef02f9_bootstrap_1.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_0',);
+                    }
+
+                    // _assetic_4ef02f9_1
+                    if ($pathinfo === '/css/4ef02f9_bootstrap-theme_2.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_1',);
+                    }
+
+                }
+
+                // _assetic_4ef02f9_2
+                if ($pathinfo === '/css/4ef02f9_main_3.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_2',);
+                }
+
+                // _assetic_4ef02f9_3
+                if ($pathinfo === '/css/4ef02f9_boostrap-social_4.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_3',);
+                }
+
+                // _assetic_4ef02f9_4
+                if ($pathinfo === '/css/4ef02f9_index_5.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 4,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_4',);
+                }
+
+                // _assetic_4ef02f9_5
+                if ($pathinfo === '/css/4ef02f9_bootstrap-gallery_6.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '4ef02f9',  'pos' => 5,  '_format' => 'css',  '_route' => '_assetic_4ef02f9_5',);
+                }
+
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/js/a900f2a')) {
+            // _assetic_a900f2a
+            if ($pathinfo === '/js/a900f2a.js') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'a900f2a',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_a900f2a',);
+            }
+
+            if (0 === strpos($pathinfo, '/js/a900f2a_bootstrap')) {
+                // _assetic_a900f2a_0
+                if ($pathinfo === '/js/a900f2a_bootstrap_1.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'a900f2a',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_a900f2a_0',);
+                }
+
+                // _assetic_a900f2a_1
+                if ($pathinfo === '/js/a900f2a_bootstrap-gallery_2.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'a900f2a',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_a900f2a_1',);
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/css/c6d7f5d')) {
             // _assetic_c6d7f5d
             if ($pathinfo === '/css/c6d7f5d.css') {
@@ -164,6 +229,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
+        }
+
+        // site_galerie
+        if ($pathinfo === '/galerie') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
         }
 
         // homepage

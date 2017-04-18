@@ -1265,3 +1265,17 @@ e4c00d,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap.
 395685,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap-theme.css.map,1492453438,b39d2e,200
 b39d2e,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap-theme.css.map,1492453438,,404
 2909c4,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492453470,,200
+b666ab,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492498089,,200
+488f57,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492498645,,200
+611c5a,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492498771,,200
+b735f5,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492498774,,200
+95de26,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/,1492499585,,200
+cde3e1,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492499590,,200
+2d5b72,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492499687,,200
+935468,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492499836,,200
+dc3b53,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492499914,,200
+69a2ce,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/galerie,1492499929,,200
+eb9ff2,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap-theme.css.map,1492499976,51ae3c,200
+51ae3c,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap-theme.css.map,1492499976,,404
+fbfa8a,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap.css.map,1492499976,a1f36c,200
+a1f36c,127.0.0.1,GET,http://localhost/ProjetWebA2/web/app_dev.php/css/bootstrap.css.map,1492499976,,404
