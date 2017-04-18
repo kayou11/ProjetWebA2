@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a745bda1-0f4f-4107-b108-a53e87b4e700" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/autumn-thumb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/autumn.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/beach.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/landscape-thumb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/landscape.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/london-thumb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/london.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/sunrise-thumb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/img/sunrise.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Controller/GalerieController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/views/Pages/galerie.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/css/bootstrap-gallery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/public/js/bootstrap-gallery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SiteBundle/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/src/SiteBundle/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/assetic/config/f/f77373fe7ef9bec0b2c57246ac68e70c.php" afterPath="$PROJECT_DIR$/var/cache/dev/assetic/config/f/f77373fe7ef9bec0b2c57246ac68e70c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/twig/8b/8b0d96d48206240ec5e7d177a99029a64d13cfd25931b712f40d9a4d0e367fe8.php" afterPath="$PROJECT_DIR$/var/cache/dev/twig/8b/8b0d96d48206240ec5e7d177a99029a64d13cfd25931b712f40d9a4d0e367fe8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/prod.log" afterPath="$PROJECT_DIR$/var/logs/prod.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -109,8 +82,8 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="136" column="35" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="35" />
+            <state relative-caret-position="558">
+              <caret line="134" column="32" lean-forward="true" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -625,7 +598,7 @@
       <workItem from="1492369387490" duration="9274000" />
       <workItem from="1492449087537" duration="4644000" />
       <workItem from="1492453763175" duration="2733000" />
-      <workItem from="1492498250231" duration="2300000" />
+      <workItem from="1492498250231" duration="3560000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout composer.phar et symfony.phar">
       <created>1491861350406</created>
@@ -638,7 +611,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91263000" />
+    <option name="totallyTimeSpent" value="92523000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -651,8 +624,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3350582" sideWeight="0.50555557" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -910,8 +884,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SiteBundle/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="136" column="35" lean-forward="false" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="35" />
+        <state relative-caret-position="558">
+          <caret line="134" column="32" lean-forward="true" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
           <folding />
         </state>
       </provider>
