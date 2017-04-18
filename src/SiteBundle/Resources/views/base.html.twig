@@ -37,7 +37,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-                <a href="#">
+             <!--   <a href="#">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">@</span>
                         <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
@@ -48,15 +48,14 @@
                         <span class="input-group-addon" id="basic-addon1">MDP</span>
                         <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
                     </div>
-                </a>
+                </a>-->
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
                 {% else %}
                     <a href="{{ path('fos_user_security_login') }}">Connexion</a>
                 {% endif %}
             </li>
-            <li><a href="#">Proposez vos activités</a></li>
-            <li><a href="#">Archives</a></li>
+            <li><a href="{{ path('fos_user_registration_register') }}"> Pas encore de compte ? Inscrivez-vous</a></li>
         </ul>
     </div>
     <div class="basket">
@@ -77,8 +76,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">ACCUEIL<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Le BDE</a></li>
+                <li class="active"><a href="{{ path('site_homepage') }}">ACCUEIL<span class="sr-only">(current)</span></a></li>
+                <li><a href="{{ path('site_le_bde') }}">Le BDE</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activités<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -87,9 +86,8 @@
                         <li><a href="#">Archives</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Associations</a></li>
                 <li><a href="{{ path('site_galerie') }}">Galerie</a></li>
-                <li><a href="#">Boutique</a></li>
+                <li><a href="">Boutique</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">

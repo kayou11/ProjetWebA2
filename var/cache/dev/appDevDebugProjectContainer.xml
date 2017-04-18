@@ -20,6 +20,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="SiteBundle">SiteBundle\SiteBundle</parameter>
       <parameter key="UserBundle">UserBundle\UserBundle</parameter>
+      <parameter key="ShopBundle">ShopBundle\ShopBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -85,6 +86,11 @@
         <parameter key="parent">FOSUserBundle</parameter>
         <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/UserBundle</parameter>
         <parameter key="namespace">UserBundle</parameter>
+      </parameter>
+      <parameter key="ShopBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle</parameter>
+        <parameter key="namespace">ShopBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -392,6 +398,7 @@
       <parameter>AppBundle</parameter>
       <parameter>SiteBundle</parameter>
       <parameter>UserBundle</parameter>
+      <parameter>ShopBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -409,7 +416,7 @@
     <parameter key="assetic.write_to">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.node.bin">/Users/PierreKayou/.nvm/versions/node/v4.4.7/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
@@ -456,7 +463,7 @@
       <parameter key="noreply@yourcompany.com">No Reply</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
-    <parameter key="fos_user.registration.form.name">app_user_registration</parameter>
+    <parameter key="fos_user.registration.form.name">site_user_registration</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
       <parameter>Registration</parameter>
@@ -553,8 +560,9 @@
     </parameter>
   </parameters>
   <services>
-    <service id="app.form.registration" class="AppBundle\Form\RegistrationType">
-      <tag name="form.type" alias="app_user_registration"/>
+    <service id="site.form.registration.form.type" class="SiteBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="site_user_registration"/>
+      <argument>UserBundle\Entity\User</argument>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -622,7 +630,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>zoAc5NUaZt</argument>
                 <argument>0</argument>
-                <argument>nqVh30aVpuNsSsg0s31Kti</argument>
+                <argument>DBT3hXU3LJMEHi8foy9Y47</argument>
                 <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -819,7 +827,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>77e5w3UIne</argument>
       <argument>0</argument>
-      <argument>nqVh30aVpuNsSsg0s31Kti</argument>
+      <argument>DBT3hXU3LJMEHi8foy9Y47</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -829,7 +837,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>3MDI1qEtgi</argument>
       <argument>0</argument>
-      <argument>nqVh30aVpuNsSsg0s31Kti</argument>
+      <argument>DBT3hXU3LJMEHi8foy9Y47</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -839,7 +847,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>OBRcLxGJY8</argument>
       <argument>0</argument>
-      <argument>nqVh30aVpuNsSsg0s31Kti</argument>
+      <argument>DBT3hXU3LJMEHi8foy9Y47</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1452,7 +1460,7 @@
           <service class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
             <argument type="service" id="service_container"/>
             <argument type="collection">
-              <argument key="AppBundle\Form\RegistrationType">app.form.registration</argument>
+              <argument key="SiteBundle\Form\Type\RegistrationFormType">site.form.registration.form.type</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType">form.type.form</argument>
               <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType">form.type.choice</argument>
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
@@ -2289,7 +2297,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58f5f6c771d151.03662727</argument>
+            <argument>58f6231f7cbf32.04109039</argument>
           </service>
         </argument>
         <argument type="service">
@@ -2310,7 +2318,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58f5f6c771d151.03662727</argument>
+            <argument>58f6231f7cbf32.04109039</argument>
           </service>
         </argument>
       </argument>
@@ -2510,7 +2518,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58f5f6c771d151.03662727</argument>
+            <argument>58f6231f7cbf32.04109039</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2680,7 +2688,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58f5f6c771d151.03662727</argument>
+            <argument>58f6231f7cbf32.04109039</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2897,6 +2905,7 @@
               <argument>AppBundle</argument>
               <argument>SiteBundle</argument>
               <argument>UserBundle</argument>
+              <argument>ShopBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
@@ -3179,7 +3188,9 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
+              <argument key="SiteBundle">SiteBundle\Entity</argument>
               <argument key="UserBundle">UserBundle\Entity</argument>
+              <argument key="ShopBundle">ShopBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -3199,11 +3210,39 @@
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/SiteBundle/Entity</argument>
                         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/UserBundle/Entity</argument>
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>SiteBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/SiteBundle/Entity</argument>
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/UserBundle/Entity</argument>
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/SiteBundle/Entity</argument>
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/UserBundle/Entity</argument>
+                        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>ShopBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -3679,6 +3718,33 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
+                  <argument>ShopBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/Resources/ShopBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>ShopBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
                   <argument>DebugBundle</argument>
                   <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/Resources/DebugBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -3928,7 +3994,7 @@
     </service>
     <service id="fos_user.registration.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
-      <argument>app_user_registration</argument>
+      <argument>site_user_registration</argument>
       <argument>FOS\UserBundle\Form\Type\RegistrationFormType</argument>
       <argument type="collection">
         <argument>Registration</argument>
@@ -4462,6 +4528,10 @@
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/UserBundle/Resources/views</argument>
         <argument>User</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/src/ShopBundle/Resources/views</argument>
+        <argument>Shop</argument>
       </call>
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

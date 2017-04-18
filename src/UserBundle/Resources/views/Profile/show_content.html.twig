@@ -1,0 +1,51 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+
+<div class="container">
+    <h2 class="BodyTitle">Bonjour Username !</h2>
+    <div class="row">
+        <div class="col-md-11">
+            <h3>Informations</h3>
+            <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+            <p>{{ 'profile.show.name'|trans }}: {{ user.name }}</p>
+            <p>{{ 'profile.show.lastname'|trans }}: {{ user.lastname }}</p>
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+        </div>
+        <div class="col-md-11">
+            <form>
+                <p>Modifier mot de passe : </p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="text" class="form-control" name="Password" placeholder="Confirmer ancien mot de passe">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="text" class="form-control" name="Password" placeholder="Nouveau mot de passe">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Confirmer mot de passe">
+                </div>
+                <div class="ProfilBouton">
+                    <input class="btn btn-primary" type="submit" value="Confirmer">
+                </div>
+                <p>Modifier Mail : </p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="Email" type="Email" class="form-control" name="Email" placeholder="Nouvelle adresse">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="Email" type="mail" class="form-control" name="Email" placeholder="Confirmer adresse">
+                </div>
+                <div class="ProfilBouton">
+                    <input class="btn btn-primary" type="submit" value="Confirmer">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

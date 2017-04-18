@@ -9,29 +9,23 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\UserBundle\Form\Type;
+namespace SiteBundle\Form\Type;
 
-use FOS\UserBundle\Util\LegacyFormHelper;
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 
-class ResettingFormType extends AbstractType
+class RegistrationFormType extends BaseType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        parent::buildForm($builder, $options);
         $builder
             ->add('name')
             ->add('lastname');
     }
 
-    public function getParent()
-    {
-        return 'fos_user_registration';
-    }
-
     public function getName()
     {
-        return 'app_user_registration';
+        return 'site_user_registration';
     }
 }

@@ -3,13 +3,13 @@
     font-size: 2em;
 }
 #BouttonMembreBDE{
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: black;
     border: 3px solid black;
 }
 #BouttonContact{
-    background-color: white;
-    color: black;
+    background-color: red;
+    color: white;
     border: 1px solid black;
     text-decoration: none;
 }
