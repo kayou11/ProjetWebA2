@@ -2,6 +2,10 @@ site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
 
+site_admin:
+    path:     /admin
+    defaults: { _controller: SiteBundle:Default:admin }
+
 site_galerie:
     path:     /galerie
     defaults: { _controller: SiteBundle:Galerie:view }
@@ -13,3 +17,15 @@ site_le_bde:
 site_contact:
     path:     /contact
     defaults: { _controller: SiteBundle:BDE:contact }
+
+site_activite:
+    path:     /activite
+    defaults: { _controller: SiteBundle:Activite:view }
+
+site_activite_by_id:
+    path:     /activite/{id}
+    defaults: { _controller: SiteBundle:Activite:displayActivitebyID }
+
+fos_user_profile_show:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile

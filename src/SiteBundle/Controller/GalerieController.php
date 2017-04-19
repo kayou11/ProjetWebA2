@@ -8,11 +8,14 @@
 
 namespace SiteBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use SiteBundle\Entity\Activity;
+use SiteBundle\Entity\Image;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class GalerieController extends Controller
 {
-    public function viewAction()
+    public function viewAction($id)
     {
-        return $this->render('SiteBundle:Pages:galerie.html.twig');
+        return $this->render('SiteBundle:Pages:galerie_album.html.twig');
     }
 }

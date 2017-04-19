@@ -1,0 +1,42 @@
+.BodyTitle{
+	text-align: center;
+	font-size: 2em;
+}
+.row {
+	margin-bottom: 5em;
+}
+.container .row {
+	justify-content: center;
+	text-align: center;
+	display: flex;
+	border: 1px solid red;
+	padding-left: 2em;
+	margin-top: 2em;
+	padding-top: 2em;
+}
+.col-md-11{
+	width: 20em;
+	text-align: center;
+	margin-left: 4em
+}
+.col-md-11 p, h3{
+	text-align: left;
+}
+.ProfilBouton{
+	margin-left: 11em;
+	margin-bottom: 1em
+}
+.btn-primary, .btn-primary:hover {
+	background-color: red;
+}
+
+.footer{
+	position: absolute;
+}
+.photo_profile img{
+	position: relative;
+	border-color: red;
+	justify-content: center;
+	width: 8em;
+	height: 10em;
+}

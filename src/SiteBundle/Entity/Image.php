@@ -3,9 +3,9 @@
 namespace SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use ShopBundle\Entity\Activity;
+use SiteBundle\Entity\Activity;
 use UserBundle\Entity\User;
-
+use Doctrine\Common\Annotations;
 /**
  * Image
  *
@@ -32,13 +32,13 @@ class Image
 
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ShopBundle\Entity\Activity")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="SiteBundle\Entity\Activity")
+     * @ORM\JoinColumn(name="activity_id", referencedColumnName="id",nullable=false)
      */
     protected $activity;
 
@@ -50,8 +50,6 @@ class Image
     public function setUser(User $user)
     {
         $this->user = $user;
-
-        return $this;
     }
 
     public function getActivity()
@@ -63,7 +61,6 @@ class Image
     {
         $this->activity = $activity;
 
-        return $this;
     }
 
     /**

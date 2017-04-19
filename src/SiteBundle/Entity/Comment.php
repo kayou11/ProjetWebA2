@@ -5,6 +5,7 @@ namespace SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use UserBundle\Entity\User;
+use Doctrine\Common\Annotations;
 
 /**
  * Comment
@@ -44,12 +45,16 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="SiteBundle\Entity\Image")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id",nullable=false)
      */
     protected $image;
 
     /**
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\JoinTable(name="comment_user",
+     *      JoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="comment_id", referencedColumnName="id")}
+     *      )
      */
     protected $users;
 

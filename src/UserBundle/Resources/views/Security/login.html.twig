@@ -1,0 +1,7 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="../public/css/pages/login.css" type="text/css" />
+{% endblock %}
+{% block fos_user_content %}
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+{% endblock fos_user_content %}

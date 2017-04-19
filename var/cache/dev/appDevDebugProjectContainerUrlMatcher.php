@@ -166,6 +166,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
         }
 
+        // site_admin
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::adminAction',  '_route' => 'site_admin',);
+        }
+
         // site_galerie
         if ($pathinfo === '/galerie') {
             return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
@@ -181,13 +186,46 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\BDEController::contactAction',  '_route' => 'site_contact',);
         }
 
-        // homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+        if (0 === strpos($pathinfo, '/activite')) {
+            // site_activite
+            if ($pathinfo === '/activite') {
+                return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewAction',  '_route' => 'site_activite',);
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            // site_activite_by_id
+            if (preg_match('#^/activite/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_activite_by_id')), array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::displayActivitebyIDAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/profile')) {
+            // fos_user_profile_show
+            if (rtrim($pathinfo, '/') === '/profile') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_fos_user_profile_show;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
+                }
+
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
+            }
+            not_fos_user_profile_show:
+
+            // fos_user_profile_edit
+            if ($pathinfo === '/profile/edit') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_fos_user_profile_edit;
+                }
+
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
+            }
+            not_fos_user_profile_edit:
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
@@ -226,35 +264,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
             }
             not_fos_user_security_logout:
-
-        }
-
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if (rtrim($pathinfo, '/') === '/profile') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_profile_show;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
-            }
-            not_fos_user_profile_show:
-
-            // fos_user_profile_edit
-            if ($pathinfo === '/profile/edit') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_profile_edit;
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
-            }
-            not_fos_user_profile_edit:
 
         }
 

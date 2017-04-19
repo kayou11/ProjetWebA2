@@ -2,15 +2,6 @@
 {% block style %}{% endblock %}
 {% block content %}
 
-    {# On affiche les messages flash que définissent les contrôleurs du bundle #}
-    {% for key, messages in app.session.flashbag.all() %}
-            {% for message in messages %}
-                <div class="flash-{{ type }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-    {% endfor %}
-
     {% block fos_user_content %}
     {% endblock fos_user_content %}
 

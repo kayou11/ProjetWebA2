@@ -1,0 +1,18 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../public/css/pages/contact.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Galerie photos{% endblock %}
+
+{% block content %}
+    {% for activity in activities %}
+        <div>
+            <button class="btn btn-primary" href="{{ path('site_activite_by_id', {'id': activity.id }) }}">{{ activity.name }}</button>
+        </div>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+{% endblock %}

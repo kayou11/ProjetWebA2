@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use SiteBundle\Entity\Image;
+use Doctrine\Common\Annotations;
 
 /**
  * User
@@ -53,11 +54,14 @@ class User extends BaseUser
 
     /**
      * @ORM\ManyToMany(targetEntity="SiteBundle\Entity\Image", cascade={"persist"})
+     * @ORM\JoinTable(name="user_image",
+     *      joinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *      )
      */
     protected $photos;
 
-    // Notez le singulier, on ajoute une seule catégorie à la fois
-    public function addPhotos(Image $photos)
+    public function addPhoto(Image $photos)
     {
         // Ici, on utilise l'ArrayCollection vraiment comme un tableau
         $this->photos[] = $photos;
@@ -65,21 +69,21 @@ class User extends BaseUser
         return $this;
     }
 
-    public function removePhotos(Image $photos)
+    public function removePhoto(Image $photos)
     {
         // Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
         $this->photos->removeElement($photos);
     }
 
     // Notez le pluriel, on récupère une liste de catégories ici !
-    public function getPhotos()
+    public function getPhoto()
     {
         return $this->photos;
     }
 
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Formation")
-     * @ORM\JoinColumn(nullable=false)
+     *
      */
     protected $formation;
 

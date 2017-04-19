@@ -49,8 +49,9 @@
                         <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
                     </div>
                 </a>-->
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a href="{{ path('fos_user_profile_show') }}"> Mon Profil</a>
+                <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
                 {% else %}
                     <a href="{{ path('fos_user_security_login') }}">Connexion</a>
                 {% endif %}
@@ -86,7 +87,7 @@
                         <li><a href="#">Archives</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ path('site_galerie') }}">Galerie</a></li>
+                <li><a href="{{ path('site_galerie')}}">Galerie</a></li>
                 <li><a href="">Boutique</a></li>
             </ul>
             <form class="navbar-form navbar-right">
@@ -120,7 +121,7 @@
         </div>
         <div class="col-md-5">
             <h2 class="FooterTitle">Notre réseau d'école</h2>
-                <img src="../public/img/LogoAlternance.png" class="logoFooter" style=>
+                <img src="../public/img/LogoAlternance.png" class="logoFooter">
                 <img src="../public/img/LogoCertification.jpg" class="logoFooter">
                 <img src="../public/img/LogoCesi.png" class="logoFooter">
                 <img src="../public/img/LogoEi.png" class="logoFooter">
