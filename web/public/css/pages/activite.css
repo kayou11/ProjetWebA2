@@ -1,0 +1,71 @@
+.BodyTitle{
+	position: absolute;
+	text-align: center;
+	font-size: 3em;
+	bottom: 40%;
+	right: 40%;
+	color: white;
+}
+.row {
+	margin-bottom: 5em;
+}
+.container{
+    position: relative;
+}
+.container .row {
+	text-align: left;
+	display: column;
+	width: 80em;
+	height: 10em;
+}
+.col-lg-12{
+    position: relative;
+    margin-bottom: 2em;
+}
+.col-md-3{
+	width: 38em!important;
+	margin-top: 2em;
+    position: relative;
+}
+#ActivitePhoto{
+	text-align: center;
+}
+#ActiviteDetails p{
+	margin-top: 1em;
+}
+.photosize {
+    width: 80em;
+    height: 20em;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:focus{
+	background-color: #F8241F;
+	color: white;
+	float: right;
+	box-shadow: 3px 3px 3px black;
+}
+#map {
+        height: 400px;
+        width: 100%;
+}
+
+#floating-panel {
+	position: absolute;
+	bottom: 4px;
+	left: 25%;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	/*border: 1px solid #999;*/
+	text-align: center;
+	font-family: 'Roboto','sans-serif';
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+
+
+
+
+
+
+

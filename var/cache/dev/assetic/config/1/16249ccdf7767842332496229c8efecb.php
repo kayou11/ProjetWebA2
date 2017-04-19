@@ -2,15 +2,12 @@
 
 // SiteBundle:Pages:galerie_album.html.twig
 return array (
-  'a080c53' => 
+  '57633a6' => 
   array (
     0 => 
     array (
       0 => 'public/css/bootstrap.css',
-      1 => 'public/css/bootstrap-theme.min.css',
-      2 => 'public/css/main.css',
-      3 => 'public/css/boostrap-social.css',
-      4 => 'public/css/pages/index.css',
+      1 => 'public/css/main.css',
     ),
     1 => 
     array (
@@ -18,8 +15,8 @@ return array (
     ),
     2 => 
     array (
-      'output' => '_controller/css/a080c53.css',
-      'name' => 'a080c53',
+      'output' => '_controller/css/57633a6.css',
+      'name' => '57633a6',
       'debug' => NULL,
       'combine' => NULL,
       'vars' => 

@@ -1,0 +1,3 @@
+[submodule "vendor/bundles/Admingenerator/GeneratorBundle"]
+	path = vendor/bundles/Admingenerator/GeneratorBundle
+	url = git://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle.git

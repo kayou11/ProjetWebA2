@@ -11,6 +11,7 @@ return array(
     '2c102faa651ef8ea5874edb585946bce' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
     '5255c38a0faeba867671b61dfda6d864' => $vendorDir . '/paragonie/random_compat/lib/random.php',
     'fad373d645dd668e85d44ccf3c38fbd6' => $vendorDir . '/guzzlehttp/streams/src/functions.php',
+    '8ac9dba77d5c65db2811440ee8265f5d' => $vendorDir . '/sonata-project/block-bundle/Resources/stubs/symfony2.php',
     '154e0d165f5fe76e8e9695179d0a7345' => $vendorDir . '/guzzlehttp/guzzle/src/functions.php',
     '023d27dca8066ef29e6739335ea73bad' => $vendorDir . '/symfony/polyfill-php70/bootstrap.php',
     'bd9634f2d41831496de0d3dfe4c94881' => $vendorDir . '/symfony/polyfill-php56/bootstrap.php',

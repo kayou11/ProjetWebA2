@@ -9,3 +9,25 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: site_user_registration }
+
+    site.change_password.form.type:
+            class: SiteBundle\Form\Type\ChangePasswordFormType
+            arguments: [%fos_user.model.user.class%]
+            tags:
+                - { name: form.type, alias: site_user_change_passsword }
+
+    admin.Activity:
+            class: SiteBundle\Admin\ActivityAdmin
+            arguments: [~, SiteBundle\Entity\Activity, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Activités }
+    admin.Image:
+            class: SiteBundle\Admin\ImageAdmin
+            arguments: [~, SiteBundle\Entity\Image, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Images }
+    admin.User:
+            class: UserBundle\Admin\UserAdmin
+            arguments: [~, UserBundle\Entity\User, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Users }

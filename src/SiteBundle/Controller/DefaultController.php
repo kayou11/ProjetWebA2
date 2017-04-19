@@ -11,9 +11,4 @@ class DefaultController extends Controller
     {
         return $this->render('SiteBundle:Default:index.html.twig');
     }
-
-    public function adminAction()
-    {
-        return new Response('<html><body>Admin page!</body></html>');
-    }
 }

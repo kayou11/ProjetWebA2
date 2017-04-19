@@ -1,48 +1,7 @@
-.BodyTitle{
-	text-align: center;
-	font-size: 2em;
-}
-.row {
-	margin-bottom: 5em;
-}
-.container .row {
-	justify-content: center;
-	text-align: left;
-	display: inline-block;
-	padding-left: 2em;
+form{
+	margin-bottom: 2em;
 	margin-top: 2em;
-	margin-left: 25em;
-	padding-top: 2em;
-	width: 40em;
-}
-#InscriptionLocal{
-	border: 1px solid red;
-	padding-top: 2em;
-	padding-right: -2em;
-	background-color: red;
-}
-#InscriptionLocal p{
-	color: white;
-}
-.col-md-9 input{
-	color: black;
-
-}
-#sizebutton input{
-		width: 25em
-}
-/*.col-md-12 p, h3{
-	text-align: left;
-}*/
-.promo{
-	color: black;
-}
-.ProfilBouton{
-	margin-left: 19em;
-	margin-bottom: 1em
-
-}
-.btn-primary, .btn-primary:hover {
-	background-color: white;
-	color: black;
+	display: block;
+	position: relative;
+	text-align: center;
 }

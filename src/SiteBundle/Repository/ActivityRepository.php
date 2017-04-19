@@ -1,6 +1,6 @@
 <?php
 
-namespace ShopBundle\Repository;
+namespace SiteBundle\Repository;
 
 /**
  * ActivityRepository

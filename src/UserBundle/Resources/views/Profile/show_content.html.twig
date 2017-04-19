@@ -1,23 +1,32 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-
 <div class="container">
-    <h2 class="BodyTitle">Bonjour {{ user.username }} !</h2>
-    <div class="photo_profile">
-        <img src="{{ user.avatar }}">
+    <div class="AvatarMiddleProfil">
+        <h2 class="BodyTitle">Bonjour {{ user.username }} !</h2>
+
+        <div class="photo_profile">
+            <img src="{{ user.avatar }}">
+        </div>
+
+        <div class="modifyImage">
+            <button class="btn btn-primary" href="#">Modifier ma photo</button>
+        </div>
     </div>
 
     <div class="row">
         <div class="col-md-11">
-
             <h3>Informations</h3>
             <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
             <p>Prenom : {{ user.name }}</p>
             <p>Nom : {{ user.lastname }}</p>
             <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
         </div>
+
         <div class="col-md-11">
-            <form>
+            <div class="change_password_button">
+                <a class="btn btn-xl btn-primary" href="{{ path('fos_user_change_password') }}">Modifiez votre mot de passe</a>
+            </div>
+            <!--<form>
                 <p>Modifier mot de passe : </p>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -46,7 +55,7 @@
                 <div class="ProfilBouton">
                     <input class="btn btn-primary" type="submit" value="Confirmer">
                 </div>
-            </form>
+            </form>-->
         </div>
     </div>
 </div>

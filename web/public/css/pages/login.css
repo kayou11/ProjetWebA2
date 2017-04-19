@@ -1,4 +1,7 @@
 .form_login{
     margin-bottom: 2em;
     margin-top: 2em;
+    display: block;
+    position: relative;
+    text-align: center;
 }

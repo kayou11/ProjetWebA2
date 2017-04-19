@@ -27,39 +27,21 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $context = $this->context;
         $request = $this->request;
 
-        if (0 === strpos($pathinfo, '/css/a080c53')) {
-            // _assetic_a080c53
-            if ($pathinfo === '/css/a080c53.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_a080c53',);
+        if (0 === strpos($pathinfo, '/css/57633a6')) {
+            // _assetic_57633a6
+            if ($pathinfo === '/css/57633a6.css') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => '57633a6',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_57633a6',);
             }
 
-            if (0 === strpos($pathinfo, '/css/a080c53_')) {
-                if (0 === strpos($pathinfo, '/css/a080c53_bootstrap')) {
-                    // _assetic_a080c53_0
-                    if ($pathinfo === '/css/a080c53_bootstrap_1.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_a080c53_0',);
-                    }
-
-                    // _assetic_a080c53_1
-                    if ($pathinfo === '/css/a080c53_bootstrap-theme.min_2.css') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_a080c53_1',);
-                    }
-
+            if (0 === strpos($pathinfo, '/css/57633a6_')) {
+                // _assetic_57633a6_0
+                if ($pathinfo === '/css/57633a6_bootstrap_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '57633a6',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_57633a6_0',);
                 }
 
-                // _assetic_a080c53_2
-                if ($pathinfo === '/css/a080c53_main_3.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_a080c53_2',);
-                }
-
-                // _assetic_a080c53_3
-                if ($pathinfo === '/css/a080c53_boostrap-social_4.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => 3,  '_format' => 'css',  '_route' => '_assetic_a080c53_3',);
-                }
-
-                // _assetic_a080c53_4
-                if ($pathinfo === '/css/a080c53_index_5.css') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'a080c53',  'pos' => 4,  '_format' => 'css',  '_route' => '_assetic_a080c53_4',);
+                // _assetic_57633a6_1
+                if ($pathinfo === '/css/57633a6_main_2.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '57633a6',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_57633a6_1',);
                 }
 
             }
@@ -166,11 +148,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
         }
 
-        // site_admin
-        if ($pathinfo === '/admin') {
-            return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::adminAction',  '_route' => 'site_admin',);
-        }
-
         // site_galerie
         if ($pathinfo === '/galerie') {
             return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
@@ -188,7 +165,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         if (0 === strpos($pathinfo, '/activite')) {
             // site_activite
-            if ($pathinfo === '/activite') {
+            if ($pathinfo === '/activites') {
                 return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewAction',  '_route' => 'site_activite',);
             }
 
@@ -196,35 +173,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             if (preg_match('#^/activite/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_activite_by_id')), array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::displayActivitebyIDAction',));
             }
-
-        }
-
-        if (0 === strpos($pathinfo, '/profile')) {
-            // fos_user_profile_show
-            if (rtrim($pathinfo, '/') === '/profile') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_profile_show;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
-            }
-            not_fos_user_profile_show:
-
-            // fos_user_profile_edit
-            if ($pathinfo === '/profile/edit') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_profile_edit;
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
-            }
-            not_fos_user_profile_edit:
 
         }
 
@@ -375,15 +323,215 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // fos_user_change_password
-        if ($pathinfo === '/profile/change-password') {
+        if (rtrim($pathinfo, '/') === '/change-password') {
             if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                 $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                 goto not_fos_user_change_password;
             }
 
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'fos_user_change_password');
+            }
+
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
+
+        if (0 === strpos($pathinfo, '/profile')) {
+            // fos_user_profile_show
+            if (rtrim($pathinfo, '/') === '/profile') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_fos_user_profile_show;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'fos_user_profile_show');
+                }
+
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
+            }
+            not_fos_user_profile_show:
+
+            // fos_user_profile_edit
+            if ($pathinfo === '/profile/edit') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_fos_user_profile_edit;
+                }
+
+                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
+            }
+            not_fos_user_profile_edit:
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // sonata_admin_redirect
+            if (rtrim($pathinfo, '/') === '/admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'sonata_admin_redirect');
+                }
+
+                return array (  '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction',  'route' => 'sonata_admin_dashboard',  'permanent' => 'true',  '_route' => 'sonata_admin_redirect',);
+            }
+
+            // sonata_admin_dashboard
+            if ($pathinfo === '/admin/dashboard') {
+                return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::dashboardAction',  '_route' => 'sonata_admin_dashboard',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/core')) {
+                // sonata_admin_retrieve_form_element
+                if ($pathinfo === '/admin/core/get-form-field-element') {
+                    return array (  '_controller' => 'sonata.admin.controller.admin:retrieveFormFieldElementAction',  '_route' => 'sonata_admin_retrieve_form_element',);
+                }
+
+                // sonata_admin_append_form_element
+                if ($pathinfo === '/admin/core/append-form-field-element') {
+                    return array (  '_controller' => 'sonata.admin.controller.admin:appendFormFieldElementAction',  '_route' => 'sonata_admin_append_form_element',);
+                }
+
+                // sonata_admin_short_object_information
+                if (0 === strpos($pathinfo, '/admin/core/get-short-object-description') && preg_match('#^/admin/core/get\\-short\\-object\\-description(?:\\.(?P<_format>html|json))?$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sonata_admin_short_object_information')), array (  '_controller' => 'sonata.admin.controller.admin:getShortObjectDescriptionAction',  '_format' => 'html',));
+                }
+
+                // sonata_admin_set_object_field_value
+                if ($pathinfo === '/admin/core/set-object-field-value') {
+                    return array (  '_controller' => 'sonata.admin.controller.admin:setObjectFieldValueAction',  '_route' => 'sonata_admin_set_object_field_value',);
+                }
+
+            }
+
+            // sonata_admin_search
+            if ($pathinfo === '/admin/search') {
+                return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::searchAction',  '_route' => 'sonata_admin_search',);
+            }
+
+            // sonata_admin_retrieve_autocomplete_items
+            if ($pathinfo === '/admin/core/get-autocomplete-items') {
+                return array (  '_controller' => 'sonata.admin.controller.admin:retrieveAutocompleteItemsAction',  '_route' => 'sonata_admin_retrieve_autocomplete_items',);
+            }
+
+            if (0 === strpos($pathinfo, '/admin/site')) {
+                if (0 === strpos($pathinfo, '/admin/site/activity')) {
+                    // admin_site_activity_list
+                    if ($pathinfo === '/admin/site/activity/list') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_list',  '_route' => 'admin_site_activity_list',);
+                    }
+
+                    // admin_site_activity_create
+                    if ($pathinfo === '/admin/site/activity/create') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_create',  '_route' => 'admin_site_activity_create',);
+                    }
+
+                    // admin_site_activity_batch
+                    if ($pathinfo === '/admin/site/activity/batch') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_batch',  '_route' => 'admin_site_activity_batch',);
+                    }
+
+                    // admin_site_activity_edit
+                    if (preg_match('#^/admin/site/activity/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_activity_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_edit',));
+                    }
+
+                    // admin_site_activity_delete
+                    if (preg_match('#^/admin/site/activity/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_activity_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_delete',));
+                    }
+
+                    // admin_site_activity_show
+                    if (preg_match('#^/admin/site/activity/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_activity_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_show',));
+                    }
+
+                    // admin_site_activity_export
+                    if ($pathinfo === '/admin/site/activity/export') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'admin.activity',  '_sonata_name' => 'admin_site_activity_export',  '_route' => 'admin_site_activity_export',);
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/admin/site/image')) {
+                    // admin_site_image_list
+                    if ($pathinfo === '/admin/site/image/list') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_list',  '_route' => 'admin_site_image_list',);
+                    }
+
+                    // admin_site_image_create
+                    if ($pathinfo === '/admin/site/image/create') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_create',  '_route' => 'admin_site_image_create',);
+                    }
+
+                    // admin_site_image_batch
+                    if ($pathinfo === '/admin/site/image/batch') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_batch',  '_route' => 'admin_site_image_batch',);
+                    }
+
+                    // admin_site_image_edit
+                    if (preg_match('#^/admin/site/image/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_image_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_edit',));
+                    }
+
+                    // admin_site_image_delete
+                    if (preg_match('#^/admin/site/image/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_image_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_delete',));
+                    }
+
+                    // admin_site_image_show
+                    if (preg_match('#^/admin/site/image/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_site_image_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_show',));
+                    }
+
+                    // admin_site_image_export
+                    if ($pathinfo === '/admin/site/image/export') {
+                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'admin.image',  '_sonata_name' => 'admin_site_image_export',  '_route' => 'admin_site_image_export',);
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/user/user')) {
+                // admin_user_user_list
+                if ($pathinfo === '/admin/user/user/list') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_list',  '_route' => 'admin_user_user_list',);
+                }
+
+                // admin_user_user_create
+                if ($pathinfo === '/admin/user/user/create') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_create',  '_route' => 'admin_user_user_create',);
+                }
+
+                // admin_user_user_batch
+                if ($pathinfo === '/admin/user/user/batch') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_batch',  '_route' => 'admin_user_user_batch',);
+                }
+
+                // admin_user_user_edit
+                if (preg_match('#^/admin/user/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_user_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_edit',));
+                }
+
+                // admin_user_user_delete
+                if (preg_match('#^/admin/user/user/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_user_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_delete',));
+                }
+
+                // admin_user_user_show
+                if (preg_match('#^/admin/user/user/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_user_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_show',));
+                }
+
+                // admin_user_user_export
+                if ($pathinfo === '/admin/user/user/export') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_export',  '_route' => 'admin_user_user_export',);
+                }
+
+            }
+
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

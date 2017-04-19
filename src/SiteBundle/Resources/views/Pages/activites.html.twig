@@ -1,18 +1,59 @@
 {% extends "SiteBundle::base.html.twig" %}
 
 {% block style %}
-    <link rel="stylesheet" href="../public/css/pages/contact.css" type="text/css" />
+    <link rel="stylesheet" href="../public/css/pages/activiteproposees.css" type="text/css" />
 {% endblock %}
 
 {% block title  %}Galerie photos{% endblock %}
 
 {% block content %}
-    {% for activity in activities %}
-        <div>
-            <button class="btn btn-primary" href="{{ path('site_activite_by_id', {'id': activity.id }) }}">{{ activity.name }}</button>
+    <div class="container">
+        <h1 class="BodyTitle">Votez pour vos futurs activités ! </h1>
+            <!--<div class="carousel-inner">
+                <div class="item active">-->
+                    <div class="row">
+                        {% for activity in activities %}
+                            {% if activity.status == 'Proposé'%}
+                            <div class="col-lg-8">
+                                <div class="col-md-3">
+                                    <h2>{{ activity.name }}</h2>
+                                    <a href="{{ path('/activite/') }}"><img src="../public/img/film.jpg" class="imgActivite"></a><
+                                </div>
+                                <div class="col-md-2">
+                                    <p>{{ activity.description }}</p>
+                                    <p><a class="btn btn-default" href="#" role="button" onclick="">Voter</a></p>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                <!--</div>
+            </div>-->
         </div>
-    {% endfor %}
-    <br>
-    <br>
-    <br>
+        {% if is_granted("ROLE_USER") %}
+            <div class="form-activity">
+                <h2 class="BodyTitle">Soumettre une idée d'activité</h2>
+                <div class="col-md-2 col-md-offset-4">
+                    <a class="btn btn-default" href="#" role="button" onclick="" id="BoutonRedirectionContact">Via mail</a>
+                </div>
+            </div>
+        {% endif %}
+        {% if is_granted("ROLE_BDE") %}
+            <div class="col-md-15 col-md-offset-3">
+                <div class="col-md-9">
+                    <div id="sizebutton">
+                        <p>Nom de l'activité : <input type="text" name="name"><p>
+                            <p>Description : <p><textarea name="comments" id="comments" cols="50" rows="6" placeholder="Notez votre message ici!"></textarea><br>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div id="PositionFloatRightImgButton">
+                        <p>Ajouter une image : <button><p>image.jpg</p></button></p><br>
+                    </div>
+                    <div class="ProfilBouton">
+                        <input class="btn btn-primary" type="submit" value="Confirmer">
+                    </div>
+                </div>
+            </div>
+         {% endif %}
 {% endblock %}

@@ -5,8 +5,7 @@ security:
         UserBundle\Entity\User: sha512
 
     role_hierarchy:
-        ROLE_BDE:         ROLE_USER
-        ROLE_ADMIN:       ROLE_USER ROLE_BDE
+        ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:

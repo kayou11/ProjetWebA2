@@ -18,17 +18,17 @@ class ActiviteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $images = $em
+            ->getRepository('SiteBundle:Image')
+            ->find($id);
+
         $activity = $em
             ->getRepository('SiteBundle:Activity')
             ->find($id);
 
-        $images = $em
-            ->getRepository('SiteBundle:Image')
-            ->findby(array('activity_id', $id));
-
         return $this->render('SiteBundle:Pages:activite.html.twig', array(
-            'images' => $images,
-            'activity' => $activity
+            'activity' =>$activity,
+            'images' => $images
         ));
     }
 

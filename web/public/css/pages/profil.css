@@ -2,6 +2,9 @@
 	text-align: center;
 	font-size: 2em;
 }
+.AvatarMiddleProfil{
+    text-align: center;
+}
 .row {
 	margin-bottom: 5em;
 }
@@ -17,7 +20,8 @@
 .col-md-11{
 	width: 20em;
 	text-align: center;
-	margin-left: 4em
+	margin-left: 4em;
+	margin-bottom: 3em;
 }
 .col-md-11 p, h3{
 	text-align: left;
@@ -27,7 +31,7 @@
 	margin-bottom: 1em
 }
 .btn-primary, .btn-primary:hover {
-	background-color: red;
+	background-color: blue;
 }
 
 .footer{
@@ -36,7 +40,15 @@
 .photo_profile img{
 	position: relative;
 	border-color: red;
-	justify-content: center;
 	width: 8em;
 	height: 10em;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
+.modifyImage{
+    margin-top: 1em;
+}
+
+.change_password_button{
+	margin-top: 5em;
 }
