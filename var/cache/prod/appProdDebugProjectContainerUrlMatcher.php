@@ -61,9 +61,17 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
 
         }
 
-        // site_shop
-        if ($pathinfo === '/shop') {
-            return array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewAction',  '_route' => 'site_shop',);
+        if (0 === strpos($pathinfo, '/shop')) {
+            // site_shop
+            if ($pathinfo === '/shop') {
+                return array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewAction',  '_route' => 'site_shop',);
+            }
+
+            // site_shop_panier
+            if ($pathinfo === '/shop/panier') {
+                return array (  '_controller' => 'ShopBundle\\Controller\\PanierController::viewAction',  '_route' => 'site_shop_panier',);
+            }
+
         }
 
         // site_homepage
@@ -477,6 +485,44 @@ class appProdDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBun
                 // admin_user_user_export
                 if ($pathinfo === '/admin/user/user/export') {
                     return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'admin.user',  '_sonata_name' => 'admin_user_user_export',  '_route' => 'admin_user_user_export',);
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/admin/shop/article')) {
+                // admin_shop_article_list
+                if ($pathinfo === '/admin/shop/article/list') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_list',  '_route' => 'admin_shop_article_list',);
+                }
+
+                // admin_shop_article_create
+                if ($pathinfo === '/admin/shop/article/create') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_create',  '_route' => 'admin_shop_article_create',);
+                }
+
+                // admin_shop_article_batch
+                if ($pathinfo === '/admin/shop/article/batch') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_batch',  '_route' => 'admin_shop_article_batch',);
+                }
+
+                // admin_shop_article_edit
+                if (preg_match('#^/admin/shop/article/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_shop_article_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_edit',));
+                }
+
+                // admin_shop_article_delete
+                if (preg_match('#^/admin/shop/article/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_shop_article_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_delete',));
+                }
+
+                // admin_shop_article_show
+                if (preg_match('#^/admin/shop/article/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_shop_article_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_show',));
+                }
+
+                // admin_shop_article_export
+                if ($pathinfo === '/admin/shop/article/export') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'admin.article',  '_sonata_name' => 'admin_shop_article_export',  '_route' => 'admin_shop_article_export',);
                 }
 
             }

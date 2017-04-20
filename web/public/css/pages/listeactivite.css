@@ -27,8 +27,8 @@
 }
 .col-md-1{
 	margin-top: 1%;
-	width: 30%;
-	float: right;
+	width: 30%!important;
+	float: right!important;
 	font-size: 1.3em;
 }
 #ActivitePhoto{

@@ -5,3 +5,7 @@ site_shop:
 site_shop_article:
     path:     /shop/article/{id}
     defaults: { _controller: ShopBundle:Default:viewArticle }
+
+site_shop_panier:
+    path:     /shop/panier
+    defaults: { _controller: ShopBundle:Panier:view }

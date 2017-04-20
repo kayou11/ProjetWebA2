@@ -30,4 +30,9 @@ services:
             class: UserBundle\Admin\UserAdmin
             arguments: [~, UserBundle\Entity\User, ~]
             tags:
-                - { name: sonata.admin, manager_type: orm, label: Users }
+                - { name: sonata.admin, manager_type: orm, label: Utilisateurs }
+    admin.Article:
+            class: ShopBundle\Admin\ArticleAdmin
+            arguments: [~, ShopBundle\Entity\Article, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Articles }

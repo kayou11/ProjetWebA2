@@ -16,7 +16,7 @@
                         <img src="../public/img/kubb.jpg" class="photosize">
                     </div>
                     <div class="col-md-3">
-                        <a href=""><h2 class="BodyTitle">{{ activity.name }}</h2></a>
+                        <a href="{{ path('site_activite_by_id', {'id': activity.id}) }}"><h2 class="BodyTitle">{{ activity.name }}</h2></a>
                     </div>
                     <div class="col-md-1">
                         <p>Lieu : {{ activity.location }}</p>

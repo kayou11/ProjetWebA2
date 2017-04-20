@@ -1,0 +1,51 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../../public/css/pages/panier.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Votre panier{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 id="TitleHead"> Votre panier</h2>
+        <div class="row">
+            <div class="col-lg-12" id="ArticlePhoto">
+                <div class="col-md-2">
+                    <img src="../../public/img/kubb.jpg" class="photosize">
+                </div>
+                <div class="col-md-3">
+                    <a href=""><h2 class="BodyTitle">The Kubb !</h2></a>
+                </div>
+                <div class="col-md-1">
+                    <p>Prix : EUR xx.xx</p>
+                </div>
+            </div>
+            <div class="col-lg-12" id="ArticlePhoto">
+                <div class="col-md-2">
+                    <img src="../../public/img/foot.jpg" class="photosize">
+                </div>
+                <div class="col-md-3">
+                    <a href=""><h2 class="BodyTitle">Foot</h2></a>
+                </div>
+                <div class="col-md-1">
+                    <p>Prix : EUR xx.xx</p>
+                </div>
+            </div>
+            <div class="col-lg-12" id="ArticlePhoto">
+                <div class="col-md-2">
+                    <img src="../../public/img/hacking.jpg" class="photosize">
+                </div>
+                <div class="col-md-3">
+                    <a href=""><h2 class="BodyTitle">Rootme</h2></a>
+                </div>
+                <div class="col-md-1">
+                    <p>Prix : EUR xx.xx</p>
+                </div>
+            </div>
+            <div class="col-md-1" id="ArticlePhoto">
+                <p>Total : </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

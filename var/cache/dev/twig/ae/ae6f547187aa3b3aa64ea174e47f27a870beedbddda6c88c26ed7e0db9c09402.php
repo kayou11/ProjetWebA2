@@ -15,11 +15,11 @@ class __TwigTemplate_91f667ae9ec13c7fa5137ca1e19d642d7187060b69804ed1c91aefb39fe
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e9a255e539862151799548296ad14eae51ae8c590c6c9601d44c53a047c65907 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e9a255e539862151799548296ad14eae51ae8c590c6c9601d44c53a047c65907->enter($__internal_e9a255e539862151799548296ad14eae51ae8c590c6c9601d44c53a047c65907_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "knp_menu_base.html.twig"));
+        $__internal_0984a8948833189fe55498da24eacd5f1b2a29eed2f76f97baf350a389fbdee6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0984a8948833189fe55498da24eacd5f1b2a29eed2f76f97baf350a389fbdee6->enter($__internal_0984a8948833189fe55498da24eacd5f1b2a29eed2f76f97baf350a389fbdee6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "knp_menu_base.html.twig"));
 
-        $__internal_00c48c8c888e264328a5ff0362883bac6c2f4152739aaf37564e7b55d8cdb089 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_00c48c8c888e264328a5ff0362883bac6c2f4152739aaf37564e7b55d8cdb089->enter($__internal_00c48c8c888e264328a5ff0362883bac6c2f4152739aaf37564e7b55d8cdb089_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "knp_menu_base.html.twig"));
+        $__internal_e13f5b6df394f2c021e5e739702edcb5cd2b6bb8991644775b299c6c70b31aab = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e13f5b6df394f2c021e5e739702edcb5cd2b6bb8991644775b299c6c70b31aab->enter($__internal_e13f5b6df394f2c021e5e739702edcb5cd2b6bb8991644775b299c6c70b31aab_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "knp_menu_base.html.twig"));
 
         // line 1
         if (twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["options"]) || array_key_exists("options", $context) ? $context["options"] : (function () { throw new Twig_Error_Runtime('Variable "options" does not exist.', 1, $this->getSourceContext()); })()), "compressed", array())) {
@@ -28,10 +28,10 @@ class __TwigTemplate_91f667ae9ec13c7fa5137ca1e19d642d7187060b69804ed1c91aefb39fe
             $this->displayBlock("root", $context, $blocks);
         }
         
-        $__internal_e9a255e539862151799548296ad14eae51ae8c590c6c9601d44c53a047c65907->leave($__internal_e9a255e539862151799548296ad14eae51ae8c590c6c9601d44c53a047c65907_prof);
+        $__internal_0984a8948833189fe55498da24eacd5f1b2a29eed2f76f97baf350a389fbdee6->leave($__internal_0984a8948833189fe55498da24eacd5f1b2a29eed2f76f97baf350a389fbdee6_prof);
 
         
-        $__internal_00c48c8c888e264328a5ff0362883bac6c2f4152739aaf37564e7b55d8cdb089->leave($__internal_00c48c8c888e264328a5ff0362883bac6c2f4152739aaf37564e7b55d8cdb089_prof);
+        $__internal_e13f5b6df394f2c021e5e739702edcb5cd2b6bb8991644775b299c6c70b31aab->leave($__internal_e13f5b6df394f2c021e5e739702edcb5cd2b6bb8991644775b299c6c70b31aab_prof);
 
     }
 

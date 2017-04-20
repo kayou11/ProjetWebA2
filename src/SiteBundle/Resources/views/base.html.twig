@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block style %}{% endblock %}
     {% stylesheets filter='cssrewrite'
-    'public/css/bootstrap.css'
-    'public/css/main.css'
+        'public/css/bootstrap.css'
+        'public/css/main.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
@@ -19,7 +19,7 @@
 <body>
 <div id="top">
     <div class='logo_bde'>
-        <a href="#"><img src=" ../public/img/logo_bde.jpg" width="100" height="100"> </a>
+        <a href="{{ path('site_homepage') }}"><img src=" ../../public/img/logo_bde.jpg" width="100" height="100"> </a>
     </div>
     <div class="msg_bde">
         <h1>BDE CESI BORDEAUX</h1>
@@ -28,23 +28,11 @@
         <a href="#" class="dropdown-toggle square" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true" width="200" height="200"></span>
             <br>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            {{ app.user.username }}
+                {{ app.user.username }}
             {% endif %}
         </a>
         <ul class="dropdown-menu">
             <li>
-             <!--   <a href="#">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">MDP</span>
-                        <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-                    </div>
-                </a>-->
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <a href="{{ path('fos_user_profile_show') }}"> Mon Profil</a>
                 {% if is_granted("ROLE_ADMIN") %}
@@ -59,7 +47,7 @@
         </ul>
     </div>
     <div class="basket">
-        <a class="square" href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" width="100" height="100"></span></a>
+        <a class="square" href="{{ path('site_shop_panier') }}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" width="100" height="100"></span></a>
     </div>
 </div>
 
@@ -115,19 +103,19 @@
                 <div class="col-md-5">
                     <div class="HyperTextFooter">
                         <h2 class="FooterTitle">BDE CESI BORDEAUX</h2>
-                        <p><a href="#">L'équipe</a> </p>
-                        <p><a href="#">Galerie</a> </p>
-                        <p><a href="#">Boutique</a> </p>
+                        <p><a href="{{ path('site_le_bde') }}">L'équipe</a> </p>
+                        <p><a href="{{ path('site_galerie')}}">Galerie</a> </p>
+                        <p><a href="{{ path('site_shop') }}">Boutique</a> </p>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <h2 class="FooterTitle">Notre réseau d'école</h2>
-                    <img src="../public/img/LogoAlternance.png" class="logoFooter">
-                    <img src="../public/img/LogoCertification.jpg" class="logoFooter">
-                    <img src="../public/img/LogoCesi.png" class="logoFooter">
-                    <img src="../public/img/LogoEi.png" class="logoFooter">
-                    <img src="../public/img/LogoEntreprises.png" class="logoFooter">
-                    <img src="../public/img/LogoExia.png" class="logoFooter">
+                    <img src="../../public/img/LogoAlternance.png" class="logoFooter">
+                    <img src="../../public/img/LogoCertification.jpg" class="logoFooter">
+                    <img src="../../public/img/LogoCesi.png" class="logoFooter">
+                    <img src="../../public/img/LogoEi.png" class="logoFooter">
+                    <img src="../../public/img/LogoEntreprises.png" class="logoFooter">
+                    <img src="../../public/img/LogoExia.png" class="logoFooter">
                 </div>
                 <div class="col-md-5">
                     <h2 class="FooterTitle">Restez connecté</h2>
@@ -148,8 +136,4 @@
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 </body>
-
-
 </html>
-
-
