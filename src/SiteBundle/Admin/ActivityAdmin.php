@@ -18,16 +18,32 @@ class ActivityAdmin extends AbstractAdmin
     #These lines configure which fields are displayed on the edit and create actions. The FormMapper behaves similar to the FormBuilder of the Symfony Form component;
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('name', 'text');
+        $formMapper
+            ->add('name', 'text')
+            ->add('status', 'text')
+            ->add('price', 'text')
+            ->add('location', 'text')
+            ->add('description', 'text');
     }
     #This method configures the filters, used to filter and sort the list of models;
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('name');
+        $datagridMapper
+            ->add('name')
+            ->add('status')
+            ->add('price')
+            ->add('location')
+            ->add('description');
     }
     #Here you specify which fields are shown when all models are listed (the addIdentifier() method means that this field will link to the show/edit page of this particular model).
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('name');
+        $listMapper
+            ->addIdentifier('name')
+            ->addIdentifier('status')
+            ->addIdentifier('price')
+            ->addIdentifier('location')
+            ->addIdentifier('description');
+
     }
 }

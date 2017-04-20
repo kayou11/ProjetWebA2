@@ -1,0 +1,29 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../public/css/pages/listeactivite.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Activité Prévues{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Activité Prévues</h2>
+        <div class="row">
+            {% for activity in activities %}
+                <div class="col-lg-12" id="ActivitePhoto">
+                    <div class="col-md-2">
+                        <img src="../public/img/kubb.jpg" class="photosize">
+                    </div>
+                    <div class="col-md-3">
+                        <a href=""><h2 class="BodyTitle"{{ activity.name }}</h2></a>
+                    </div>
+                    <div class="col-md-1">
+                        <p>Lieu : {{ activity.location }}</p>
+                        <p>Date : 20/04/2017</p>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -2,6 +2,14 @@ site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
 
+site_shop:
+    path:     /shop
+    defaults: { _controller: ShopBundle:Default:view }
+
+site_shop_article:
+    path:     /shop/article{id}
+    defaults: { _controller: ShopBundle:Default:viewArticle }
+
 site_galerie:
     path:     /galerie
     defaults: { _controller: SiteBundle:Galerie:view }
@@ -21,3 +29,11 @@ site_activite:
 site_activite_by_id:
     path:     /activite/{id}
     defaults: { _controller: SiteBundle:Activite:displayActivitebyID }
+
+site_activite_archives:
+    path:     /archives
+    defaults: { _controller: SiteBundle:Activite:viewArchives }
+
+site_activite_prevues:
+    path:     /planning
+    defaults: { _controller: SiteBundle:Activite:viewActivitesPrevues }

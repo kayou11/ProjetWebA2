@@ -148,6 +148,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
         }
 
+        if (0 === strpos($pathinfo, '/shop')) {
+            // site_shop
+            if ($pathinfo === '/shop') {
+                return array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewAction',  '_route' => 'site_shop',);
+            }
+
+            // site_shop_article
+            if (0 === strpos($pathinfo, '/shop/article') && preg_match('#^/shop/article(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_shop_article')), array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewArticleAction',));
+            }
+
+        }
+
         // site_galerie
         if ($pathinfo === '/galerie') {
             return array (  '_controller' => 'SiteBundle\\Controller\\GalerieController::viewAction',  '_route' => 'site_galerie',);
@@ -163,17 +176,30 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\BDEController::contactAction',  '_route' => 'site_contact',);
         }
 
-        if (0 === strpos($pathinfo, '/activite')) {
-            // site_activite
-            if ($pathinfo === '/activites') {
-                return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewAction',  '_route' => 'site_activite',);
+        if (0 === strpos($pathinfo, '/a')) {
+            if (0 === strpos($pathinfo, '/activite')) {
+                // site_activite
+                if ($pathinfo === '/activites') {
+                    return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewAction',  '_route' => 'site_activite',);
+                }
+
+                // site_activite_by_id
+                if (preg_match('#^/activite/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_activite_by_id')), array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::displayActivitebyIDAction',));
+                }
+
             }
 
-            // site_activite_by_id
-            if (preg_match('#^/activite/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_activite_by_id')), array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::displayActivitebyIDAction',));
+            // site_activite_archives
+            if ($pathinfo === '/archives') {
+                return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewArchivesAction',  '_route' => 'site_activite_archives',);
             }
 
+        }
+
+        // site_activite_prevues
+        if ($pathinfo === '/planning') {
+            return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewActivitesPrevuesAction',  '_route' => 'site_activite_prevues',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

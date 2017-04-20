@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Site BDE{% endblock %}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,9 +81,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Activités<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Planning</a></li>
+                        <li><a href="{{ path('site_activite_prevues') }}">Planning</a></li>
                         <li><a href="{{ path('site_activite') }}">Proposez vos activités</a></li>
-                        <li><a href="#">Archives</a></li>
+                        <li><a href="{{ path('site_activite_archives') }}">Archives</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ path('site_galerie')}}">Galerie</a></li>
@@ -101,49 +101,52 @@
 {% block content  %}
 
 {% endblock %}
-<div class="footer">
+<footer>
     <div class="content">
-        <div class="col-md-5">
-            <h2 class="FooterTitle">Nous contacter</h2>
-                <p>Adresse : 60 rue de Maurian</p>
-                <p>Blanquefort, France</p>
-                <p>Téléphone : 06 69 69 69 69</p>
-                <p>Email : bdecesibordeaux@viacesi.fr</p>
-        </div>
-        <div class="col-md-5">
-            <div class="HyperTextFooter">
-                <h2 class="FooterTitle">BDE CESI BORDEAUX</h2>
-                    <p><a href="#">L'équipe</a> </p>
-                    <p><a href="#">Galerie</a> </p>
-                    <p><a href="#">Boutique</a> </p>
+        <div class="row">
+            <div class="col-lg-14 col-md-offset-1">
+                <div class="col-md-5">
+                    <h2 class="FooterTitle">Nous contacter</h2>
+                    <p>Adresse : 60 rue de Maurian</p>
+                    <p>Blanquefort, France</p>
+                    <p>Téléphone : 06 69 69 69 69</p>
+                    <p>Email : bdecesibordeaux@viacesi.fr</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="HyperTextFooter">
+                        <h2 class="FooterTitle">BDE CESI BORDEAUX</h2>
+                        <p><a href="#">L'équipe</a> </p>
+                        <p><a href="#">Galerie</a> </p>
+                        <p><a href="#">Boutique</a> </p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h2 class="FooterTitle">Notre réseau d'école</h2>
+                    <img src="../public/img/LogoAlternance.png" class="logoFooter">
+                    <img src="../public/img/LogoCertification.jpg" class="logoFooter">
+                    <img src="../public/img/LogoCesi.png" class="logoFooter">
+                    <img src="../public/img/LogoEi.png" class="logoFooter">
+                    <img src="../public/img/LogoEntreprises.png" class="logoFooter">
+                    <img src="../public/img/LogoExia.png" class="logoFooter">
+                </div>
+                <div class="col-md-5">
+                    <h2 class="FooterTitle">Restez connecté</h2>
+                    <a class="btn btn-social-icon btn-lg btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-lg btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-md-5">
-            <h2 class="FooterTitle">Notre réseau d'école</h2>
-                <img src="../public/img/LogoAlternance.png" class="logoFooter">
-                <img src="../public/img/LogoCertification.jpg" class="logoFooter">
-                <img src="../public/img/LogoCesi.png" class="logoFooter">
-                <img src="../public/img/LogoEi.png" class="logoFooter">
-                <img src="../public/img/LogoEntreprises.png" class="logoFooter">
-                <img src="../public/img/LogoExia.png" class="logoFooter">
-        </div>
-        <div class="col-md-5">
-            <h2 class="FooterTitle">Restez connecté</h2>
-                <a class="btn btn-social-icon btn-lg btn-facebook">
-                    <span class="fa fa-facebook"></span>
-                </a>
-                <a class="btn btn-social-icon btn-lg btn-twitter">
-                    <span class="fa fa-twitter"></span>
-                </a>
-        </div>
     </div>
-</div>
+    <footer>
 {%  javascripts filter='?yui_js'
     'public/js/bootstrap.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
-
 </body>
 
 

@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="../../public/css/pages/activite.css" type="text/css" />
 {% endblock %}
 
-{% block title  %}Galerie photos{% endblock %}
+{% block title  %}{{ activity.name }}{% endblock %}
 
 {% block content %}
     <div class="container">
 
         <div class="row">
             <div class="col-lg-12" id="ActivitePhoto">
-                <img src="{{ images.name }}" class="photosize">
+                <img src="../../public/img/jump_park.jpeg" class="photosize">
                 <h2 class="BodyTitle">{{ activity.name }}</h2>
             </div>
             <div class="col-lg-12" id="ActiviteDetails">

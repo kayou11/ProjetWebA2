@@ -44,4 +44,30 @@ class ActiviteController extends Controller
             'activities' => $listactivity
         ));
     }
+
+    public function viewArchivesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $listactivity = $em
+            ->getRepository('SiteBundle:Activity')
+            ->findAll();
+
+        return $this->render('SiteBundle:Pages:archives.html.twig',array(
+            'activities' => $listactivity
+        ));
+    }
+
+    public function viewActivitesPrevuesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $listactivity = $em
+            ->getRepository('SiteBundle:Activity')
+            ->findAll();
+
+        return $this->render('SiteBundle:Pages:listeactivites.html.twig',array(
+            'activities' => $listactivity
+        ));
+    }
 }
