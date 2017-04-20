@@ -15,11 +15,11 @@ class __TwigTemplate_af6024b47b6cca3d29851343a967b187a68c6848ba41f57ab9fd190b21f
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7da253ff1516c7ddf2fb23cf859c6ed5b55cc6a1bb005e76c3ea024821465303 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7da253ff1516c7ddf2fb23cf859c6ed5b55cc6a1bb005e76c3ea024821465303->enter($__internal_7da253ff1516c7ddf2fb23cf859c6ed5b55cc6a1bb005e76c3ea024821465303_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:acl_button.html.twig"));
+        $__internal_a2e50e5fdf42203d96dfd1c3f5fbc619d439e369f2f358321c7fec895838cf53 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a2e50e5fdf42203d96dfd1c3f5fbc619d439e369f2f358321c7fec895838cf53->enter($__internal_a2e50e5fdf42203d96dfd1c3f5fbc619d439e369f2f358321c7fec895838cf53_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:acl_button.html.twig"));
 
-        $__internal_efb8dbedc67db3fb9eaf33cc3b2812b7d44fb2d4f4ddffa3fe3f48f2bbe6c095 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_efb8dbedc67db3fb9eaf33cc3b2812b7d44fb2d4f4ddffa3fe3f48f2bbe6c095->enter($__internal_efb8dbedc67db3fb9eaf33cc3b2812b7d44fb2d4f4ddffa3fe3f48f2bbe6c095_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:acl_button.html.twig"));
+        $__internal_d710e9c8a58572ec114154aba10ccf16b4bd82034faabb1a451dc9bef4287e40 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d710e9c8a58572ec114154aba10ccf16b4bd82034faabb1a451dc9bef4287e40->enter($__internal_d710e9c8a58572ec114154aba10ccf16b4bd82034faabb1a451dc9bef4287e40_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:acl_button.html.twig"));
 
         // line 11
         if (((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "isAclEnabled", array(), "method") && twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "canAccessObject", array(0 => "acl", 1 => (isset($context["object"]) || array_key_exists("object", $context) ? $context["object"] : (function () { throw new Twig_Error_Runtime('Variable "object" does not exist.', 11, $this->getSourceContext()); })())), "method")) && twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "hasRoute", array(0 => "acl"), "method"))) {
@@ -39,10 +39,10 @@ class __TwigTemplate_af6024b47b6cca3d29851343a967b187a68c6848ba41f57ab9fd190b21f
 ";
         }
         
-        $__internal_7da253ff1516c7ddf2fb23cf859c6ed5b55cc6a1bb005e76c3ea024821465303->leave($__internal_7da253ff1516c7ddf2fb23cf859c6ed5b55cc6a1bb005e76c3ea024821465303_prof);
+        $__internal_a2e50e5fdf42203d96dfd1c3f5fbc619d439e369f2f358321c7fec895838cf53->leave($__internal_a2e50e5fdf42203d96dfd1c3f5fbc619d439e369f2f358321c7fec895838cf53_prof);
 
         
-        $__internal_efb8dbedc67db3fb9eaf33cc3b2812b7d44fb2d4f4ddffa3fe3f48f2bbe6c095->leave($__internal_efb8dbedc67db3fb9eaf33cc3b2812b7d44fb2d4f4ddffa3fe3f48f2bbe6c095_prof);
+        $__internal_d710e9c8a58572ec114154aba10ccf16b4bd82034faabb1a451dc9bef4287e40->leave($__internal_d710e9c8a58572ec114154aba10ccf16b4bd82034faabb1a451dc9bef4287e40_prof);
 
     }
 

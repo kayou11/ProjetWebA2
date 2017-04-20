@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="col-md-2">
                                     <p>{{ activity.description }}</p>
-                                    <p><a class="btn btn-default" href="#" role="button" onclick="">Voter</a></p>
+                                    <p><a class="btn btn-default" role="button" onclick="{{ path('site_activite_vote', {'id': activity.id}) }}">Voter</a></p>
                                 </div>
                             </div>
                             {% endif %}

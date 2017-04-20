@@ -1,0 +1,49 @@
+.BodyTitle{
+    text-align: center;
+    font-size: 2em;
+}
+.row {
+    margin-bottom: 5em;
+}
+.container .row {
+    justify-content: center;
+    text-align: left;
+    display: flex;
+    padding-top: 2em;
+    width: 80em;
+    height: 30em;
+}
+
+.col-md-12{
+    border: 3px solid black
+}
+
+#ArticlePhoto{
+    background-color: #F8241F;
+    text-align: center;
+    border: 3px solid black;
+}
+#ArticleDetails p{
+    margin-top: 1em;
+}
+
+.photosize{
+    width: 20em;
+    height: 20em;
+    margin-top: 4em;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus{
+    background-color: #F8241F;
+    color: white;
+    float: right;
+    box-shadow: 3px 3px 3px black;
+}
+
+
+
+
+
+
+
+

@@ -15,20 +15,20 @@ class __TwigTemplate_6a6aa151c72db212495dcb9edd0b54b302b100195d7ae9d586f0ad92dcb
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e0e5db411126905a836058536eedc1961269b5149ce80a0be116c9e157412c54 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e0e5db411126905a836058536eedc1961269b5149ce80a0be116c9e157412c54->enter($__internal_e0e5db411126905a836058536eedc1961269b5149ce80a0be116c9e157412c54_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ShopBundle:Default:index.html.twig"));
+        $__internal_4af9554d4aec8b926e92d3a8dbd6d238e6f19b15609ca5f63c2ea839d075ef0a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4af9554d4aec8b926e92d3a8dbd6d238e6f19b15609ca5f63c2ea839d075ef0a->enter($__internal_4af9554d4aec8b926e92d3a8dbd6d238e6f19b15609ca5f63c2ea839d075ef0a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ShopBundle:Default:index.html.twig"));
 
-        $__internal_12e4f8acf09152816b27c3cc5c5d002e0dfb35f21239ed90c8f5fcf26455fee4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_12e4f8acf09152816b27c3cc5c5d002e0dfb35f21239ed90c8f5fcf26455fee4->enter($__internal_12e4f8acf09152816b27c3cc5c5d002e0dfb35f21239ed90c8f5fcf26455fee4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ShopBundle:Default:index.html.twig"));
+        $__internal_d976bba8c46ad0f45505a65b5fc3148e0752beb255545473cc28bf792da0666c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d976bba8c46ad0f45505a65b5fc3148e0752beb255545473cc28bf792da0666c->enter($__internal_d976bba8c46ad0f45505a65b5fc3148e0752beb255545473cc28bf792da0666c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ShopBundle:Default:index.html.twig"));
 
         // line 1
         echo "Hello World!
 ";
         
-        $__internal_e0e5db411126905a836058536eedc1961269b5149ce80a0be116c9e157412c54->leave($__internal_e0e5db411126905a836058536eedc1961269b5149ce80a0be116c9e157412c54_prof);
+        $__internal_4af9554d4aec8b926e92d3a8dbd6d238e6f19b15609ca5f63c2ea839d075ef0a->leave($__internal_4af9554d4aec8b926e92d3a8dbd6d238e6f19b15609ca5f63c2ea839d075ef0a_prof);
 
         
-        $__internal_12e4f8acf09152816b27c3cc5c5d002e0dfb35f21239ed90c8f5fcf26455fee4->leave($__internal_12e4f8acf09152816b27c3cc5c5d002e0dfb35f21239ed90c8f5fcf26455fee4_prof);
+        $__internal_d976bba8c46ad0f45505a65b5fc3148e0752beb255545473cc28bf792da0666c->leave($__internal_d976bba8c46ad0f45505a65b5fc3148e0752beb255545473cc28bf792da0666c_prof);
 
     }
 

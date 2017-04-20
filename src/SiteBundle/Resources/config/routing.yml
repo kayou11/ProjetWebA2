@@ -2,10 +2,6 @@ site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Default:index }
 
-site_shop:
-    path:     /shop
-    defaults: { _controller: ShopBundle:Default:view }
-
 site_shop_article:
     path:     /shop/article{id}
     defaults: { _controller: ShopBundle:Default:viewArticle }
@@ -37,3 +33,7 @@ site_activite_archives:
 site_activite_prevues:
     path:     /planning
     defaults: { _controller: SiteBundle:Activite:viewActivitesPrevues }
+
+site_activite_vote:
+    path:     /vote/{id}
+    defaults: { _controller: SiteBundle:Activite:vote }

@@ -61,6 +61,21 @@ class User extends BaseUser
      */
     protected $photos;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="SiteBundle\Entity\Activity", cascade={"persist"}, inversedBy="users")
+     * @ORM\JoinTable(name="activity_user",
+     *      joinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     *      )
+     */
+    protected $activity;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Formation")
+     *
+     */
+    protected $formation;
+
     public function addPhoto(Image $photos)
     {
         // Ici, on utilise l'ArrayCollection vraiment comme un tableau
@@ -81,11 +96,27 @@ class User extends BaseUser
         return $this->photos;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Formation")
-     *
-     */
-    protected $formation;
+    // Notez le singulier, on ajoute une seule catégorie à la fois
+    public function addActivity(User $activity)
+    {
+        // Ici, on utilise l'ArrayCollection vraiment comme un tableau
+        $this->activity[] = $activity;
+
+        return $this;
+    }
+
+    public function removeActivity(User $activity)
+    {
+        // Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
+        $this->activity->removeElement($activity);
+    }
+
+    // Notez le pluriel, on récupère une liste de catégories ici !
+
+    public function getActivity()
+    {
+        return $this->activity;
+    }
 
     public function getFormation()
     {

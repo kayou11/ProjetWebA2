@@ -1,1 +1,7 @@
+site_shop:
+    path:     /shop
+    defaults: { _controller: ShopBundle:Default:view }
 
+site_shop_article:
+    path:     /shop/article/{id}
+    defaults: { _controller: ShopBundle:Default:viewArticle }

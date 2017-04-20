@@ -164,6 +164,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // site_shop
+        if ($pathinfo === '/shop') {
+            return array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewAction',  '_route' => 'site_shop',);
+        }
+
         // site_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -173,17 +178,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'SiteBundle\\Controller\\DefaultController::indexAction',  '_route' => 'site_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/shop')) {
-            // site_shop
-            if ($pathinfo === '/shop') {
-                return array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewAction',  '_route' => 'site_shop',);
-            }
-
-            // site_shop_article
-            if (0 === strpos($pathinfo, '/shop/article') && preg_match('#^/shop/article(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_shop_article')), array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewArticleAction',));
-            }
-
+        // site_shop_article
+        if (0 === strpos($pathinfo, '/shop/article') && preg_match('#^/shop/article(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_shop_article')), array (  '_controller' => 'ShopBundle\\Controller\\DefaultController::viewArticleAction',));
         }
 
         // site_galerie
@@ -225,6 +222,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // site_activite_prevues
         if ($pathinfo === '/planning') {
             return array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::viewActivitesPrevuesAction',  '_route' => 'site_activite_prevues',);
+        }
+
+        // site_activite_vote
+        if (0 === strpos($pathinfo, '/vote') && preg_match('#^/vote/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'site_activite_vote')), array (  '_controller' => 'SiteBundle\\Controller\\ActiviteController::voteAction',));
         }
 
         if (0 === strpos($pathinfo, '/log')) {

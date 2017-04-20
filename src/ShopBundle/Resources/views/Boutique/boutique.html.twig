@@ -1,0 +1,24 @@
+{% extends "SiteBundle::base.html.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="../public/css/pages/activiteproposees.css" type="text/css" />
+{% endblock %}
+
+{% block title  %}Boutique{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="BodyTitle">Boutique</h1>
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-lg-8">
+                        <div class="col-md-3">
+                            <h2>{{ article.name }}</h2>
+                            <a href="{{ path('site_shop_article', {'id': article.id}) }}"><img src="../public/img/film.jpg" class="imgActivite"></a>
+                            <h2>{{ article.price }} €</h2>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

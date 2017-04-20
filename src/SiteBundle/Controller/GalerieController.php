@@ -16,21 +16,6 @@ class GalerieController extends Controller
 {
     public function viewAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $activity = $em
-            ->getRepository('SiteBundle:Activity')
-            ->findAll();
-
-        $images = $em
-            ->getRepository('SiteBundle:Image')
-            ->find(function (Activity $id){
-                return $id->getId();
-            });
-
-        return $this->render('SiteBundle:Pages:galerie_album.html.twig', array(
-            'images' => $images,
-            'activity' => $activity
-        ));
+        return $this->render('SiteBundle:Pages:galerie_album.html.twig');
     }
 }

@@ -15,11 +15,11 @@ class __TwigTemplate_f523f1bb8b72c887e375533f7a7a72da20a3d492ad0112fb850f215d6e7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_87e52055c4637128a3e142ec296d54fa1b9c4f3e54d5457356ef637c82dec0cc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_87e52055c4637128a3e142ec296d54fa1b9c4f3e54d5457356ef637c82dec0cc->enter($__internal_87e52055c4637128a3e142ec296d54fa1b9c4f3e54d5457356ef637c82dec0cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:show_button.html.twig"));
+        $__internal_bda0167a7d7594393f4b46d7a781ed600b39166b51a0d42012743005620f666b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bda0167a7d7594393f4b46d7a781ed600b39166b51a0d42012743005620f666b->enter($__internal_bda0167a7d7594393f4b46d7a781ed600b39166b51a0d42012743005620f666b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:show_button.html.twig"));
 
-        $__internal_7f0cdd90bb065a29f429be16b48ffe31837ff6e8b5e25a17ff22cddb8e5163d4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7f0cdd90bb065a29f429be16b48ffe31837ff6e8b5e25a17ff22cddb8e5163d4->enter($__internal_7f0cdd90bb065a29f429be16b48ffe31837ff6e8b5e25a17ff22cddb8e5163d4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:show_button.html.twig"));
+        $__internal_5025bd0618588adc5be2c98a23ec4d2d38829b38fff2f341cb271daec7cd0bf3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5025bd0618588adc5be2c98a23ec4d2d38829b38fff2f341cb271daec7cd0bf3->enter($__internal_5025bd0618588adc5be2c98a23ec4d2d38829b38fff2f341cb271daec7cd0bf3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:Button:show_button.html.twig"));
 
         // line 11
         if (((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "canAccessObject", array(0 => "show", 1 => (isset($context["object"]) || array_key_exists("object", $context) ? $context["object"] : (function () { throw new Twig_Error_Runtime('Variable "object" does not exist.', 11, $this->getSourceContext()); })())), "method") && (twig_length_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "show", array())) > 0)) && twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 11, $this->getSourceContext()); })()), "hasRoute", array(0 => "show"), "method"))) {
@@ -39,10 +39,10 @@ class __TwigTemplate_f523f1bb8b72c887e375533f7a7a72da20a3d492ad0112fb850f215d6e7
 ";
         }
         
-        $__internal_87e52055c4637128a3e142ec296d54fa1b9c4f3e54d5457356ef637c82dec0cc->leave($__internal_87e52055c4637128a3e142ec296d54fa1b9c4f3e54d5457356ef637c82dec0cc_prof);
+        $__internal_bda0167a7d7594393f4b46d7a781ed600b39166b51a0d42012743005620f666b->leave($__internal_bda0167a7d7594393f4b46d7a781ed600b39166b51a0d42012743005620f666b_prof);
 
         
-        $__internal_7f0cdd90bb065a29f429be16b48ffe31837ff6e8b5e25a17ff22cddb8e5163d4->leave($__internal_7f0cdd90bb065a29f429be16b48ffe31837ff6e8b5e25a17ff22cddb8e5163d4_prof);
+        $__internal_5025bd0618588adc5be2c98a23ec4d2d38829b38fff2f341cb271daec7cd0bf3->leave($__internal_5025bd0618588adc5be2c98a23ec4d2d38829b38fff2f341cb271daec7cd0bf3_prof);
 
     }
 

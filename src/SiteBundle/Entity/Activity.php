@@ -80,7 +80,7 @@ class Activity
     protected $endtime;
 
     /**
-     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\User",cascade={"persist"}, mappedBy="activity")
      * @ORM\JoinTable(name="activity_user",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="activity_id", referencedColumnName="id")}
@@ -89,7 +89,7 @@ class Activity
     protected $users;
 
     // Notez le singulier, on ajoute une seule catégorie à la fois
-    public function addCategory(User $users)
+    public function addUsers(User $users)
     {
         // Ici, on utilise l'ArrayCollection vraiment comme un tableau
         $this->users[] = $users;
@@ -97,7 +97,7 @@ class Activity
         return $this;
     }
 
-    public function removeCategory(User $users)
+    public function removeUsers(User $users)
     {
         // Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
         $this->users->removeElement($users);

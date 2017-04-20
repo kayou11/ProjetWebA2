@@ -39,20 +39,17 @@
     <div id="home" class="header">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-
-                {% for images in activity %}
                 <div class="item active">
                     <div class="container">
                         <div id="slide1" class="masonry">
                             <div class="post-box col-lg-4 col-md-4 col-sm-4">
-                                <img class="img-responsive img-thumbnail" src="{{ images.name }}">
+                                <img class="img-responsive img-thumbnail" src="../public/img/kayak.jpg">
                                 <p><button class="btn btn-primary">Enregistrer</button></p>
                                 <p><button class="btn btn-primary">Supprimer</button></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
