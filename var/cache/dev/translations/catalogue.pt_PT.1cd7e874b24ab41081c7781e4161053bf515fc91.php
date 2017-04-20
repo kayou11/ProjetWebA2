@@ -930,6 +930,16 @@ the Team.
     'read_more' => 'Read more',
     'read_less' => 'Close',
   ),
+  'messages' => 
+  array (
+    'coresphere_console.headline.index' => 'Console',
+    'coresphere_console.working_directory' => 'Working directory',
+    'coresphere_console.environment' => 'Environment',
+    'coresphere_console.welcome_message' => 'Type %command% to get a list of all commands.',
+    'coresphere_console.loading' => 'Loading...',
+    'coresphere_console.suggestion_head' => 'Did you mean:',
+    'coresphere_console.empty_response' => 'Complete!',
+  ),
 ));
 $cataloguePt->addFallbackCatalogue($catalogueEn);
 

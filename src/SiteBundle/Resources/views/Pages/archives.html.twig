@@ -10,79 +10,21 @@
     <div class="container">
         <h2>Archives</h2>
         <div class="row">
+            {% for activity in activities %}
             <div class="col-lg-12" id="ActivitePhoto">
                 <div class="col-md-2">
                     <img src="../public/img/kubb.jpg" class="photosize">
                 </div>
                 <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
+                    <a href=""><h2 class="BodyTitle">{{ activity.name }}</h2></a>
                 </div>
                 <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
+                    <p>Lieu : {{ activity.name }}</p>
                     <p>Date : 20/04/2017</p>
                     <p>Nombre d'inscrits : 100<p>
                 </div>
             </div>
-            <div class="col-lg-12" id="ActivitePhoto">
-                <div class="col-md-2">
-                    <img src="../public/img/kubb.jpg" class="photosize">
-                </div>
-                <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
-                </div>
-                <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
-                    <p>Date : </p>
-                </div>
-            </div>
-            <div class="col-lg-12" id="ActivitePhoto">
-                <div class="col-md-2">
-                    <img src="../public/img/kubb.jpg" class="photosize">
-                </div>
-                <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
-                </div>
-                <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
-                    <p>Date : </p>
-                </div>
-            </div>
-            <div class="col-lg-12" id="ActivitePhoto">
-                <div class="col-md-2">
-                    <img src="../public/img/kubb.jpg" class="photosize">
-                </div>
-                <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
-                </div>
-                <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
-                    <p>Date : </p>
-                </div>
-            </div>
-            <div class="col-lg-12" id="ActivitePhoto">
-                <div class="col-md-2">
-                    <img src="../public/img/kubb.jpg" class="photosize">
-                </div>
-                <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
-                </div>
-                <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
-                    <p>Date : </p>
-                </div>
-            </div>
-            <div class="col-lg-12" id="ActivitePhoto">
-                <div class="col-md-2">
-                    <img src="../public/img/kubb.jpg" class="photosize">
-                </div>
-                <div class="col-md-3">
-                    <a href=""><h2 class="BodyTitle">Nom Activité</h2></a>
-                </div>
-                <div class="col-md-1">
-                    <p>Lieu : Bordeaux</p>
-                    <p>Date : </p>
-                </div>
-            </div>
+                {% endfor %}
         </div>
     </div>
 {% endblock %}

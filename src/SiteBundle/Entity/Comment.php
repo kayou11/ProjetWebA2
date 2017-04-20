@@ -52,7 +52,7 @@ class Comment
     /**
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\User", cascade={"persist"})
      * @ORM\JoinTable(name="comment_user",
-     *      JoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="comment_id", referencedColumnName="id")}
      *      )
      */

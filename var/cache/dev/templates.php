@@ -257,6 +257,7 @@
   'SiteBundle:Pages:activite.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/activite.html.twig',
   'SiteBundle:Pages:activites.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/activites.html.twig',
   'SiteBundle:Pages:archives.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/archives.html.twig',
+  'SiteBundle:Pages:article.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/article.html.twig',
   'SiteBundle:Pages:contact.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/contact.html.twig',
   'SiteBundle:Pages:galerie.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/galerie.html.twig',
   'SiteBundle:Pages:galerie_album.html.twig' => __DIR__.'/../../../src/SiteBundle/Resources/views/Pages/galerie_album.html.twig',
@@ -305,4 +306,10 @@
   'WebProfilerBundle:Profiler:toolbar_js.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_js.html.twig',
   'WebProfilerBundle:Profiler:toolbar_redirect.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/toolbar_redirect.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => __DIR__.'/../../../vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
+  'CoreSphereConsoleBundle::base.html.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/base.html.twig',
+  'CoreSphereConsoleBundle:Console:console.html.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/Console/console.html.twig',
+  'CoreSphereConsoleBundle:Console:htmlTemplates.html.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/Console/htmlTemplates.html.twig',
+  'CoreSphereConsoleBundle:Console:result.json.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/Console/result.json.twig',
+  'CoreSphereConsoleBundle:Console:terminal.html.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/Console/terminal.html.twig',
+  'CoreSphereConsoleBundle:Toolbar:toolbar.html.twig' => __DIR__.'/../../../vendor/coresphere/console-bundle/Resources/views/Toolbar/toolbar.html.twig',
 );

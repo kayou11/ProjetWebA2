@@ -30,6 +30,7 @@
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
       <parameter key="SensioGeneratorBundle">Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle</parameter>
+      <parameter key="CoreSphereConsoleBundle">CoreSphere\ConsoleBundle\CoreSphereConsoleBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -141,6 +142,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sensio/generator-bundle</parameter>
         <parameter key="namespace">Sensio\Bundle\GeneratorBundle</parameter>
+      </parameter>
+      <parameter key="CoreSphereConsoleBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle</parameter>
+        <parameter key="namespace">CoreSphere\ConsoleBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -435,6 +441,7 @@
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
       <parameter>SensioGeneratorBundle</parameter>
+      <parameter>CoreSphereConsoleBundle</parameter>
     </parameter>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
@@ -448,7 +455,7 @@
     <parameter key="assetic.write_to">/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/../web</parameter>
     <parameter key="assetic.variables" type="collection"/>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
-    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.node.bin">/Users/PierreKayou/.nvm/versions/node/v4.4.7/bin/node</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
@@ -799,6 +806,10 @@
       <parameter key="sonata.block.data_collector" type="collection">
         <parameter>block</parameter>
         <parameter>SonataBlockBundle:Profiler:block.html.twig</parameter>
+      </parameter>
+      <parameter key="coresphere_console.toolbar" type="collection">
+        <parameter>coresphere_console</parameter>
+        <parameter>CoreSphereConsoleBundle:Toolbar:toolbar</parameter>
       </parameter>
       <parameter key="data_collector.config" type="collection">
         <parameter>config</parameter>
@@ -1300,7 +1311,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>zoAc5NUaZt</argument>
                 <argument>0</argument>
-                <argument>g1NJ-mdSP2graZsj3Yauvv</argument>
+                <argument>UULSMJYhdn-CqD25DqH-Nr</argument>
                 <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1498,7 +1509,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>77e5w3UIne</argument>
       <argument>0</argument>
-      <argument>g1NJ-mdSP2graZsj3Yauvv</argument>
+      <argument>UULSMJYhdn-CqD25DqH-Nr</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1508,7 +1519,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>3MDI1qEtgi</argument>
       <argument>0</argument>
-      <argument>g1NJ-mdSP2graZsj3Yauvv</argument>
+      <argument>UULSMJYhdn-CqD25DqH-Nr</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1518,7 +1529,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>OBRcLxGJY8</argument>
       <argument>0</argument>
-      <argument>g1NJ-mdSP2graZsj3Yauvv</argument>
+      <argument>UULSMJYhdn-CqD25DqH-Nr</argument>
       <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1609,6 +1620,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.bg.yml</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.bg.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.bg.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.bg.yml</argument>
           </argument>
           <argument key="ca" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
@@ -1647,6 +1659,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.de.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/block-bundle/Resources/translations/SonataBlockBundle.de.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.de.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
@@ -1664,6 +1677,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.en.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/block-bundle/Resources/translations/SonataBlockBundle.en.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.en.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
@@ -1673,6 +1687,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.es.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.es.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
@@ -1712,6 +1727,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.fr.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/block-bundle/Resources/translations/SonataBlockBundle.fr.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.fr.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
@@ -1764,6 +1780,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.it.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/block-bundle/Resources/translations/SonataBlockBundle.it.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.it.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.it.yml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
@@ -1828,6 +1845,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.pl.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.pl.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
@@ -1863,6 +1881,7 @@
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/core-bundle/Resources/translations/SonataCoreBundle.ru.xliff</argument>
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/translations/SonataAdminBundle.ru.xliff</argument>
+            <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/translations/messages.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
@@ -2569,6 +2588,9 @@
         </argument>
       </call>
       <call method="add">
+        <argument type="service" id="coresphere_console.toolbar"/>
+      </call>
+      <call method="add">
         <argument type="service">
           <service class="Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector" public="false">
             <tag name="data_collector" template="@WebProfiler/Collector/config.html.twig" id="config" priority="-255"/>
@@ -2832,6 +2854,10 @@
       <argument type="service" id="debug.stopwatch"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor" public="false"/>
+    <service id="routing.loader.yml" class="Symfony\Component\Routing\Loader\YamlFileLoader" public="false">
+      <tag name="routing.loader"/>
+      <argument type="service" id="file_locator"/>
+    </service>
     <service id="routing.loader" class="Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader">
       <argument type="service" id="controller_name_converter"/>
       <argument type="service">
@@ -2845,12 +2871,7 @@
             </argument>
           </call>
           <call method="addLoader">
-            <argument type="service">
-              <service class="Symfony\Component\Routing\Loader\YamlFileLoader" public="false">
-                <tag name="routing.loader"/>
-                <argument type="service" id="file_locator"/>
-              </service>
-            </argument>
+            <argument type="service" id="routing.loader.yml"/>
           </call>
           <call method="addLoader">
             <argument type="service">
@@ -2923,6 +2944,9 @@
           </call>
           <call method="addLoader">
             <argument type="service" id="sonata.admin.route_loader"/>
+          </call>
+          <call method="addLoader">
+            <argument type="service" id="coresphere_console.routing"/>
           </call>
         </service>
       </argument>
@@ -3032,7 +3056,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58f82e7198e2f0.99832293</argument>
+            <argument>58f87ca7620e77.43753156</argument>
           </service>
         </argument>
         <argument type="service">
@@ -3053,7 +3077,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58f82e7198e2f0.99832293</argument>
+            <argument>58f87ca7620e77.43753156</argument>
           </service>
         </argument>
       </argument>
@@ -3100,7 +3124,7 @@
         </argument>
         <argument key="security.firewall.map.context.main_login" type="service">
           <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-            <argument>^/login</argument>
+            <argument>^/register</argument>
           </service>
         </argument>
         <argument key="security.firewall.map.context.main" type="service">
@@ -3338,7 +3362,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58f82e7198e2f0.99832293</argument>
+            <argument>58f87ca7620e77.43753156</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3362,7 +3386,7 @@
         <service class="Symfony\Bundle\SecurityBundle\Security\FirewallConfig" public="false">
           <argument>main_login</argument>
           <argument>security.user_checker</argument>
-          <argument>security.request_matcher.6279cc18444405126b2950accab9d0c12250659de5c9800a2d20958fd130c8d611238f00</argument>
+          <argument>security.request_matcher.745af285ec0cdb27a2ff492a5d678ab6479bc7c9470e5861db25ebba7dea9c02f5bf909e</argument>
           <argument>true</argument>
           <argument>false</argument>
           <argument>fos_user.user_provider.username</argument>
@@ -3508,7 +3532,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58f82e7198e2f0.99832293</argument>
+            <argument>58f87ca7620e77.43753156</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3735,6 +3759,7 @@
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
               <argument>SensioGeneratorBundle</argument>
+              <argument>CoreSphereConsoleBundle</argument>
             </argument>
             <argument type="service">
               <service class="Symfony\Bundle\AsseticBundle\DefaultValueSupplier" public="false">
@@ -4851,6 +4876,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioGeneratorBundle</argument>
                   <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sensio/generator-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CoreSphereConsoleBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/app/Resources/CoreSphereConsoleBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>CoreSphereConsoleBundle</argument>
+                  <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -6109,6 +6161,10 @@
           <argument>block</argument>
           <argument>SonataBlockBundle:Profiler:block.html.twig</argument>
         </argument>
+        <argument key="coresphere_console.toolbar" type="collection">
+          <argument>coresphere_console</argument>
+          <argument>CoreSphereConsoleBundle:Toolbar:toolbar</argument>
+        </argument>
         <argument key="data_collector.config" type="collection">
           <argument>config</argument>
           <argument>@WebProfiler/Collector/config.html.twig</argument>
@@ -6147,6 +6203,27 @@
     <service id="sensio_distribution.security_checker.command" class="SensioLabs\Security\Command\SecurityCheckerCommand">
       <tag name="console.command"/>
       <argument type="service" id="sensio_distribution.security_checker"/>
+    </service>
+    <service id="coresphere_console.controller" class="CoreSphere\ConsoleBundle\Controller\ConsoleController">
+      <argument type="service" id="templating"/>
+      <argument type="service" id="coresphere_console.executer"/>
+      <argument type="service" id="coresphere_console.application"/>
+      <argument>dev</argument>
+    </service>
+    <service id="coresphere_console.executer" class="CoreSphere\ConsoleBundle\Executer\CommandExecuter">
+      <argument type="service" id="kernel"/>
+    </service>
+    <service id="coresphere_console.routing" class="CoreSphere\ConsoleBundle\Routing\Loader">
+      <tag name="routing.loader"/>
+      <argument type="service" id="routing.loader.yml"/>
+    </service>
+    <service id="coresphere_console.toolbar" class="CoreSphere\ConsoleBundle\DataCollector\DataCollector">
+      <tag name="data_collector" template="CoreSphereConsoleBundle:Toolbar:toolbar" id="coresphere_console"/>
+    </service>
+    <service id="coresphere_console.application.factory" class="CoreSphere\ConsoleBundle\Console\ApplicationFactory"/>
+    <service id="coresphere_console.application" class="Symfony\Bundle\FrameworkBundle\Console\Application">
+      <argument type="service" id="kernel"/>
+      <factory service="coresphere_console.application.factory" method="create"/>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -6419,20 +6496,37 @@
           <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
           <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
           <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
+          <argument>form.type_extension.form.http_foundation</argument>
+          <argument>form.type_extension.form.validator</argument>
+          <argument>form.type_extension.csrf</argument>
+          <argument>form.type_extension.form.data_collector</argument>
+          <argument>sonata.admin.form.extension.field</argument>
+          <argument>mopa_bootstrap.form.type_extension.help</argument>
+          <argument>mopa_bootstrap.form.type_extension.legend</argument>
+          <argument>mopa_bootstrap.form.type_extension.error</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget</argument>
+          <argument>mopa_bootstrap.form.type_extension.horizontal</argument>
+          <argument>mopa_bootstrap.form.type_extension.widget_collection</argument>
+          <argument>mopa_bootstrap.form.type_extension.tabbed</argument>
         </argument>
         <argument key="repeated" type="collection">
+          <argument>form.type_extension.repeated.validator</argument>
           <argument>form.type_extension.repeated.validator</argument>
         </argument>
         <argument key="submit" type="collection">
           <argument>form.type_extension.submit.validator</argument>
+          <argument>form.type_extension.submit.validator</argument>
         </argument>
         <argument key="choice" type="collection">
+          <argument>sonata.admin.form.extension.choice</argument>
           <argument>sonata.admin.form.extension.choice</argument>
         </argument>
         <argument key="button" type="collection">
           <argument>mopa_bootstrap.form.type_extension.button</argument>
+          <argument>mopa_bootstrap.form.type_extension.button</argument>
         </argument>
         <argument key="date" type="collection">
+          <argument>mopa_bootstrap.form.type_extension.date</argument>
           <argument>mopa_bootstrap.form.type_extension.date</argument>
         </argument>
       </argument>
@@ -6706,6 +6800,10 @@
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
         <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/coresphere/console-bundle/Resources/views</argument>
+        <argument>CoreSphereConsole</argument>
       </call>
       <call method="addPath">
         <argument>/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>

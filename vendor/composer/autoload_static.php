@@ -100,6 +100,7 @@ class ComposerStaticInitca9b62b4cc87fdd42c5e10d4aacba5a4
         ),
         'C' => 
         array (
+            'CoreSphere\\ConsoleBundle\\' => 25,
             'Composer\\CaBundle\\' => 18,
             'Cocur\\Slugify\\' => 14,
         ),
@@ -285,6 +286,10 @@ class ComposerStaticInitca9b62b4cc87fdd42c5e10d4aacba5a4
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
+        ),
+        'CoreSphere\\ConsoleBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/coresphere/console-bundle',
         ),
         'Composer\\CaBundle\\' => 
         array (

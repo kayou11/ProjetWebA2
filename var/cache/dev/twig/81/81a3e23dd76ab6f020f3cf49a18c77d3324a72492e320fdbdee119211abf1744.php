@@ -1,0 +1,106 @@
+<?php
+
+/* SonataAdminBundle:CRUD:list_trans.html.twig */
+class __TwigTemplate_e57bc67dfc4096a8d8fab2663cc83cbf6c0f5fb51111d4b919c2ff9af1b1c8b4 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->blocks = array(
+            'field' => array($this, 'block_field'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 12
+        return $this->loadTemplate(twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 12, $this->getSourceContext()); })()), "getTemplate", array(0 => "base_list_field"), "method"), "SonataAdminBundle:CRUD:list_trans.html.twig", 12);
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_06f79e1b3f810195939c7708ae9dd1fe4c0eac7306b9ee33cb1d1cab7ed5d625 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_06f79e1b3f810195939c7708ae9dd1fe4c0eac7306b9ee33cb1d1cab7ed5d625->enter($__internal_06f79e1b3f810195939c7708ae9dd1fe4c0eac7306b9ee33cb1d1cab7ed5d625_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_trans.html.twig"));
+
+        $__internal_453bdc2095b3c920cce36f8ddfea50fadd7e8496a4d7a35e40811da67c4306df = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_453bdc2095b3c920cce36f8ddfea50fadd7e8496a4d7a35e40811da67c4306df->enter($__internal_453bdc2095b3c920cce36f8ddfea50fadd7e8496a4d7a35e40811da67c4306df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_trans.html.twig"));
+
+        $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_06f79e1b3f810195939c7708ae9dd1fe4c0eac7306b9ee33cb1d1cab7ed5d625->leave($__internal_06f79e1b3f810195939c7708ae9dd1fe4c0eac7306b9ee33cb1d1cab7ed5d625_prof);
+
+        
+        $__internal_453bdc2095b3c920cce36f8ddfea50fadd7e8496a4d7a35e40811da67c4306df->leave($__internal_453bdc2095b3c920cce36f8ddfea50fadd7e8496a4d7a35e40811da67c4306df_prof);
+
+    }
+
+    // line 14
+    public function block_field($context, array $blocks = array())
+    {
+        $__internal_87bd154bcd47c6fe7865943cce126a2ce2a020dc49a4bf5be14b66c1d4ae0c11 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_87bd154bcd47c6fe7865943cce126a2ce2a020dc49a4bf5be14b66c1d4ae0c11->enter($__internal_87bd154bcd47c6fe7865943cce126a2ce2a020dc49a4bf5be14b66c1d4ae0c11_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "field"));
+
+        $__internal_40de6e9995f9ca977601cfa26657c7cb12fdd68b5c8e22c27dfd3aa6a13c853b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_40de6e9995f9ca977601cfa26657c7cb12fdd68b5c8e22c27dfd3aa6a13c853b->enter($__internal_40de6e9995f9ca977601cfa26657c7cb12fdd68b5c8e22c27dfd3aa6a13c853b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "field"));
+
+        // line 15
+        echo "    ";
+        $context["translationDomain"] = ((twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["field_description"] ?? null), "options", array(), "any", false, true), "catalogue", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["field_description"] ?? null), "options", array(), "any", false, true), "catalogue", array()), twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 15, $this->getSourceContext()); })()), "translationDomain", array()))) : (twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new Twig_Error_Runtime('Variable "admin" does not exist.', 15, $this->getSourceContext()); })()), "translationDomain", array())));
+        // line 16
+        echo "    ";
+        $context["valueFormat"] = ((twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["field_description"] ?? null), "options", array(), "any", false, true), "format", array(), "any", true, true)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["field_description"] ?? null), "options", array(), "any", false, true), "format", array()), "%s")) : ("%s"));
+        // line 17
+        echo "
+    ";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans(sprintf((isset($context["valueFormat"]) || array_key_exists("valueFormat", $context) ? $context["valueFormat"] : (function () { throw new Twig_Error_Runtime('Variable "valueFormat" does not exist.', 18, $this->getSourceContext()); })()), (isset($context["value"]) || array_key_exists("value", $context) ? $context["value"] : (function () { throw new Twig_Error_Runtime('Variable "value" does not exist.', 18, $this->getSourceContext()); })())), array(), (isset($context["translationDomain"]) || array_key_exists("translationDomain", $context) ? $context["translationDomain"] : (function () { throw new Twig_Error_Runtime('Variable "translationDomain" does not exist.', 18, $this->getSourceContext()); })())), "html", null, true);
+        echo "
+";
+        
+        $__internal_40de6e9995f9ca977601cfa26657c7cb12fdd68b5c8e22c27dfd3aa6a13c853b->leave($__internal_40de6e9995f9ca977601cfa26657c7cb12fdd68b5c8e22c27dfd3aa6a13c853b_prof);
+
+        
+        $__internal_87bd154bcd47c6fe7865943cce126a2ce2a020dc49a4bf5be14b66c1d4ae0c11->leave($__internal_87bd154bcd47c6fe7865943cce126a2ce2a020dc49a4bf5be14b66c1d4ae0c11_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "SonataAdminBundle:CRUD:list_trans.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  57 => 18,  54 => 17,  51 => 16,  48 => 15,  39 => 14,  18 => 12,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends admin.getTemplate('base_list_field') %}
+
+{% block field%}
+    {% set translationDomain = field_description.options.catalogue|default(admin.translationDomain) %}
+    {% set valueFormat = field_description.options.format|default('%s') %}
+
+    {{valueFormat|format(value)|trans({}, translationDomain)}}
+{% endblock %}
+", "SonataAdminBundle:CRUD:list_trans.html.twig", "/Users/PierreKayou/Documents/Sites Web/ProjetWebA2/vendor/sonata-project/admin-bundle/Resources/views/CRUD/list_trans.html.twig");
+    }
+}

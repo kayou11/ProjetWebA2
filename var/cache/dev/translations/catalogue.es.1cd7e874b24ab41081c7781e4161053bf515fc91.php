@@ -462,6 +462,16 @@ el Equipo.
     'read_more' => 'Leer más',
     'read_less' => 'Cerrar',
   ),
+  'messages' => 
+  array (
+    'coresphere_console.headline.index' => 'Consola',
+    'coresphere_console.working_directory' => 'Directorio de trabajo',
+    'coresphere_console.environment' => 'Entorno',
+    'coresphere_console.welcome_message' => 'Escriba %command% para obtener una lista de los comandos.',
+    'coresphere_console.loading' => 'Cargando...',
+    'coresphere_console.suggestion_head' => 'Quieres decir:',
+    'coresphere_console.empty_response' => 'Terminado!',
+  ),
 ));
 
 $catalogueEn = new MessageCatalogue('en', array (
@@ -932,6 +942,16 @@ the Team.
     'label_unknown_user' => 'unknown',
     'read_more' => 'Read more',
     'read_less' => 'Close',
+  ),
+  'messages' => 
+  array (
+    'coresphere_console.headline.index' => 'Console',
+    'coresphere_console.working_directory' => 'Working directory',
+    'coresphere_console.environment' => 'Environment',
+    'coresphere_console.welcome_message' => 'Type %command% to get a list of all commands.',
+    'coresphere_console.loading' => 'Loading...',
+    'coresphere_console.suggestion_head' => 'Did you mean:',
+    'coresphere_console.empty_response' => 'Complete!',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

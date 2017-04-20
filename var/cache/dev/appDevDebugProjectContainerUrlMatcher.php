@@ -137,6 +137,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => '_twig_error_test')), array (  '_controller' => 'twig.controller.preview_error:previewErrorPageAction',  '_format' => 'html',));
             }
 
+            if (0 === strpos($pathinfo, '/_console')) {
+                // console
+                if ($pathinfo === '/_console') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_console;
+                    }
+
+                    return array (  '_controller' => 'coresphere_console.controller:consoleAction',  '_route' => 'console',);
+                }
+                not_console:
+
+                // console_exec
+                if (0 === strpos($pathinfo, '/_console/commands') && preg_match('#^/_console/commands(?:\\.(?P<_format>json))?$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_console_exec;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'console_exec')), array (  '_controller' => 'coresphere_console.controller:execAction',  '_format' => 'json',));
+                }
+                not_console_exec:
+
+            }
+
         }
 
         // site_homepage
